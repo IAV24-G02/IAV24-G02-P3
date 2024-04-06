@@ -19,10 +19,10 @@ Se parte de un proyecto base de **Unity 2022.3.5f1** proporcionado por el profes
 | - | - |
 | BasicRigidBodyPush | |
 | BehaviourExecutor | |
-| Bullet | |
-| Enemy | |
+| Bullet | Componente utilizado para los proyectiles. Gestiona la colisión de estos con otros objetos. Si colisiona con un objeto con el componente `Health` le resta vida. En cualquier caso los proyectiles se destruyen al colisionar o pasados 2 segundos desde que se intanciaron. |
+| Enemy | Inicializa los atributos y comportamientos comunes a los Guardias: navegación por el entorno, árboles de comportamiento, salud y animaciones. |
 | Health | |
-| LaserShooter | |
+| LaserShooter | Gestiona el disparo de los enemigos. Contiene variables para las balas, velocidad, cooldown y punto al que disparar. En su método `Shoot()` se instancian las balas desde el punto de disparo hacia un punto especificado o hacia delante. |
 | PlayerInput | |
 | ResetPlayer | |
 | StarterAssetsInputs | |
