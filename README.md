@@ -9,7 +9,7 @@
 ## Propuesta
 Este proyecto es una práctica de la asignatura de Inteligencia Artificial para Videojuegos del Grado en Desarrollo de Videojuegos de la UCM, cuyo enunciado original es este: [Robot a la Fuga](https://narratech.com/es/inteligencia-artificial-para-videojuegos/decision/robot-a-la-fuga/).
 
-[Descripción] ...
+Esta práctica consiste en recrear un escenario en el que un robot `Néstor` debe encontrar la salida del espacio en donde se encuentra. Para ello, deberá buscar llaves para desbloquear puertas y, huir y esconderse entre otros `Robots` de un grupo de `Guardias` que intentan capturarlo y disparlo si está en sus campos de visión. Estos últimos, si no ven a `Néstor`, patrullan por el escenario siguiendo waypoints.
 
 ## Punto de partida
 
@@ -23,9 +23,9 @@ Se parte de un proyecto base de **Unity 2022.3.5f1** proporcionado por el profes
 | Enemy | Inicializa los atributos y comportamientos comunes a los Guardias: navegación por el entorno, árboles de comportamiento, salud y animaciones. |
 | Health | |
 | LaserShooter | Gestiona el disparo de los enemigos. Contiene variables para las balas, velocidad, cooldown y punto al que disparar. En su método `Shoot()` se instancian las balas desde el punto de disparo hacia un punto especificado o hacia delante. |
-| PlayerInput | |
-| ResetPlayer | |
-| StarterAssetsInputs | |
+| PlayerInput | Esquema que mapea las acciones del jugador con botones de teclado, ratón y gamepad. |
+| ResetPlayer | Reestablece la posición y rotación del jugador y de la cámara. |
+| StarterAssetsInputs | Establece los valores de input: move, look, jump, sprint, crouch, shoot, interact que representan el estado del jugador en escena. |
 | ThirdPersonController | |
 | ToggleBarrier | |
 | Waypoint | |
