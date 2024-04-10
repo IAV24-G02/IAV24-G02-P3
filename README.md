@@ -108,7 +108,7 @@ Las tareas se han realizado y el esfuerzo ha sido repartido entre los autores. O
 | Estado  |  Tarea  |  Fecha  |  
 |:-:|:--|:-:|
 |  | Diseño: Primer borrador | ..-04-2024 |
-|  | Característica A | ..-04-2024 |
+|  | Característica A | 10-04-2024 |
 |  | Característica B | ..-04-2024 |
 |  | Característica C | ..-04-2024 |
 |  | Característica D | ..-04-2024 |
