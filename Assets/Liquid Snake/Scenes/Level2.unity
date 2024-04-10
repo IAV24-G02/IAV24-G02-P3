@@ -1575,6 +1575,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1422234013}
   m_SourcePrefab: {fileID: 100100000, guid: a7889276ae15e5e4e98c2d2b879a7e74, type: 3}
+--- !u!1 &296348060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6579166562538199984, guid: 3bf7e38931121bb48b2ba13eac6baa48,
+    type: 3}
+  m_PrefabInstance: {fileID: 899608700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &314712565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5351,7 +5357,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3862277631971027947, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1307216670}
   m_SourcePrefab: {fileID: 100100000, guid: 7ae956b4f54394e80818898d8f4d30c6, type: 3}
 --- !u!1001 &874168758
 PrefabInstance:
@@ -7096,9 +7106,9 @@ MonoBehaviour:
   onAreaEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LiquidSnake.LevelObjects.ToggleBarrier, Assembly-CSharp
-        m_MethodName: ToggleLaser
+      - m_Target: {fileID: 1300187581}
+        m_TargetAssemblyTypeName: LiquidSnake.Character.Health, Assembly-CSharp
+        m_MethodName: Reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7307,12 +7317,88 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 862200628}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1307216662}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd375328b35a8e4ebd75c44b6683209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1307216662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3862277631971027947, guid: 7ae956b4f54394e80818898d8f4d30c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 862200628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1307216670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307216662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422fb6956201c7944ae2113a1a53b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTasksPerTick: 500
+  behavior: {fileID: 11400000, guid: 66cc08c49f6ff19429f57d3a29a24130, type: 2}
+  paused: 0
+  restartWhenFinished: 0
+  blackboard:
+    intParams: 
+    intParamsNames: []
+    intParamsLostDefaultValue: 
+    boolParams: 
+    boolParamsNames: []
+    boolParamsLostDefaultValue: 
+    floatParams: []
+    floatParamsNames: []
+    floatParamsLostDefaultValue: 
+    stringParams: []
+    stringParamsNames: []
+    stringParamsLostDefaultValue: 
+    colorParams: []
+    colorParamsNames: []
+    colorParamsLostDefaultValue: 
+    objectParams:
+    - {fileID: 1422234011}
+    - {fileID: 1010054955}
+    - {fileID: 296348060}
+    objectParamsNames:
+    - redButtonTarget
+    - blueButtonTarget
+    - wanderArea
+    objectParamsLostDefaultValue: 
+    layerMaskParams: []
+    layerMaskParamsNames: []
+    layerMaskParamsLostDefaultValue: 
+    enumParamsNames: []
+    enumParamsLostDefaultValue: 
+    vector2Params: []
+    vector2ParamsNames: []
+    vector2ParamsLostDefaultValue: 
+    vector3Params: []
+    vector3ParamsNames: []
+    vector3ParamsLostDefaultValue: 
+    vector4Params: []
+    vector4ParamsNames: []
+    vector4ParamsLostDefaultValue: 
+    rectParams: []
+    rectParamsNames: []
+    rectParamsLostDefaultValue: 
+    animationCurveParams: []
+    animationCurveParamsNames: []
+    animationCurveParamsLostDefaultValue: 
+    boundsParams: []
+    boundsParamsNames: []
+    boundsParamsLostDefaultValue: 
+    gradientParams: []
+    gradientParamsNames: []
+    gradientParamsLostDefaultValue: 
+    quaternionParams: []
+    quaternionParamsNames: []
+    quaternionParamsLostDefaultValue: 
 --- !u!4 &1310962321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3701514911456619017, guid: 1035980c7ef596f4eaf64a260f8784b3,
