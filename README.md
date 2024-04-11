@@ -26,9 +26,9 @@ Se parte de un proyecto base de **Unity 2022.3.5f1** proporcionado por el profes
 | PlayerInput | Esquema que mapea las acciones del jugador con botones de teclado, ratón y gamepad. |
 | ResetPlayer | Reestablece la posición y rotación del jugador y de la cámara. |
 | StarterAssetsInputs | Establece los valores de input: move, look, jump, sprint, crouch, shoot, interact que representan el estado del jugador en escena. |
-| ThirdPersonController | |
-| ToggleBarrier | |
-| Waypoint | |
+| ThirdPersonController | Recoge todos los apartados necesarios para el satisfactorio control de una entidad en tercera persona. Realiza las labores de: salto y caída con representación de la gravedad determinada, comprobación de que la entidad se encuentra con los pies en la tierra, comprobación de que la entidad puede dejar de estar agachada y mueve la entidad en una dirección establecida a través de la rotación y la velocidad de la entidad. |
+| ToggleBarrier | Corrutina que se encarga de cambiar el parámetro alpha de los mesh de los láseres de las barreras durante un tiempo predeterminado para representar su activación o desactivación. |
+| Waypoint | Clase base que sive como almacenamiento para un punto de ruta que seguirá una entidad guiada por IA. |
 
 ## Diseño de la solución
 
