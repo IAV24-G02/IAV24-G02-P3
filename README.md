@@ -50,11 +50,22 @@ C. ...
 
 ```
 
-D. ...
+D. En este apartado se nos pide que con BehaviorBricks Nestor escape del Nivel 2. Para ello vamos a implementar el siguiente árbol de comportamientos:
 
-```pseudo
-
+```mermaid
+flowchart TD
+    A[Repeat] --> B((?))
+    B --> C((?))
+    C -->|Not caught && health < 250| D[MoveToHealthPoint]
+    C -->|Not caught && health < 250| E[MoveToHealthPoint]
+    C -->|Not caught && health < 250| F[MoveToHealthPoint]
+    B -->|Not caught| G[MoveToRedButton]
+    B -->|Not caught| H[MoveToBlueButton]
+    B -->|Not caught| I[MoveToWhiteButton]
+    I -->|Not caught| K[MoveToGreenButton]
+    K --> L[MoveToExit]
 ```
+
 
 E. ...
 
