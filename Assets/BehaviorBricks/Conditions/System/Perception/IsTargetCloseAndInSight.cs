@@ -19,54 +19,29 @@ namespace BBUnity.Conditions
         [Help("The view angle to consider that the target is in sight")]
         public float angle;
 
-        ///<value>Input maximum distance Parameter to consider that the target is close.</value>
+        ///<value>Input maximun distance Parameter to consider that the target is close.</value>
         [InParam("closeDistance")]
-        [Help("The maximum distance to consider that the target is close")]
+        [Help("The maximun distance to consider that the target is close")]
         public float closeDistance;
-
-        [InParam("eyes")]
-        [Help("Point that marks the origin of the raycast")]
-        public Transform eyes;
-
-        [InParam("layerMask")]
-        [Help("What layers we should take into account when raycasting")]
-        public LayerMask layerMask;
-
-        /// <summary>
-        /// Collider del objetivo para cachear resultado.
-        /// </summary>
-        private Collider targetCollider;
-
 
         /// <summary>
         /// Checks whether a target is close and in sight depending on a given distance and an angle, 
         /// First calculates the magnitude between the gameobject and the target and then compares with the given distance, then
         /// casting a raycast to the target and then compare the angle of forward vector with de raycast direction.
         /// </summary>
-        /// <returns>True if the magnitude between the gameobject and the target is lower than the given distance.
-        ///          false if the angle of forward vector with the  raycast direction is lower than the given angle.</returns>
+        /// <returns>True if the magnitude between the gameobject and de target is lower that the given distance
+        /// and if the angle of forward vector with the  raycast direction is lower than the given angle, false therwase.</returns>
 		public override bool Check()
         {
-            if (targetCollider == null) { targetCollider = target.GetComponent<Collider>(); }
-            Vector3 targetPos = targetCollider.bounds.center;
-
-            Vector3 dir = targetPos - eyes.position;
+            Vector3 dir = (target.transform.position - gameObject.transform.position);
             if (dir.sqrMagnitude > closeDistance * closeDistance)
                 return false;
-            if (Physics.Raycast(eyes.position, dir, out var eyesRaycastHit, layerMask))
+            RaycastHit hit;
+            if (Physics.Raycast(gameObject.transform.position + new Vector3(0, 0.1f, 0), dir, out hit))
             {
-                // ¿Hemos golpeado al objetivo?
-                bool targetSeen = eyesRaycastHit.collider.gameObject == target;
-                if (!targetSeen) return false;
-
-                // el ángulo es adecuado si es menor que el ángulo del cono de visión entre dos (el cono está centrado en los ojos)
-                bool angleCorrect = Vector3.Angle(dir, eyes.forward) < angle * 0.5f;
-
-                return angleCorrect;
+                return hit.collider.gameObject == target && Vector3.Angle(dir, gameObject.transform.forward) < angle * 0.5f;
             }
-            // no hemos golpeado nada
             return false;
-        } // Check
-    } // IsTargetCloseAndInSight
-
-} // namespace BBUnity.Conditions
+		}
+    }
+}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1480,7 +1480,7 @@ PrefabInstance:
     - target: {fileID: 2419616962832236228, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 0.10000038
       objectReference: {fileID: 0}
     - target: {fileID: 2419616962832236228, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
@@ -1575,12 +1575,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1422234013}
   m_SourcePrefab: {fileID: 100100000, guid: a7889276ae15e5e4e98c2d2b879a7e74, type: 3}
---- !u!1 &296348060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6579166562538199984, guid: 3bf7e38931121bb48b2ba13eac6baa48,
-    type: 3}
-  m_PrefabInstance: {fileID: 899608700}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &314712565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5362,6 +5356,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1307216670}
+    - targetCorrespondingSourceObject: {fileID: 3862277631971027947, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1307216671}
   m_SourcePrefab: {fileID: 100100000, guid: 7ae956b4f54394e80818898d8f4d30c6, type: 3}
 --- !u!1001 &874168758
 PrefabInstance:
@@ -6551,6 +6549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090929907}
   - component: {fileID: 1090929906}
+  - component: {fileID: 1090929908}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -6620,6 +6619,27 @@ Transform:
   - {fileID: 1486958258}
   m_Father: {fileID: 847847315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1090929908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090929905}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50, y: 1, z: 50}
+  m_Center: {x: 25, y: -0.14, z: 6.631119}
 --- !u!1001 &1140035292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7362,12 +7382,12 @@ MonoBehaviour:
     colorParamsNames: []
     colorParamsLostDefaultValue: 
     objectParams:
-    - {fileID: 1422234011}
     - {fileID: 1010054955}
-    - {fileID: 296348060}
+    - {fileID: 1422234011}
+    - {fileID: 1090929905}
     objectParamsNames:
-    - redButtonTarget
     - blueButtonTarget
+    - redButtonTarget
     - wanderArea
     objectParamsLostDefaultValue: 
     layerMaskParams: []
@@ -7399,6 +7419,28 @@ MonoBehaviour:
     quaternionParams: []
     quaternionParamsNames: []
     quaternionParamsLostDefaultValue: 
+--- !u!195 &1307216671
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307216662}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &1310962321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3701514911456619017, guid: 1035980c7ef596f4eaf64a260f8784b3,
@@ -10052,11 +10094,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3701514911456619017, guid: 1035980c7ef596f4eaf64a260f8784b3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1010054956}
+      addedObject: {fileID: 406965121}
     - targetCorrespondingSourceObject: {fileID: 3701514911456619017, guid: 1035980c7ef596f4eaf64a260f8784b3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 406965121}
+      addedObject: {fileID: 1010054956}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1035980c7ef596f4eaf64a260f8784b3, type: 3}
 --- !u!1001 &1748342216
@@ -11303,7 +11345,7 @@ PrefabInstance:
     - target: {fileID: 2419616962832236228, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 0.10000086
       objectReference: {fileID: 0}
     - target: {fileID: 2419616962832236228, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
