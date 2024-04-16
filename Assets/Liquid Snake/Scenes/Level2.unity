@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -770,6 +770,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenSecurityGateBeams
       objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1227,6 +1232,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueSecurityGateBeams
       objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1592,6 +1602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhiteSecurityGateBeams
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
@@ -3214,6 +3229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhiteSecurityGateBeams
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
@@ -7385,10 +7405,16 @@ MonoBehaviour:
     - {fileID: 1010054955}
     - {fileID: 1422234011}
     - {fileID: 1090929905}
+    - {fileID: 1946599923}
+    - {fileID: 2129257229}
+    - {fileID: 2765123952985081080}
     objectParamsNames:
     - blueButtonTarget
     - redButtonTarget
     - wanderArea
+    - whiteButtonTarget
+    - greenButtonTarget
+    - exitTarget
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
@@ -7429,7 +7455,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -10227,6 +10253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedSecurityGateBeams
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
@@ -13200,8 +13231,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1226931231282574719, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2765123952985081081}
   m_SourcePrefab: {fileID: 100100000, guid: 547a0ba4f9d639a4dbb335cdd857d96a, type: 3}
+--- !u!1 &2765123952985081080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1226931231282574719, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2765123952985081079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2765123952985081081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2765123952985081080}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &5485888423223351426
 Transform:
   m_ObjectHideFlags: 0
