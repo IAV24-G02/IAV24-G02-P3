@@ -770,6 +770,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenSecurityGateBeams
       objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1602,6 +1607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhiteSecurityGateBeams
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
@@ -3229,6 +3239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhiteSecurityGateBeams
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
@@ -10237,6 +10252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedSecurityGateBeams
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
