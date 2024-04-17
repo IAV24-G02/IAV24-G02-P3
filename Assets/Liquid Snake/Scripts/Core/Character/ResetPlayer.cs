@@ -1,7 +1,5 @@
 using Cinemachine;
 using LiquidSnake.Utils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace LiquidSnake.Character
@@ -11,7 +9,6 @@ namespace LiquidSnake.Character
         public Transform playerSpawnPoint;
         public Transform cameraSpawnPoint;
         public CinemachineVirtualCamera vcam;
-
 
         public void Reset()
         {
