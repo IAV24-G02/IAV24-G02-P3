@@ -32,40 +32,36 @@ Se parte de un proyecto base de **Unity 2022.3.5f1** proporcionado por el profes
 
 ## Diseño de la solución
 
-A. ...
-
-```pseudo
-
-```
-
-B. ...
-
-```pseudo
-
-```
-
 C. ...
 
 ```pseudo
 
 ```
 
-D. En este apartado se nos pide que con BehaviorBricks Nestor escape del Nivel 2. Para ello vamos a implementar el siguiente árbol de comportamientos:
+D. En este apartado se nos pide que con BehaviorBricks `Néstor` escape del **Nivel 2**. Para ello vamos a implementar el siguiente árbol de comportamientos:
 
 ```mermaid
 flowchart TD
     A[Repeat] --> B((?))
-    B --> C((?))
-    C -->|Not caught && health < 250| D[MoveToHealthPoint]
-    C -->|Not caught && health < 250| E[MoveToHealthPoint]
-    C -->|Not caught && health < 250| F[MoveToHealthPoint]
-    B -->|Not caught| G[MoveToRedButton]
-    B -->|Not caught| H[MoveToBlueButton]
-    B -->|Not caught| I[MoveToWhiteButton]
-    I -->|Not caught| K[MoveToGreenButton]
-    K --> L[MoveToExit]
+    B -->|IsEnemyLooking| C[RunToTheNearestHidingSpot]
+    B -->|health < 250 && AreHealthPointsAvailable| D[MoveToNearestPossibleHealthPoint]
+    B --> J(("->"))
+    J -->|IsRedButtonActive| E[MoveToRedButton]
+    J -->|IsBlueButtonActive| F[MoveToBlueButton]
+    J -->|IsWhiteButtonActive| G[MoveToWhiteButton]
+    J -->|IsGreenButtonActive| H[MoveToGreenButton]
+    J -->|IsExitActive| I[MoveToExit]
 ```
 
+**Es importante conseguir todos los botones en ese orden para poder salir del nivel y, aunque para el caso de los botones rojo y azul puede variar el orden, conviene que primero sea el rojo y luego el azul para que sea el camino más rápido por la disposición de la escena.**
+
+La idea es que siempre se compruebe si el enemigo está mirando a `Néstor` y si su vida es menor de cierto valor, en este caso, 250. Mientras no se cumpla ninguna de estas condiciones, `Néstor` debe intentar conseguir los botones que desbloquean las puertas. Si no hay botones activos, debe dirigirse a la salida porque ya ha conseguido todas las llaves y ha desbloqueado todas las puertas.
+
+- Si el/los enemigo/s está/n mirando a `Néstor`, `Néstor` debe huir a un punto de escondite más cercano para perderlo/s de vista y volver a intentar conseguir los botones que desbloquean las puertas.
+
+- Si la vida de `Néstor` es menor de cierto valor y dependiendo de si puede llegar hasta un punto de curación, `Néstor` irá al punto más cercano para curarse.
+
+Como se puede intuir, esto es un árbol de comportamientos *hardcodeado*, por lo que no es muy flexible y solo se puede aplicar a este caso en concreto.
 
 E. ...
 
