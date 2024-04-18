@@ -112,7 +112,7 @@ D. En este apartado se nos pide que con BehaviorBricks `Néstor` escape del **Ni
 
 ```mermaid
 flowchart TD
-    A[Repeat] --> B((?))
+    A(("↺")) --> B((?))
     B -->|IsEnemyLooking| C[RunToTheNearestHidingSpot]
     B -->|health < 250 && AreHealthPointsAvailable| D[MoveToNearestPossibleHealthPoint]
     B --> J(("->"))
@@ -133,11 +133,39 @@ La idea es que siempre se compruebe si el enemigo está mirando a `Néstor` y si
 
 Como se puede intuir, esto es un árbol de comportamientos *hardcodeado*, por lo que no es muy flexible y solo se puede aplicar a este caso en concreto.
 
-E. ...
+E. En este último apartado modificaremos el árbol de comportamientos de `Néstor` para que sea más genérico y funcione para el **Nivel 2** y uno modificado por nosotros.
 
-```pseudo
-
+```mermaid
+flowchart TD
+    A(("↺")) --> B((?))
+    B -->|IsEnemyLooking| C[RunToTheNearestHidingSpot]
+    B -->|health < 250 && AreHealthPointsAvailable| D[MoveToNearestPossibleHealthPoint]
+    B --> E[SearchRooms]
 ```
+
+```mermaid
+flowchart TD
+    Z[SearchRooms] --> A
+    A(("↺")) --> B((?))
+    B -->|!HasTurnAround| C[TurnAround, HasTurnedAround = true, IsWayPointSearched = true]
+    B -->|HasRegisteredExit| D[MoveToExit]
+    B --> E(("->"))
+    E -->|HasRegisteredLockedDoor && HasRegisteredButtonSameColor| F[MoveToButton]
+    E --> G[MoveToDoor, HasTurnAround = false]
+    B -->|IsThereAnotherWayPoint| H[GoToNextWayPoint, HasTurnedAround = false]
+    B -->|HasRegisteredNewRooms| I[GoToNextRoom, HasTurnedAround = false]
+    B--> |!IsLastWayPointSearched| J[GoToLastWaypoint]
+```
+
+Notas:
+
+- Cada vez que se realice el TurnAround, se registran: puertas bloqueadas, botones, la salida, puntos de salud, escondites y como el TurnAround se realiza en un WayPoint, establecemos que ese WayPoint ya está visitado.
+
+- Cada vez que entre a una nueva sala o esté en ella se registran los WayPoints correspondientes a esa sala además de guardarse los últimos WayPoints sin visitar si existen por lo habría un registro de WayPoints relacionado con si está visitado o no.
+
+- Se guardan los WayPoints sin visitar porque puede haber casos como que un guardia persiga a `Néstor` o que `Néstor` esté bajo de vida y necesite ir a un punto de salud o que haya desbloqueado una puerta.
+
+- Cuando se han registrado puertas cerradas se comprueban con el registro de botones si coinciden en color. Si coinciden, `Néstor` iría al botón y secuencialmente a la puerta. Esto dejaría algunas salas sin visitar, pero como tenemos el registro de WayPoints, iría al primer WayPoint sin visitar.
 
 ## Pruebas y métricas
 
@@ -160,14 +188,18 @@ E. ...
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica D** | | |
-|  | - <br> - | []() |
-|  | - <br> - | []() |
+| `Néstor` supera el nivel de ejemplo empezando con poca vida | - Salud: 200 <br> - | []() |
+| `Néstor` supera el nivel de ejemplo sin guardias | - <br> - | []() |
+| `Néstor` supera el nivel de ejemplo con guardias | - <br> - | []() |
+
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica E** | | |
-|  | - <br> - | []() |
-|  | - <br> - | []() |
+| `Néstor` supera el nivel de ejemplo empezando con poca vida | - Salud: 200 <br> - | []() |
+| `Néstor` supera el nivel de ejemplo sin guardias | - <br> - | []() |
+| `Néstor` supera el nivel de ejemplo con guardias | - <br> - | []() |
+| `Néstor` supera un nivel modificado | - <br> - | []() |
 
 [ENLACE AL VÍDEO COMPLETO EN YOUTUBE]()
 [ENLACE AL VÍDEO COMPLETO EN DRIVE]()
