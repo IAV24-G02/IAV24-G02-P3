@@ -144,19 +144,17 @@ E. ...
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica A** | | |
-|  | - <br> - | []() |
-|  | - <br> - | []() |
+| Comprobar la correcta representación del esquema con la topología del complejo militar incluyendo todos los elementos incluidos en este (Néstor, Cápsulas de Energía, botones, guardias y escondites) y el correcto zoom y seguimiento de la cámara a _Néstor_  | - Ejecución del programa y movimiento del jugador para inspeccionar el mapa<br> - Pulsaciones consecutivas de la tecla Z para opbservar el correcto funcionamiento del mismo. | []() |
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica B** | | |
-|  | - <br> - | []() |
-|  | - <br> - | []() |
+| Probar el correcto bloqueo de la visibilidad de _Néstor_ al encontrarse tras una puerte cerrada o abierta y en el interior de un montón de robot. | -Colocarse tras una puerta cerrada. <br> - Colocarse tras una puerta abierta. <br> - Colocarse en el interior de un montón de robots, entrar y salir mientras _Néstor_ se encuentra en el cono de visioón de un robot.  | []() |
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica C** | | |
-|  | - <br> - | []() |
+| Probar que el comportamiento de los robot es el descrito en la máquina de estados asignada a los mismos. | - Entrar en el cono de visión de un robot y observar que te sigue. <br> - Alejarte y acercarte y observar el empeoramiento/mejoría de la puntería. <br> - Aguantar los disparos necesarios para que se agoten y observar que vuelve a su base para recargar. <br> - Desaparecer del cono de visión del robot y observar que vuelve al Waypoint más cercano.  | []() |
 |  | - <br> - | []() |
 
 | Pruebas | Métricas | Links |
