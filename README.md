@@ -50,9 +50,9 @@ flowchart TD
     B --> |!Detect Nestor| F
 ```
 
+Ian Millington en su su libro *AI for Games* habla sobre este tipo de situaciones en las que un personaje tiene que pasar por distintos _estados_ durante la partida, y muchas desarrolladoras cuando se les plantea también esta situación deciden optar por usar *máquinas de estados*. Esta opción tiene la ventaja de que queda a medio camino entre los árboles de comportamiento y los estados de los propios personajes. Sin entrar en mucho detalle de cómo de parte de una máquina de estados más esquemática a una más formal, como la que habrá que plantear de cara al apartado a resolver, la idea es partir de una estructurá más básica que permita la posterior modificación con los nuevos estados que se necesiten para la funcionalidad del robot. 
 
-
-
+La máquina de estados mantiene un registro de las posibles transiciones y guarda el estado actual en él. Con cada estado, una serie de transiciones son mantenidas. Cada transición es, de nuevo, una interfaz genérica que puede ser implementada con las condiciones apropiadas. Simplemente notifica a la máquina de estados si debe ser activada o no.
 
 ```
 class StateMachine:
@@ -92,6 +92,8 @@ class StateMachine:
             return currentState.getActions()
 ```
 
+La máquina de estados cuenta con que tendrá estados y transiciones con una interzaz concreta. La interfaz de estado sigue la siguiente forma:
+
 
 ```
 class State:
@@ -100,6 +102,10 @@ class State:
     function getExitActions() -> Action[]
     function getTransitions() -> Transition[]
 ```
+
+Cada uno de los métodos getXActions debería devolver una lista de acciones a realizar. Además, getentryActions solo es llamdo cuando el estado entra desde una transición, y getExitActions es solamente llamado cuando se sale de un estado. El resto del tiempo en el que el estado esté activo, se llama a getactions. El método getTransitions debería devolver una lista de transiciones que salen de este estado.
+
+La interfaz de transición tien ela siguiente forma:
 
 ```
 class Transition:
