@@ -32,10 +32,80 @@ Se parte de un proyecto base de **Unity 2022.3.5f1** proporcionado por el profes
 
 ## Diseño de la solución
 
-C. ...
+C. El planteamiento del ejercicio es hacer una máquina de estados en la que se hallen distintas fases por las que los robots pasen en su comportamiento. En primer lugar habrá una fase de patrulla, donde el robot seguirá una serie de puntos de forma cíclica. Si se encontrase con `Nestor` (es decir, que entre en su cono de visión durante la patrulla), el robot pasará a una fase de seguimiento y disparo donde, mientras siga estando en dicho cono, seguirá siguiendo y disparando hasta acabar con él. Dentro del propio seguimiento hay momentos de recálculo del porcentaje de acierto y/o daño que se le puede hacer, pero siempre se vuelve rápidamente al estado de seguimiento y disparo. Pueden darse a partir de ahí dos casos distintos: o bien pierde a `Nestor` de vista y tiene que volver a la base a volver a realizar la patrulla o bien se queda sin munición y tiene que volver a la base para recargar. En éste último, el robot tiene que hacer todo el recorrido de vuelta independientemente de su posición actual. En el otro caso de pérdida de vista, el robot tendrá que localizar el punto de la patrulla más cercano y volver de nuevo a hacer la patrulla.
 
-```pseudo
+Todos estos estados se pueden ver bastante visualmente gracias al siguiente diagrama de estados:
 
+```mermaid
+flowchart TD
+    A(PATROL) -->|Detect Nestor| B(FOLLOW_SHOOT)
+    B --> |X frames passed| C(RECALCULATE_AIM)
+    C -->  B
+    D(RELOAD) --> |Bullets Reloaded & !Detect Nestor| A
+    D --> |Bulltets Reloaded & Detect Nestor| B
+    E(GO_TO_BASE) --> D
+    B --> |No bullets| E
+
+    F(GO_TO_NEAREST_WAYPOINT) --> A
+    B --> |!Detect Nestor| F
+```
+
+
+
+
+
+```
+class StateMachine:
+    # We’re in one state at a time.
+    initialState: State
+    currentState: State = initialState
+
+    # Checks and applies transitions, returning a list of actions.
+    function update() -> Action[]:
+        # Assume no transition is triggered.
+        triggered: Transition = null
+
+        # Check through each transition and store the first
+        # one that triggers.
+        for transition in currentState.getTransitions():
+            if transition.isTriggered():
+                triggered = transition
+                break
+
+        # Check if we have a transition to fire.
+        if triggered:
+            # Find the target state.
+            targetState = triggered.getTargetState()
+
+            # Add the exit action of the old state, the
+            # transition action and the entry for the new state.
+            actions = currentState.getExitActions()
+            actions += triggered.getActions()
+            actions += targetState.getEntryActions()
+
+            # Complete the transition and return the action list.
+            currentState = targetState
+            return actions
+
+        # Otherwise just return the current state’s actions.
+        else:
+            return currentState.getActions()
+```
+
+
+```
+class State:
+    function getActions() -> Action[]
+    function getEntryActions() -> Action[]
+    function getExitActions() -> Action[]
+    function getTransitions() -> Transition[]
+```
+
+```
+class Transition:
+    function isTriggered() -> bool
+    function getTargetState() -> State
+    function getActions() -> Action[]
 ```
 
 D. En este apartado se nos pide que con BehaviorBricks `Néstor` escape del **Nivel 2**. Para ello vamos a implementar el siguiente árbol de comportamientos:
