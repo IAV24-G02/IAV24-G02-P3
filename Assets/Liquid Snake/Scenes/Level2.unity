@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7407,6 +7407,8 @@ MonoBehaviour:
     - {fileID: 1946599923}
     - {fileID: 2129257229}
     - {fileID: 1303397922}
+    - {fileID: 1193499616}
+    - {fileID: 1307216662}
     objectParamsNames:
     - blueButtonTarget
     - redButtonTarget
@@ -7414,6 +7416,8 @@ MonoBehaviour:
     - whiteButtonTarget
     - greenButtonTarget
     - exitTarget
+    - healthSpot
+    - playerTarget
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
