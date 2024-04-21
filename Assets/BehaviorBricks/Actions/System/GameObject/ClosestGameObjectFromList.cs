@@ -1,4 +1,4 @@
-﻿using Pada1.BBCore.Tasks;
+﻿/*using Pada1.BBCore.Tasks;
 using Pada1.BBCore;
 using UnityEngine;
 using System.Collections.Generic;
@@ -12,8 +12,6 @@ namespace BBUnity.Actions
         public List<GameObject> list;
         [OutParam("foundGameObject")]
         public GameObject foundGameObject;
-
-        private float elapsedTime;
 
         public override void OnStart()
         {
@@ -35,3 +33,4 @@ namespace BBUnity.Actions
         }
     }
 }
+*/
