@@ -1,7 +1,10 @@
-﻿/*
+﻿using Pada1.BBCore.Tasks;
+using Pada1.BBCore;
+using UnityEngine;
+using System.Collections.Generic;
+
 namespace BBUnity.Actions
 {
-
     [Action("GameObject/ClosestGameObjectFromList")]
     public class ClosestGameObjectFromList : GOAction
     {
@@ -15,10 +18,10 @@ namespace BBUnity.Actions
         public override void OnStart()
         {
             float dist = float.MaxValue;
-            foreach(GameObject go in list)
+            foreach (GameObject go in list)
             {
-                float newdist = (go.transform.position + gameobject.transform.position).sqrMagnitude;
-                if(newdist < dist)
+                float newdist = (go.transform.position + foundGameObject.transform.position).sqrMagnitude;
+                if (newdist < dist)
                 {
                     dist = newdist;
                     foundGameObject = go;
@@ -31,4 +34,4 @@ namespace BBUnity.Actions
             return TaskStatus.COMPLETED;
         }
     }
-}*/
+}

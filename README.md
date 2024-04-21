@@ -121,12 +121,11 @@ flowchart TD
     A(("↺")) --> B((?))
     B -->|IsEnemyLooking| C[RunToTheNearestHidingSpot]
     B -->|health < 250 && AreHealthPointsAvailable| D[MoveToNearestPossibleHealthPoint]
-    B --> J(("->"))
-    J -->|IsRedButtonActive| E[MoveToRedButton]
-    J -->|IsBlueButtonActive| F[MoveToBlueButton]
-    J -->|IsWhiteButtonActive| G[MoveToWhiteButton]
-    J -->|IsGreenButtonActive| H[MoveToGreenButton]
-    J -->|IsExitActive| I[MoveToExit]
+    B -->|IsRedButtonActive| E[MoveToRedButton]
+    B -->|IsBlueButtonActive| F[MoveToBlueButton]
+    B -->|IsWhiteButtonActive| G[MoveToWhiteButton]
+    B -->|IsGreenButtonActive| H[MoveToGreenButton]
+    B -->|IsExitActive| I[MoveToExit]
 ```
 
 **Es importante conseguir todos los botones en ese orden para poder salir del nivel y, aunque para el caso de los botones rojo y azul puede variar el orden, conviene que primero sea el rojo y luego el azul para que sea el camino más rápido por la disposición de la escena.**

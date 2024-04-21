@@ -3,7 +3,6 @@ using LiquidSnake.Enemies;
 using Pada1.BBCore;
 using UnityEngine;
 
-
 namespace LiquidSnake.BT.Conditions
 {
     /// <summary>
