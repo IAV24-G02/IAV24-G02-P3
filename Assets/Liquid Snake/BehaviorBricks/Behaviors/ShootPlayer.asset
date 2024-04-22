@@ -53,28 +53,28 @@ MonoBehaviour:
     id=\"30\" />\r\n          <ActionNode id=\"52\" />\r\n          <ActionNode id=\"53\"
     />\r\n          <ActionNode id=\"51\" />\r\n        </nodes>\r\n      </_nodes>\r\n   
     </BehaviorTree>\r\n    <RepeatDecorator id=\"30\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"798.8102 102.3808\" name=\"Repeat\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"413.096 65.23794\" name=\"Repeat\"
     description=\"Repeats the execution of its child node\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"30\" />\r\n       
     </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <SequenceNode id=\"25\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"775.1359
-    300.3555\" name=\"Sequence\" description=\"Executes all its children in sequence
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"389.4217
+    263.2126\" name=\"Sequence\" description=\"Executes all its children in sequence
     until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"36\" />\r\n         
     <RepeatDecorator id=\"30\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ActionNode id=\"51\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"507.1424 491.4284\" name=\"Navigation/MoveToGameObject\" description=\"Moves
+    position=\"121.4281 454.2856\" name=\"Navigation/MoveToGameObject\" description=\"Moves
     the game object towards a given target by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"51\" />\r\n          <SequenceNode id=\"25\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"52\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"788.5716 499.9999\" name=\"GameObject/LookAt\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"402.8573 462.8571\" name=\"GameObject/LookAt\"
     description=\"Rotates the transform so the forward vector of the game object
     points at target's current position\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"52\" />\r\n         
     <SequenceNode id=\"25\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ActionNode id=\"53\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"949.9991 487.1427\" name=\"LiquidSnake/Enemies/ShootTarget\" description=\"Triggerea
+    position=\"564.2848 449.9998\" name=\"LiquidSnake/Enemies/ShootTarget\" description=\"Triggerea
     la acci\xF3n de disparo del enemigo, si es posible, en direcci\xF3n al objetivo
     especificado.\" cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"53\" />\r\n          <SequenceNode

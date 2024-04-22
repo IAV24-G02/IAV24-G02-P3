@@ -129,71 +129,71 @@ MonoBehaviour:
     id=\"12\" />\r\n          <SequenceNode id=\"13\" />\r\n          <ConditionEvalNode
     id=\"14\" />\r\n        </nodes>\r\n      </_nodes>\r\n    </BehaviorTree>\r\n   
     <RepeatDecorator id=\"1\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"741.2634 -28.22624\" name=\"Repeat\" description=\"Repeats
+    selected=\"False\" position=\"701.2635 53.44041\" name=\"Repeat\" description=\"Repeats
     the execution of its child node\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"1\" />\r\n       
     </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <PrioritySelectorNode
     id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"688.9301 131.4413\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
+    position=\"648.9302 213.108\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode
     id=\"2\" />\r\n          <RepeatDecorator id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"5\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"217.5945
-    275.7749\" name=\"LiquidSnake/IsTargetDetectedBySensor\" description=\"Eval\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"177.5945
+    357.4415\" name=\"LiquidSnake/IsTargetDetectedBySensor\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"5\" />\r\n          <PrioritySelectorNode id=\"2\" />\r\n       
     </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <SequenceNode id=\"3\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"217.5945
-    275.7749\" name=\"Sequence\" description=\"Executes all its children in sequence
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"177.5945
+    357.4415\" name=\"Sequence\" description=\"Executes all its children in sequence
     until all of them are successful\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"3\" />\r\n        </data>\r\n     
     </_data>\r\n    </SequenceNode>\r\n    <ConditionEvalNode id=\"11\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1354.594
-    281.4416\" name=\"AlwaysTrue\" description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n         
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1314.594
+    363.1082\" name=\"AlwaysTrue\" description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode id=\"11\" />\r\n         
     <PrioritySelectorNode id=\"2\" />\r\n        </data>\r\n      </_data>\r\n   
     </ConditionEvalNode>\r\n    <SubbehaviorNode id=\"10\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"1354.594 281.4416\" name=\"LiquidSnake/Patrol\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"1314.594 363.1082\" name=\"LiquidSnake/Patrol\"
     description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <SubbehaviorNode id=\"10\" />\r\n        </data>\r\n     
     </_data>\r\n    </SubbehaviorNode>\r\n    <ConditionEvalNode id=\"14\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1987.09
-    813.1046\" name=\"Basic/CheckNull\" description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n         
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1947.09
+    894.7714\" name=\"Basic/CheckNull\" description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode id=\"14\" />\r\n         
     <PrioritySelectorNode id=\"2\" />\r\n        </data>\r\n      </_data>\r\n   
     </ConditionEvalNode>\r\n    <SequenceNode id=\"13\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"765.0972 297.1085\" name=\"Sequence\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"725.0973 378.7751\" name=\"Sequence\"
     description=\"Executes all its children in sequence until all of them are successful\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SequenceNode id=\"13\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ActionNode id=\"12\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"84.76215 503.4383\" name=\"Basic/SetGameObject\" description=\"Sets
+    position=\"44.76218 585.105\" name=\"Basic/SetGameObject\" description=\"Sets
     a value to a boolean variable\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"12\" />\r\n         
     <SequenceNode id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ActionNode id=\"6\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"292.9275 502.1049\" name=\"Animation/ToggleAnimator\" description=\"Enables
+    position=\"252.9276 583.7716\" name=\"Animation/ToggleAnimator\" description=\"Enables
     or disables the animator found in the game object\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"6\" />\r\n          <SequenceNode
     id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <SubbehaviorNode id=\"7\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"True\" position=\"513.9285 501.105\" name=\"LiquidSnake/ShootPlayer\"
+    selected=\"False\" position=\"473.9283 582.7717\" name=\"LiquidSnake/ShootPlayer\"
     description=\"\" cardinality=\"-1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <SubbehaviorNode id=\"7\" />\r\n          <SequenceNode
     id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <SubbehaviorNode id=\"15\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"708.4304 497.4383\" name=\"LiquidSnake/ExamineTargetLastPosition\"
+    selected=\"False\" position=\"668.4305 579.105\" name=\"LiquidSnake/ExamineTargetLastPosition\"
     description=\"Moves the character to the target's last known position, rotates
     randomly a few times for a few seconds.\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode id=\"15\" />\r\n         
     <SequenceNode id=\"13\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ActionNode id=\"16\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1034.761 499.4383\" name=\"Basic/SetGameObject\" description=\"Sets
+    position=\"994.7615 581.105\" name=\"Basic/SetGameObject\" description=\"Sets
     a value to a boolean variable\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"16\" />\r\n         
     <SequenceNode id=\"13\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n 
     </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.6
+  zoom: 0.5
   subslist:
   - {fileID: 11400000, guid: 1e3848dd138d8f8408b92514c155ce39, type: 2}
   - {fileID: 11400000, guid: ceb9db27758df1542aedcbd324e6e975, type: 2}
