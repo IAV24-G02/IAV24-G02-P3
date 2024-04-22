@@ -15,6 +15,8 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : MonoBehaviour, IResetteable
     {
+        private bool auto;
+
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.5f;
@@ -149,6 +151,15 @@ namespace StarterAssets
             if (_mainCamera == null)
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            }
+
+            BehaviorExecutor executor = GetComponent<BehaviorExecutor>();
+            if (executor != null && executor.enabled)
+            {
+                auto = true;
+            } else
+            {
+                auto = false;
             }
         }
 
@@ -324,7 +335,7 @@ namespace StarterAssets
             // update animator if using character
             if (_hasAnimator)
             {
-                _animator.SetFloat(_animIDSpeed, _animationBlend);
+                if (!auto) _animator.SetFloat(_animIDSpeed, _animationBlend);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
                 _animator.SetBool(_animIDCrouching, Crouching);
             }

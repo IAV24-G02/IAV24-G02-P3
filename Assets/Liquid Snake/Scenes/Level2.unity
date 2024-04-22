@@ -4510,6 +4510,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5615815007780928290, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: m_Enabled
@@ -4519,6 +4524,16 @@ PrefabInstance:
         type: 3}
       propertyPath: blackboard.boolParams.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.objectParams.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.boolParams.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4572,8 +4587,24 @@ PrefabInstance:
       objectReference: {fileID: 406965120}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
+      propertyPath: blackboard.objectParams.Array.data[10]
+      value: 
+      objectReference: {fileID: 1657602633327794031, guid: 8269a9f8cf495034c817722ac21f309f,
+        type: 3}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
       propertyPath: blackboard.boolParamsNames.Array.data[1]
       value: healthAvailable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[10]
+      value: walkAnim
       objectReference: {fileID: 0}
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
