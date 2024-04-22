@@ -155,7 +155,7 @@ MonoBehaviour:
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"36\" />\r\n          <PrioritySelectorNode
     id=\"9\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
-    <ActionNode id=\"34\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
+    <ActionNode id=\"34\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
     position=\"514.1112 480.4169\" name=\"Navigation/MoveToGameObject\" description=\"Moves
     the game object towards a given target by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode

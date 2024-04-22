@@ -2,7 +2,6 @@ using Pada1.BBCore;
 using BBUnity.Conditions;
 using UnityEngine;
 using LiquidSnake.Character;
-using LiquidSnake.Enemies;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -31,10 +30,6 @@ namespace BBCore.Conditions
         [Help("minHealth")]
         public int minHealth;
 
-        [InParam("maxDistance")]
-        [Help("maxDistance")]
-        public float maxDistance = 100.0f;
-
         /// <summary>
         /// Checks if the nearestHealthSpot is active or not and if the target has low health.
         /// </summary>
@@ -53,109 +48,41 @@ namespace BBCore.Conditions
                 return false;
             }
 
-            // Busca el punto de curacion mas cercano
-            //float healthSpotDistance = Mathf.Infinity;
-            //if (register.healthSpots.Count > 0 && register.healthSpots[0] != null && register.healthSpots[0].activeSelf)
-            //{
-            //    nearestHealthSpot = register.healthSpots[0];
-            //}
-            //for (int i = 0; i < register.healthSpots.Count; ++i)
-            //{
-            //    if (register.healthSpots[i] != null && register.healthSpots[i].activeSelf)
-            //    {
-            //        float newDistance = Vector3.Distance(target.transform.position, register.healthSpots[i].transform.position);
-            //        if (newDistance < healthSpotDistance)
-            //        {
-            //            healthSpotDistance = newDistance;
-            //            nearestHealthSpot = register.healthSpots[i];
-            //        }
-            //    }
-            //}
-            
-            //int i = 0; bool found = false;
-            //while (i < register.healthSpotsAvailable.Count && !found)
-            //{
-            //    // Buscar el más cercano
-            //    KeyValuePair<GameObject, List<GameObject>> entry = register.healthSpotsAvailable.ElementAt(i);
-            //    float newDistance = Vector3.Distance(target.transform.position, entry.Key.transform.position);
-            //    if (newDistance < healthSpotDistance)
-            //    {
-            //        healthSpotDistance = newDistance;
-            //        nearestHealthSpot = entry.Key;
-
-            //        // Si tiene al menos una puerta asignada de desbloqueo
-            //        if (entry.Value.Count > 0)
-            //        {
-            //            // Comprobar si la/s puerta/s asignada/s de desbloqueo está/n desactivada/s
-            //            for (int j = 0; j < entry.Value.Count; ++j)
-            //            {
-            //                // Si se detecta la puerta con el sensor de visión y está desactivada, se puede curar
-            //                if (visionSensorObject != null && visionSensorObject.TryGetComponent<VisionSensor>(out var visionSensor))
-            //                {
-            //                    GameObject closestTarget = visionSensor.GetClosestTarget();
-            //                    if (closestTarget == null || (closestTarget != null && closestTarget == entry.Value[j] && !closestTarget.activeSelf))
-            //                    {
-            //                        healthAvailable = true;
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    }
-            //    i++;
-            //}
-
-            float healthSpotDistance = Mathf.Infinity;
             // Cogemos el primer punto de curación del diccionario
+            KeyValuePair<GameObject, List<GameObject>> entry = new KeyValuePair<GameObject, List<GameObject>>();
+            bool healthAvailable = false;
             if (register.healthSpotsAvailable != null && register.healthSpotsAvailable.Count > 0)
             {
-                KeyValuePair<GameObject, List<GameObject>> firstEntry = register.healthSpotsAvailable.First();
-                GameObject firstKey = firstEntry.Key;
-                nearestHealthSpot = firstKey;
-                healthSpotDistance = Vector3.Distance(target.transform.position, firstKey.transform.position);
-            }
-            int i = 0;
-            bool healthAvailable = false;
-            while (register.healthSpotsAvailable != null && i < register.healthSpotsAvailable.Count && !healthAvailable && healthSpotDistance < maxDistance)
-            {
-                // Buscar el más cercano
-                KeyValuePair<GameObject, List<GameObject>> entry = register.healthSpotsAvailable.ElementAt(i);
-                float newDistance = Vector3.Distance(target.transform.position, entry.Key.transform.position);
-
-                if (newDistance < healthSpotDistance)
+                entry = register.healthSpotsAvailable.First();
+                GameObject firstKey = entry.Key;
+                if (firstKey != null && firstKey.activeSelf)
                 {
-                    healthSpotDistance = newDistance;
-                    nearestHealthSpot = entry.Key;
-
-                    if (healthSpotDistance < maxDistance)
-                    {
-                        // Si tiene al menos una puerta asignada de desbloqueo
-                        if (entry.Value != null && entry.Value.Count > 0)
-                        {
-                            // Comprobar si la/s puerta/s asignada/s de desbloqueo está/n desactivada/s
-                            for (int j = 0; j < entry.Value.Count; ++j)
-                            {
-                                if (visionSensorObject != null && visionSensorObject.TryGetComponent<VisionSensor>(out var visionSensor))
-                                {
-                                    GameObject closestTarget = visionSensor.GetClosestTarget();
-                                    if (closestTarget == null && (closestTarget != null && closestTarget == entry.Value[j] && !closestTarget.activeSelf))
-                                    {
-                                        healthAvailable = true;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            healthAvailable = true;
-                        }
-                    }
+                    nearestHealthSpot = firstKey;
                 }
-                i++;
             }
-            if (!healthAvailable || healthSpotDistance >= maxDistance)
+
+            // Si el más cercano tiene al menos una puerta asignada de desbloqueo
+            if (entry.Value != null && entry.Value.Count > 0)
             {
-                nearestHealthSpot = null;
+                // Comprobar si la/s puerta/s asignada/s de desbloqueo está/n desactivada/s
+                int j = 0; bool found = false;
+                while (j < entry.Value.Count && !found)
+                {
+                    MeshRenderer doorMeshRenderer = entry.Value[j].GetComponent<MeshRenderer>();
+                    if (entry.Value[j] != null && doorMeshRenderer != null && doorMeshRenderer.enabled)
+                    {
+                        found = true;
+                    }
+                    ++j;
+                }
+                if (!found)
+                {
+                    healthAvailable = true;
+                }
+            }
+            else
+            {
+                healthAvailable = true;
             }
 
             return target.GetComponent<Health>().CurrentValue() < minHealth && nearestHealthSpot != null

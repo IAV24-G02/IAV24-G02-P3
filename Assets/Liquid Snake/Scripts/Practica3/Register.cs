@@ -14,21 +14,14 @@ public class Register : MonoBehaviour
     public List<GameObject> hidingSpots;
     public List<GameObject> healthSpots;
     public List<KeyValuePairs<GameObject, List<GameObject>>> healthSpotsAvailableList = new List<KeyValuePairs<GameObject, List<GameObject>>>();
-    public Dictionary<GameObject, List<GameObject>> healthSpotsAvailable;
+    public Dictionary<GameObject, List<GameObject>> healthSpotsAvailable = new Dictionary<GameObject, List<GameObject>>();
     public List<GameObject> waypoints;
 
     void Awake()
     {
         foreach (var pair in healthSpotsAvailableList)
         {
-            if (pair.value == null || pair.value.Count <= 0)
-            {
-                healthSpotsAvailable.Add(pair.key, null);
-            }
-            else
-            {
-                healthSpotsAvailable.Add(pair.key, pair.value);
-            }
+            healthSpotsAvailable.Add(pair.key, pair.value);
         }
     }
 }

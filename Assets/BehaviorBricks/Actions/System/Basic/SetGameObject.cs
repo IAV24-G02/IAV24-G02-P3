@@ -12,13 +12,10 @@ namespace BBUnity.Actions
     [Help("Sets a value to a boolean variable")]
     public class SetGameObject : BasePrimitiveAction
     {
-        
-
         ///<value>OutPut GameObject Parameter.</value>
         [OutParam("var")]
         [Help("output variable")]
         public GameObject var;
-
 
         ///<value>Input GameObject Parameter.</value>
         [InParam("value")]
