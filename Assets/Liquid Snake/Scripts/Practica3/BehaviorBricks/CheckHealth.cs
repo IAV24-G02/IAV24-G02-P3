@@ -12,15 +12,17 @@ namespace BBCore.Conditions
     [Help("Checks if the target has low health")]
     public class CheckHealth : GOCondition
     {
-        ///<value></value>
         [InParam("target")]
         [Help("target")]
         public GameObject target;
 
-        ///<value></value>
         [OutParam("nearestHealthSpot")]
         [Help("nearestHealthSpot")]
         public GameObject nearestHealthSpot;
+
+        [InParam("minHealth")]
+        [Help("minHealth")]
+        public int minHealth = 250;
 
         /// <summary>
         /// Checks if the nearestHealthSpot is active or not and if the target has low health.
@@ -60,7 +62,7 @@ namespace BBCore.Conditions
                 }
             }
 
-            return nearestHealthSpot != null && target.GetComponent<Health>().CurrentValue() < 250;
+            return nearestHealthSpot != null && target.GetComponent<Health>().CurrentValue() < minHealth;
         }
     }
 }

@@ -119,13 +119,13 @@ D. En este apartado se nos pide que con BehaviorBricks `Néstor` escape del **Ni
 ```mermaid
 flowchart TD
     A(("↺")) --> B((?))
-    B -->|IsEnemyLooking| C[RunToTheNearestHidingSpot]
-    B -->|health < 250 && AreHealthPointsAvailable| D[MoveToNearestPossibleHealthPoint]
-    B -->|IsRedButtonActive| E[MoveToRedButton]
-    B -->|IsBlueButtonActive| F[MoveToBlueButton]
-    B -->|IsWhiteButtonActive| G[MoveToWhiteButton]
-    B -->|IsGreenButtonActive| H[MoveToGreenButton]
-    B -->|IsExitActive| I[MoveToExit]
+    B -->|IsEnemyLooking| C[MoveToGameObject/MoveToNearestHidingSpot]
+    B -->|CheckHealth| D[MoveToGameObject/MoveToNearestPossibleHealthPoint]
+    B -->|IsActive/IsRedButtonActive| E[MoveToGameObject/MoveToRedButton]
+    B -->|IsActive/IsBlueButtonActive| F[MoveToGameObject/MoveToBlueButton]
+    B -->|IsActive/IsWhiteButtonActive| G[MoveToGameObject/MoveToWhiteButton]
+    B -->|IsActive/IsGreenButtonActive| H[MoveToGameObject/MoveToGreenButton]
+    B -->|IsActive/IsExitActive| I[MoveToGameObject/MoveToExit]
 ```
 
 **Es importante conseguir todos los botones en ese orden para poder salir del nivel y, aunque para el caso de los botones rojo y azul puede variar el orden, conviene que primero sea el rojo y luego el azul para que sea el camino más rápido por la disposición de la escena.**
