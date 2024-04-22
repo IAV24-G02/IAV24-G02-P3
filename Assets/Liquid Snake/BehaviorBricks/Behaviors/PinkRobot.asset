@@ -177,7 +177,7 @@ MonoBehaviour:
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"6\" />\r\n          <SequenceNode
     id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <SubbehaviorNode id=\"7\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"True\" position=\"403.5444 564.8983\" name=\"LiquidSnake/ShootPlayer\"
+    selected=\"False\" position=\"403.5444 564.8983\" name=\"LiquidSnake/ShootPlayer\"
     description=\"\" cardinality=\"-1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <SubbehaviorNode id=\"7\" />\r\n          <SequenceNode
     id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   

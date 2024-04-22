@@ -68,7 +68,7 @@ MonoBehaviour:
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"51\" />\r\n          <SequenceNode id=\"25\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"52\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"True\" position=\"402.8573 462.8571\" name=\"GameObject/LookAt\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"402.8573 462.8571\" name=\"GameObject/LookAt\"
     description=\"Rotates the transform so the forward vector of the game object
     points at target's current position\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"52\" />\r\n         

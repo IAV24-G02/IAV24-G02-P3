@@ -4512,13 +4512,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
+      propertyPath: behavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6577fa0861540ff4ea618b73fb2f918d,
+        type: 2}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
+      propertyPath: blackboard.intParams.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
       propertyPath: blackboard.boolParams.Array.size
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.objectParams.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4527,8 +4543,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
+      propertyPath: blackboard.intParamsNames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
       propertyPath: blackboard.boolParamsNames.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4570,6 +4591,11 @@ PrefabInstance:
       propertyPath: blackboard.objectParams.Array.data[9]
       value: 
       objectReference: {fileID: 406965120}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: blackboard.boolParamsNames.Array.data[1]

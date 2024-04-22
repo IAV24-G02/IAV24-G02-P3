@@ -37,12 +37,9 @@ MonoBehaviour:
     isBlackboard=\"True\" />\r\n          <entry name=\"healthAvailable\" type=\"System.Boolean\"
     isBlackboard=\"True\" />\r\n        </outputValues>\r\n      </outputParams>\r\n     
     <localParams />\r\n    </BehaviorTree>\r\n    <RepeatDecorator id=\"15\" loops=\"-1\"
-    policy=\"ContinueWhenChildFails\">\r\n      <child>\r\n        <SequenceNode
-    id=\"45\" />\r\n      </child>\r\n      <inputParams />\r\n      <outputParams
-    />\r\n      <localParams />\r\n    </RepeatDecorator>\r\n    <SequenceNode id=\"45\">\r\n     
-    <children>\r\n        <elem>\r\n          <PrioritySelectorNode id=\"9\" />\r\n       
-    </elem>\r\n      </children>\r\n      <inputParams />\r\n      <outputParams
-    />\r\n      <localParams />\r\n    </SequenceNode>\r\n    <PrioritySelectorNode
+    policy=\"ContinueWhenChildFails\">\r\n      <child>\r\n        <PrioritySelectorNode
+    id=\"9\" />\r\n      </child>\r\n      <inputParams />\r\n      <outputParams
+    />\r\n      <localParams />\r\n    </RepeatDecorator>\r\n    <PrioritySelectorNode
     id=\"9\">\r\n      <children>\r\n        <elem>\r\n          <GuardAndNode>\r\n           
     <guard>\r\n              <ConditionEvalNode id=\"25\" />\r\n            </guard>\r\n           
     <child>\r\n              <ActionNode id=\"23\" />\r\n            </child>\r\n         
@@ -116,66 +113,59 @@ MonoBehaviour:
     <ConditionEvalNode id=\"36\" />\r\n        </elem>\r\n        <elem>\r\n         
     <SubbehaviorNode id=\"37\" />\r\n        </elem>\r\n        <elem>\r\n         
     <ConditionEvalNode id=\"38\" />\r\n        </elem>\r\n        <elem>\r\n         
-    <SequenceNode id=\"45\" />\r\n        </elem>\r\n        <elem>\r\n         
     <ActionNode id=\"48\" />\r\n        </elem>\r\n      </_rootList>\r\n      <_nodes>\r\n       
     <nodes>\r\n          <PrioritySelectorNode id=\"9\" />\r\n          <SubbehaviorNode
     id=\"8\" />\r\n          <ConditionEvalNode id=\"12\" />\r\n          <RepeatDecorator
     id=\"15\" />\r\n          <ConditionEvalNode id=\"38\" />\r\n          <ActionNode
     id=\"23\" />\r\n          <ConditionEvalNode id=\"25\" />\r\n          <ActionNode
     id=\"34\" />\r\n          <ConditionEvalNode id=\"36\" />\r\n          <SubbehaviorNode
-    id=\"37\" />\r\n          <SequenceNode id=\"45\" />\r\n          <ActionNode
-    id=\"48\" />\r\n        </nodes>\r\n      </_nodes>\r\n    </BehaviorTree>\r\n   
-    <RepeatDecorator id=\"15\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"835.2725 17.84955\" name=\"Repeat\" description=\"Repeats
-    the execution of its child node\" cardinality=\"1\" hasParent=\"False\">\r\n         
-    <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"15\" />\r\n       
-    </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <SequenceNode id=\"45\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"821.9996
-    151.3333\" name=\"Sequence\" description=\"Executes all its children in sequence
-    until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
-    <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"45\" />\r\n         
-    <RepeatDecorator id=\"15\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
+    id=\"37\" />\r\n          <ActionNode id=\"48\" />\r\n        </nodes>\r\n     
+    </_nodes>\r\n    </BehaviorTree>\r\n    <RepeatDecorator id=\"15\">\r\n     
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"805.181
+    219.8329\" name=\"Repeat\" description=\"Repeats the execution of its child node\"
+    cardinality=\"1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
+    <RepeatDecorator id=\"15\" />\r\n        </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n   
     <PrioritySelectorNode id=\"9\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"790.8917 282.3693\" name=\"Priority Selector\"
+    selected=\"False\" position=\"744.1333 484.3525\" name=\"Priority Selector\"
     description=\"\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
-    id=\"0\" />\r\n          <PrioritySelectorNode id=\"9\" />\r\n          <SequenceNode
-    id=\"45\" />\r\n        </data>\r\n      </_data>\r\n    </PrioritySelectorNode>\r\n   
+    id=\"0\" />\r\n          <PrioritySelectorNode id=\"9\" />\r\n          <RepeatDecorator
+    id=\"15\" />\r\n        </data>\r\n      </_data>\r\n    </PrioritySelectorNode>\r\n   
     <ConditionEvalNode id=\"25\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"179.8526 1257.063\" name=\"Basic/IsEnemyLooking\"
+    selected=\"False\" position=\"149.761 1459.046\" name=\"Basic/IsEnemyLooking\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"25\" />\r\n          <PrioritySelectorNode
     id=\"9\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"23\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"247.2825 482.0674\" name=\"Navigation/MoveToGameObject\" description=\"Moves
+    position=\"217.1909 684.0509\" name=\"Navigation/MoveToGameObject\" description=\"Moves
     the game object towards a given target by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"23\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"36\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"500.7674 584.5195\" name=\"Basic/CheckHealth\"
+    selected=\"False\" position=\"512.6758 788.5032\" name=\"Basic/CheckHealth\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"36\" />\r\n          <PrioritySelectorNode
     id=\"9\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
-    <ActionNode id=\"34\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
-    position=\"514.1112 480.4169\" name=\"Navigation/MoveToGameObject\" description=\"Moves
+    <ActionNode id=\"34\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
+    position=\"526.0197 684.4004\" name=\"Navigation/MoveToGameObject\" description=\"Moves
     the game object towards a given target by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"34\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"38\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1458.333 935.1669\" name=\"AlwaysTrue\" description=\"Eval\"
+    selected=\"False\" position=\"1538.241 1139.15\" name=\"AlwaysTrue\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"38\" />\r\n          <PrioritySelectorNode id=\"9\" />\r\n       
     </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <SubbehaviorNode
     id=\"37\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"848.9996 487.8333\" name=\"MoveToButton\" description=\"\" cardinality=\"-1\"
+    position=\"928.908 691.8168\" name=\"MoveToButton\" description=\"\" cardinality=\"-1\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode
     id=\"37\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ConditionEvalNode id=\"12\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"2013.159 1052.588\" name=\"AlwaysTrue\" description=\"Eval\"
+    selected=\"False\" position=\"2129.067 1238.571\" name=\"AlwaysTrue\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"12\" />\r\n          <PrioritySelectorNode id=\"9\" />\r\n       
     </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <SubbehaviorNode
     id=\"8\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1138.149 495.7091\" name=\"QuickStartGuide/DoneWander\" description=\"Wanders
+    position=\"1254.057 681.6925\" name=\"QuickStartGuide/DoneWander\" description=\"Wanders
     to random positions around a NavMesh area.\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"8\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n 
     </editorInfo>\r\n  <runtimeInfo>\r\n    <ActionNode id=\"48\" action=\"Animation/ToggleAnimator\">\r\n     
@@ -185,7 +175,7 @@ MonoBehaviour:
     />\r\n    </ActionNode>\r\n    <BehaviorTree id=\"8\" nextId=\"1\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n 
     </runtimeInfo>\r\n  <editorInfo>\r\n    <ActionNode id=\"48\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"13.99993 505.3333\" name=\"Animation/ToggleAnimator\"
+    <data breakpoint=\"0\" selected=\"True\" position=\"499.2417 337.9836\" name=\"Animation/ToggleAnimator\"
     description=\"Enables or disables the animator found in the game object\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"48\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <BehaviorTree id=\"8\" _removeIfClosed=\"False\">\r\n     
@@ -195,7 +185,7 @@ MonoBehaviour:
     />\r\n    </BehaviorTree>\r\n  </runtimeInfo>\r\n  <editorInfo>\r\n    <BehaviorTree
     id=\"48\" _removeIfClosed=\"False\">\r\n      <_rootList />\r\n      <_nodes>\r\n       
     <nodes />\r\n      </_nodes>\r\n    </BehaviorTree>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.6
+  zoom: 0.5
   subslist:
   - {fileID: 11400000, guid: 8adfddffa70852a45ba1b64354494e3c, type: 2}
   - {fileID: 11400000, guid: 7f46b905b17539b4f8c0c41769320baa, type: 2}

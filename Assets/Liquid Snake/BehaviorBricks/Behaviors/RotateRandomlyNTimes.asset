@@ -32,7 +32,7 @@ MonoBehaviour:
     />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n     
     <localParams />\r\n    </ActionNode>\r\n    <ActionNode id=\"4\" action=\"Basic/WaitForSeconds\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"seconds\" type=\"System.Single\"
-    isBlackboard=\"False\" value=\"0.5\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
+    isBlackboard=\"False\" value=\"0,5\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
     <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n  </runtimeInfo>\r\n 
     <editorInfo>\r\n    <BehaviorTree id=\"0\" _name=\"RotateRandomlyNTimes\" _description=\"\"
     _removeIfClosed=\"False\">\r\n      <_rootList>\r\n        <elem>\r\n         
@@ -43,25 +43,25 @@ MonoBehaviour:
     <RepeatDecorator id=\"1\" />\r\n          <ActionNode id=\"2\" />\r\n         
     <SequenceNode id=\"3\" />\r\n          <ActionNode id=\"4\" />\r\n        </nodes>\r\n     
     </_nodes>\r\n    </BehaviorTree>\r\n    <RepeatDecorator id=\"1\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"1271.063 451.1667\" name=\"Repeat\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"503.6212 357.2834\" name=\"Repeat\"
     description=\"Repeats the execution of its child node\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"1\" />\r\n       
     </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <SequenceNode id=\"3\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1263.063
-    597.1667\" name=\"Sequence\" description=\"Executes all its children in sequence
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"495.6211
+    503.2834\" name=\"Sequence\" description=\"Executes all its children in sequence
     until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"3\" />\r\n         
     <RepeatDecorator id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ActionNode id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1112.063 768.1667\" name=\"LiquidSnake/RotateRandomly\" description=\"Smoothly
+    position=\"344.6212 674.2832\" name=\"LiquidSnake/RotateRandomly\" description=\"Smoothly
     rotates the character in a random direction and degrees\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"2\" />\r\n          <SequenceNode
     id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ActionNode id=\"4\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1381.618 762.1669\" name=\"Basic/WaitForSeconds\" description=\"Action
+    position=\"614.1763 668.2834\" name=\"Basic/WaitForSeconds\" description=\"Action
     that success after a period of time.\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"4\" />\r\n          <SequenceNode
     id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.9
+  zoom: 0.6
   subslist: []
   _guid: 42b70cf48b6590343bbb24f44566155f

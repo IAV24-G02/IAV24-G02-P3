@@ -134,7 +134,7 @@ La idea es que siempre se compruebe si el enemigo está mirando a `Néstor` y si
 
 - Si el/los enemigo/s está/n mirando a `Néstor`, `Néstor` debe huir a un punto de escondite más cercano para perderlo/s de vista y volver a intentar conseguir los botones que desbloquean las puertas.
 
-- Si la vida de `Néstor` es menor de cierto valor y dependiendo de si puede llegar hasta un punto de curación, `Néstor` irá al punto más cercano para curarse.
+- Si la vida de `Néstor` es menor de cierto valor y dependiendo de si puede llegar hasta un punto de curación, `Néstor` irá al punto más cercano para curarse. Si ese punto más cercano no está disponible, `Néstor` seguirá intentando conseguir los botones que desbloquean las puertas.
 
 Como se puede intuir, esto es un árbol de comportamientos *hardcodeado*, por lo que no es muy flexible y solo se puede aplicar a este caso en concreto.
 
@@ -143,8 +143,8 @@ E. En este último apartado modificaremos el árbol de comportamientos de `Nést
 ```mermaid
 flowchart TD
     A(("↺")) --> B((?))
-    B -->|IsEnemyLooking| C[RunToTheNearestHidingSpot]
-    B -->|health < 250 && AreHealthPointsAvailable| D[MoveToNearestPossibleHealthPoint]
+    B -->|IsEnemyLooking| C[MoveToGameObject/MoveToNearestHidingSpot]
+    B -->|CheckHealth| D[MoveToGameObject/MoveToNearestPossibleHealthPoint]
     B --> E[SearchRooms]
 ```
 
@@ -206,7 +206,7 @@ Notas:
 | `Néstor` supera el nivel de ejemplo con guardias | - <br> - | []() |
 | `Néstor` supera un nivel modificado | - <br> - | []() |
 
-[ENLACE AL VÍDEO COMPLETO EN YOUTUBE]()
+[ENLACE AL VÍDEO COMPLETO EN YOUTUBE]()  
 [ENLACE AL VÍDEO COMPLETO EN DRIVE]()
 
 ## Ampliaciones
