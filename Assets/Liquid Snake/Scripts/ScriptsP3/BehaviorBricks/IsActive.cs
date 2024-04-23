@@ -22,6 +22,11 @@ namespace BBCore.Conditions
         /// <returns>active</returns>
 		public override bool Check()
         {
+            if (target == null)
+            {
+                Debug.LogError("No target found in game object with name " + gameObject.name);
+                return false;
+            }
             return target.activeSelf;
         }
     }

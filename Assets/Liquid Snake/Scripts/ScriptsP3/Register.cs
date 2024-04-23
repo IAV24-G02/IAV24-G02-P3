@@ -30,4 +30,39 @@ public class Register : MonoBehaviour
             healthSpotsAvailable.Add(pair.key, pair.value);
         }
     }
+
+    private void Update()
+    {
+        for (int i = 0; i < doors.Count; i++)
+        {
+            MeshRenderer meshRenderer = doors[i].GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                if (!meshRenderer.enabled)
+                {
+                    doors.RemoveAt(i);
+                }
+            }
+            else
+            {
+                doors.RemoveAt(i);
+            }
+        }
+
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            if (!buttons[i].activeSelf)
+            {
+                buttons.RemoveAt(i);
+            }
+        }
+
+        for (int i = 0; i < healthSpots.Count; i++)
+        {
+            if (!healthSpots[i].activeSelf)
+            {
+                healthSpots.RemoveAt(i);
+            }
+        }
+    }
 }

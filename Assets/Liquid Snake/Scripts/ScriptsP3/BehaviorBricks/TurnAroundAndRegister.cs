@@ -66,11 +66,14 @@ public class TurnAroundAndRegister : GOAction
             {
                 _register.healthSpots.Add(closestTarget);
             }
+            else if (closestTarget.CompareTag("Room") && !_register.rooms.Contains(closestTarget))
+            {
+                _register.rooms.Add(closestTarget);
+            }
             else if (closestTarget.CompareTag("Goal") && _register.exit == null)
             {
                 _register.exit = closestTarget;
             }
-            // Waypoints??
         }
 
         float rotationThisFrame = rotationSpeed * Time.deltaTime;

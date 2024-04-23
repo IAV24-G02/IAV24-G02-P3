@@ -152,14 +152,14 @@ flowchart TD
 flowchart TD
     Z[SearchRooms] --> A
     A(("↺")) --> B((?))
-    B -->|!HasTurnAround| C[TurnAround, HasTurnedAround = true, IsWayPointSearched = true]
     B -->|HasRegisteredExit| D[MoveToExit]
-    B --> E(("->"))
-    E -->|HasRegisteredLockedDoor && HasRegisteredButtonSameColor| F[MoveToButton]
-    E --> G[MoveToDoor, HasTurnAround = false]
-    B -->|IsThereAnotherWayPoint| H[GoToNextWayPoint, HasTurnedAround = false]
+    B -->|HasRegisteredLockedDoorAndButton| F(("->"))
+    F --> E[MoveToButton]
+    F --> G[MoveToDoor]
+    B -->|IsThereAnotherWayPoint| H[GoToNextWayPoint]
     B -->|HasRegisteredNewRooms| I[GoToNextRoom, HasTurnedAround = false]
     B--> |!IsLastWayPointSearched| J[GoToLastWaypoint]
+    B --> C[NestorPatrol]
 ```
 
 Notas:

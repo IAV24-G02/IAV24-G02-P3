@@ -19,11 +19,12 @@ TagManager:
   - Environment
   - Checkpoint
   - Button
+  - Room
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Waypoint
   - Water
   - UI
   - Player

@@ -1658,9 +1658,10 @@ GameObject:
   m_Component:
   - component: {fileID: 324342257}
   - component: {fileID: 324342258}
-  m_Layer: 0
+  - component: {fileID: 324342259}
+  m_Layer: 3
   m_Name: WaypointInDoor2
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1692,7 +1693,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 728631587}
+--- !u!65 &324342259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324342256}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &330313212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2495,7 +2517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 502615257}
 --- !u!4 &477841609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3730307354819242988, guid: f810e62df191bd3409d47dc6b8d95ac7,
@@ -2552,7 +2574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1203102725}
 --- !u!1001 &533570637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2655,7 +2677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 466182127}
 --- !u!4 &539492493
 Transform:
   m_ObjectHideFlags: 0
@@ -3142,7 +3164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 1203102725}
+  nextWaypoint: {fileID: 0}
 --- !u!1 &668284216 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3432156269681320149, guid: 1035980c7ef596f4eaf64a260f8784b3,
@@ -3745,7 +3767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 324342256}
 --- !u!4 &728631589
 Transform:
   m_ObjectHideFlags: 0
@@ -4544,7 +4566,7 @@ PrefabInstance:
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: blackboard.floatParams.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4619,7 +4641,7 @@ PrefabInstance:
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: blackboard.floatParamsNames.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4949,7 +4971,7 @@ PrefabInstance:
     - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: detectableTags.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4964,6 +4986,11 @@ PrefabInstance:
     - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: detectableTags.Array.data[3]
+      value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: detectableTags.Array.data[4]
       value: Goal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7184,7 +7211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1203102726}
   - component: {fileID: 1203102727}
-  m_Layer: 0
+  - component: {fileID: 1203102728}
+  m_Layer: 3
   m_Name: WaypointInDoor1
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -7218,7 +7246,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 539492491}
+--- !u!65 &1203102728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203102725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1250658428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8841009672255735322, guid: 3bf7e38931121bb48b2ba13eac6baa48,
