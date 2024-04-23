@@ -85,7 +85,7 @@ MonoBehaviour:
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"7\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 1
+  zoom: 0.8
   subslist:
   - {fileID: 11400000, guid: 87d12e1a2bd99c34e9c4664b6bec1cb8, type: 2}
   _guid: 55776745bee2d634d83f4b3fd5da20f2
