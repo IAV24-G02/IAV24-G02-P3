@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -739,6 +739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WhiteButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089438980042630270, guid: a7889276ae15e5e4e98c2d2b879a7e74,
+        type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 4611548668141280690, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
@@ -1465,6 +1470,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3089438980042630270, guid: a7889276ae15e5e4e98c2d2b879a7e74,
+        type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     - target: {fileID: 4611548668141280690, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1779,7 +1789,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2160,7 +2170,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3479,7 +3489,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4147,7 +4157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1848447733}
 --- !u!1001 &838803176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4533,12 +4543,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
+      propertyPath: blackboard.floatParams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
       propertyPath: blackboard.objectParams.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: blackboard.boolParams.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.floatParams.Array.data[1]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.floatParams.Array.data[2]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
@@ -4565,12 +4590,12 @@ PrefabInstance:
         type: 3}
       propertyPath: blackboard.objectParams.Array.data[2]
       value: 
-      objectReference: {fileID: 1090929905}
+      objectReference: {fileID: 2011648534}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: blackboard.objectParams.Array.data[3]
       value: 
-      objectReference: {fileID: 1946599923}
+      objectReference: {fileID: 2011648534}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: blackboard.objectParams.Array.data[4]
@@ -4593,13 +4618,28 @@ PrefabInstance:
       objectReference: {fileID: 406965120}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
+      propertyPath: blackboard.floatParamsNames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
       propertyPath: blackboard.objectParamsNames.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: blackboard.boolParamsNames.Array.data[1]
       value: healthAvailable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.floatParamsNames.Array.data[1]
+      value: rotationSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.floatParamsNames.Array.data[2]
+      value: waitForSeconds
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4610,6 +4650,21 @@ PrefabInstance:
         type: 3}
       propertyPath: blackboard.objectParamsNames.Array.data[1]
       value: visionSensorObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[2]
+      value: initialWaypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[3]
+      value: currentWaypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: waypoints.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4654,7 +4709,12 @@ PrefabInstance:
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: healthSpots.Array.size
-      value: 3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: hidingSpots.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4665,7 +4725,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 662280224}
+      objectReference: {fileID: 0}
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: waypoints.Array.data[1]
@@ -4700,7 +4760,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waypoints.Array.data[7]
       value: 
-      objectReference: {fileID: 324342256}
+      objectReference: {fileID: 1848447733}
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: waypoints.Array.data[8]
@@ -4814,7 +4874,7 @@ PrefabInstance:
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
       propertyPath: healthSpotsAvailableList.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5972623578436549831, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -4886,6 +4946,26 @@ PrefabInstance:
       propertyPath: healthSpotsAvailableList.Array.data[3].value.Array.data[1]
       value: 
       objectReference: {fileID: 447437577}
+    - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: detectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: detectableTags.Array.data[1]
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: detectableTags.Array.data[2]
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631876377257966778, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: detectableTags.Array.data[3]
+      value: Goal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4993,7 +5073,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6203,7 +6283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1299194888}
 --- !u!4 &1055990683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1360539239201499588, guid: e8b46424844afce4cb48a73f140db5db,
@@ -6290,6 +6370,7 @@ Transform:
   - {fileID: 1566351496}
   - {fileID: 1300187579}
   - {fileID: 1875846134}
+  - {fileID: 2011648535}
   - {fileID: 1792612263}
   - {fileID: 5485888423223351426}
   - {fileID: 576724546}
@@ -7319,7 +7400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 837283944}
 --- !u!4 &1299281731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7398797738815192599, guid: e4242ccddc821184db0a313b66b78f15,
@@ -8230,7 +8311,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8563,7 +8644,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9270,6 +9351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GreenButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089438980042630270, guid: a7889276ae15e5e4e98c2d2b879a7e74,
+        type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 4611548668141280690, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
@@ -10508,7 +10594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 2069113299}
 --- !u!1 &1849751476
 GameObject:
   m_ObjectHideFlags: 0
@@ -11180,6 +11266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089438980042630270, guid: a7889276ae15e5e4e98c2d2b879a7e74,
+        type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 4611548668141280690, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
@@ -11915,6 +12006,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 243716353}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2011648534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011648535}
+  - component: {fileID: 2011648536}
+  m_Layer: 0
+  m_Name: WaypointInRoom1-0
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011648535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011648534}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 42.427, y: 0.81, z: -12.69}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1090929907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011648536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011648534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypoint: {fileID: 1042759703}
 --- !u!4 &2014787160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7002655100183500375, guid: 42d0a2a58d120c842bedf772dc16a7e4,
@@ -12313,7 +12449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 662280224}
 --- !u!1001 &2078432906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12410,7 +12546,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12562,6 +12698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GreenButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089438980042630270, guid: a7889276ae15e5e4e98c2d2b879a7e74,
+        type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 4611548668141280690, guid: a7889276ae15e5e4e98c2d2b879a7e74,
         type: 3}
@@ -12806,7 +12947,7 @@ PrefabInstance:
     - target: {fileID: 1226931231282574719, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
         type: 3}
       propertyPath: m_TagString
-      value: Goal
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1348014807545248415, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
         type: 3}
@@ -12892,6 +13033,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onTagDetected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605965450734688814, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Goal
       objectReference: {fileID: 0}
     - target: {fileID: 6347716818567508208, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
         type: 3}

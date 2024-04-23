@@ -18,6 +18,7 @@ TagManager:
   - MovingObstacle
   - Environment
   - Checkpoint
+  - Button
   layers:
   - Default
   - TransparentFX

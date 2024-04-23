@@ -1,8 +1,6 @@
 using BBUnity.Actions;
 using Pada1.BBCore;
 using Pada1.BBCore.Tasks;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using LiquidSnake.Enemies;
 
@@ -47,6 +45,7 @@ namespace LiquidSnake.BT.Actions
 
         public override TaskStatus OnUpdate()
         {
+            Debug.Log(currentWaypoint);
             base.OnUpdate();
             return currentWaypoint != null ? TaskStatus.COMPLETED : TaskStatus.FAILED;
         }

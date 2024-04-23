@@ -14,10 +14,6 @@ namespace BBCore.Conditions
     [Help("Checks if the target has low health and returns the nearest healthSpot available seen")]
     public class CheckHealthNotKnowing : GOCondition
     {
-        [InParam("visionSensorObject")]
-        [Help("Vision Sensor used by this condition with a VisionSensor Component attached")]
-        public GameObject visionSensorObject;
-
         [InParam("target")]
         [Help("target")]
         public GameObject target;
@@ -49,44 +45,32 @@ namespace BBCore.Conditions
             }
 
             // Cogemos el primer punto de curación del diccionario
-            KeyValuePair<GameObject, List<GameObject>> entry = new KeyValuePair<GameObject, List<GameObject>>();
-            bool healthAvailable = false;
-            if (register.healthSpotsAvailable != null && register.healthSpotsAvailable.Count > 0)
+            float healthSpotDistance = Mathf.Infinity;
+            if (register.healthSpots != null && register.healthSpots.Count > 0)
             {
-                entry = register.healthSpotsAvailable.First();
-                GameObject firstKey = entry.Key;
-                if (firstKey != null && firstKey.activeSelf)
-                {
-                    nearestHealthSpotSeen = firstKey;
-                }
-            }
-
-            // Si el más cercano tiene al menos una puerta asignada de desbloqueo
-            if (entry.Value != null && entry.Value.Count > 0)
-            {
-                // Comprobar si la/s puerta/s asignada/s de desbloqueo está/n desactivada/s
-                int j = 0; bool found = false;
-                while (j < entry.Value.Count && !found)
-                {
-                    MeshRenderer doorMeshRenderer = entry.Value[j].GetComponent<MeshRenderer>();
-                    if (entry.Value[j] != null && doorMeshRenderer != null && doorMeshRenderer.enabled)
-                    {
-                        found = true;
-                    }
-                    ++j;
-                }
-                if (!found)
-                {
-                    healthAvailable = true;
-                }
+                healthSpotDistance = Vector3.Distance(target.transform.position, register.healthSpots[0].transform.position);
+                nearestHealthSpotSeen = register.healthSpots[0];
             }
             else
             {
-                healthAvailable = true;
+                nearestHealthSpotSeen = null;
+            }
+            for (int i = 0; i < register.healthSpots.Count; ++i)
+            {
+                if (register.healthSpots[i] != null && register.healthSpots[i].activeSelf)
+                {
+                    float newDistance = Vector3.Distance(target.transform.position, register.healthSpots[i].transform.position);
+                    if (newDistance < healthSpotDistance)
+                    {
+                        healthSpotDistance = newDistance;
+                        nearestHealthSpotSeen = register.healthSpots[i];
+                    }
+                }
             }
 
-            return target.GetComponent<Health>().CurrentValue() < minHealth && nearestHealthSpotSeen != null
-                && healthAvailable;
+            // Nota: es posible que cuando detectemos el punto de curación más cercano, este ya no esté disponible
+
+            return target.GetComponent<Health>().CurrentValue() < minHealth && nearestHealthSpotSeen != null;
         }
     }
 }

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a7c8ca992f915438a96c2077353778, type: 3}
+  m_Name: TurnAround
+  m_EditorClassIdentifier: 
+  brickName: Assets/BehaviorsP3/TurnAround.asset
+  xml: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<BehaviorBricks xmlns:ref=\"urn:padaone\"
+    version=\"1.0\">\r\n  <BehaviorTree id=\"0\" />\r\n  <runtimeInfo>\r\n    <BehaviorTree
+    id=\"0\" guid=\"87d12e1a2bd99c34e9c4664b6bec1cb8\" nextId=\"6\">\r\n      <root>\r\n       
+    <ActionNode id=\"5\" />\r\n      </root>\r\n      <inputParams>\r\n        <inputValues>\r\n         
+    <entry name=\"rotationSpeed\" type=\"System.Single\" isBlackboard=\"False\" value=\"35\"
+    />\r\n          <entry name=\"visionSensorObject\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"waitForSeconds\" type=\"System.Single\"
+    isBlackboard=\"False\" value=\"1\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
+    <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n    <ActionNode
+    id=\"5\" action=\"LiquidSnake/TurnAroundAndRegister\">\r\n      <inputParams>\r\n       
+    <inputValues>\r\n          <entry name=\"rotationSpeed\" type=\"System.Single\"
+    isBlackboard=\"True\" blackboard=\"rotationSpeed\" />\r\n          <entry name=\"visionSensorObject\"
+    type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"visionSensorObject\"
+    />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n     
+    <localParams />\r\n    </ActionNode>\r\n  </runtimeInfo>\r\n  <editorInfo>\r\n   
+    <BehaviorTree id=\"0\" _name=\"TurnAround\" _description=\"\" _removeIfClosed=\"False\">\r\n     
+    <_rootList>\r\n        <elem>\r\n          <ActionNode id=\"4\" />\r\n       
+    </elem>\r\n        <elem>\r\n          <ActionNode id=\"5\" />\r\n        </elem>\r\n     
+    </_rootList>\r\n      <_nodes>\r\n        <nodes>\r\n          <ActionNode id=\"5\"
+    />\r\n          <ActionNode id=\"4\" />\r\n        </nodes>\r\n      </_nodes>\r\n   
+    </BehaviorTree>\r\n    <ActionNode id=\"5\">\r\n      <_data>\r\n        <data
+    breakpoint=\"0\" selected=\"True\" position=\"227.2 209.8\" name=\"LiquidSnake/TurnAroundAndRegister\"
+    description=\"Smoothly rotates the character 360 degrees\" cardinality=\"0\"
+    hasParent=\"False\">\r\n          <BehaviorTree id=\"5\" />\r\n        </data>\r\n     
+    </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n  <runtimeInfo>\r\n    <ActionNode
+    id=\"4\" action=\"Basic/WaitForSeconds\">\r\n      <inputParams>\r\n        <inputValues>\r\n         
+    <entry name=\"seconds\" type=\"System.Single\" isBlackboard=\"True\" blackboard=\"waitForSeconds\"
+    />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n     
+    <localParams />\r\n    </ActionNode>\r\n    <BehaviorTree id=\"5\" nextId=\"1\">\r\n     
+    <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n 
+    </runtimeInfo>\r\n  <editorInfo>\r\n    <ActionNode id=\"4\">\r\n      <_data>\r\n       
+    <data breakpoint=\"0\" selected=\"False\" position=\"505.2 212.8\" name=\"Basic/WaitForSeconds\"
+    description=\"Action that success after a period of time.\" cardinality=\"0\"
+    hasParent=\"False\">\r\n          <BehaviorTree id=\"4\" />\r\n        </data>\r\n     
+    </_data>\r\n    </ActionNode>\r\n    <BehaviorTree id=\"5\" _removeIfClosed=\"False\">\r\n     
+    <_rootList />\r\n      <_nodes>\r\n        <nodes />\r\n      </_nodes>\r\n   
+    </BehaviorTree>\r\n  </editorInfo>\r\n  <runtimeInfo>\r\n    <BehaviorTree id=\"4\"
+    nextId=\"1\">\r\n      <inputParams />\r\n      <outputParams />\r\n      <localParams
+    />\r\n    </BehaviorTree>\r\n  </runtimeInfo>\r\n  <editorInfo>\r\n    <BehaviorTree
+    id=\"4\" _removeIfClosed=\"False\">\r\n      <_rootList />\r\n      <_nodes>\r\n       
+    <nodes />\r\n      </_nodes>\r\n    </BehaviorTree>\r\n  </editorInfo>\r\n</BehaviorBricks>"
+  zoom: 1
+  subslist: []
+  _guid: 87d12e1a2bd99c34e9c4664b6bec1cb8

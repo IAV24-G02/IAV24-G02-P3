@@ -15,30 +15,54 @@ MonoBehaviour:
   brickName: Assets/BehaviorsP3/SearchRooms.asset
   xml: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<BehaviorBricks xmlns:ref=\"urn:padaone\"
     version=\"1.0\">\r\n  <BehaviorTree id=\"0\" />\r\n  <runtimeInfo>\r\n    <BehaviorTree
-    id=\"0\" guid=\"31b92a1ec42c25c4ab811703dfe61ab3\" nextId=\"3\">\r\n      <root>\r\n       
-    <RepeatDecorator id=\"1\" />\r\n      </root>\r\n      <inputParams />\r\n     
-    <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n    <RepeatDecorator
-    id=\"1\" loops=\"-1\" policy=\"ContinueWhenChildFails\">\r\n      <child>\r\n       
-    <PrioritySelectorNode id=\"2\" />\r\n      </child>\r\n      <inputParams />\r\n     
-    <outputParams />\r\n      <localParams />\r\n    </RepeatDecorator>\r\n    <PrioritySelectorNode
-    id=\"2\">\r\n      <children />\r\n      <inputParams />\r\n      <outputParams
-    />\r\n      <localParams />\r\n    </PrioritySelectorNode>\r\n  </runtimeInfo>\r\n 
+    id=\"0\" guid=\"31b92a1ec42c25c4ab811703dfe61ab3\" nextId=\"6\">\r\n      <root>\r\n       
+    <RepeatDecorator id=\"1\" />\r\n      </root>\r\n      <inputParams>\r\n       
+    <inputValues>\r\n          <entry name=\"currentWaypoint\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"initialWaypoint\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"visionSensorObject\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"rotationSpeed\" type=\"System.Single\"
+    isBlackboard=\"False\" value=\"35\" />\r\n          <entry name=\"waitForSeconds\"
+    type=\"System.Single\" isBlackboard=\"False\" value=\"1\" />\r\n        </inputValues>\r\n     
+    </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n   
+    <RepeatDecorator id=\"1\" loops=\"-1\" policy=\"ContinueWhenChildFails\">\r\n     
+    <child>\r\n        <SequenceNode id=\"5\" />\r\n      </child>\r\n      <inputParams
+    />\r\n      <outputParams />\r\n      <localParams />\r\n    </RepeatDecorator>\r\n   
+    <SequenceNode id=\"5\">\r\n      <children>\r\n        <elem>\r\n          <SubbehaviorNode
+    id=\"3\" />\r\n        </elem>\r\n      </children>\r\n      <inputParams />\r\n     
+    <outputParams />\r\n      <localParams />\r\n    </SequenceNode>\r\n    <SubbehaviorNode
+    id=\"3\">\r\n      <_guid>55776745bee2d634d83f4b3fd5da20f2</_guid>\r\n      <inputParams>\r\n       
+    <inputValues>\r\n          <entry name=\"initialWaypoint\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"True\" blackboard=\"initialWaypoint\" />\r\n          <entry name=\"currentWaypoint\"
+    type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"currentWaypoint\"
+    />\r\n          <entry name=\"visionSensorObject\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"True\" blackboard=\"visionSensorObject\" />\r\n          <entry
+    name=\"rotationSpeed\" type=\"System.Single\" isBlackboard=\"True\" blackboard=\"rotationSpeed\"
+    />\r\n          <entry name=\"waitForSeconds\" type=\"System.Single\" isBlackboard=\"True\"
+    blackboard=\"waitForSeconds\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
+    <outputParams />\r\n      <localParams />\r\n    </SubbehaviorNode>\r\n  </runtimeInfo>\r\n 
     <editorInfo>\r\n    <BehaviorTree id=\"0\" _name=\"SearchRooms\" _description=\"\"
     _removeIfClosed=\"False\">\r\n      <_rootList>\r\n        <elem>\r\n         
     <RepeatDecorator id=\"1\" />\r\n        </elem>\r\n        <elem>\r\n         
-    <PrioritySelectorNode id=\"2\" />\r\n        </elem>\r\n      </_rootList>\r\n     
-    <_nodes>\r\n        <nodes>\r\n          <RepeatDecorator id=\"1\" />\r\n         
-    <PrioritySelectorNode id=\"2\" />\r\n        </nodes>\r\n      </_nodes>\r\n   
-    </BehaviorTree>\r\n    <RepeatDecorator id=\"1\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"264.2 135.8\" name=\"Repeat\"
+    <SubbehaviorNode id=\"3\" />\r\n        </elem>\r\n        <elem>\r\n         
+    <SequenceNode id=\"5\" />\r\n        </elem>\r\n      </_rootList>\r\n      <_nodes>\r\n       
+    <nodes>\r\n          <RepeatDecorator id=\"1\" />\r\n          <SequenceNode
+    id=\"5\" />\r\n          <SubbehaviorNode id=\"3\" />\r\n        </nodes>\r\n     
+    </_nodes>\r\n    </BehaviorTree>\r\n    <RepeatDecorator id=\"1\">\r\n      <_data>\r\n       
+    <data breakpoint=\"0\" selected=\"False\" position=\"369.9778 50.63881\" name=\"Repeat\"
     description=\"Repeats the execution of its child node\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"1\" />\r\n       
-    </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <PrioritySelectorNode
-    id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
-    position=\"205.2 273.8\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
-    hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode
-    id=\"2\" />\r\n          <RepeatDecorator id=\"1\" />\r\n        </data>\r\n     
-    </_data>\r\n    </PrioritySelectorNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 1
-  subslist: []
+    </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <SequenceNode id=\"5\">\r\n     
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"364.9778
+    183.6386\" name=\"Sequence\" description=\"Executes all its children in sequence
+    until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
+    <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"5\" />\r\n         
+    <RepeatDecorator id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
+    <SubbehaviorNode id=\"3\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
+    selected=\"True\" position=\"121.9778 329.6386\" name=\"NestorPatrol\" description=\"\"
+    cardinality=\"-1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
+    <SubbehaviorNode id=\"3\" />\r\n          <SequenceNode id=\"5\" />\r\n       
+    </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
+  zoom: 0.9
+  subslist:
+  - {fileID: 11400000, guid: 55776745bee2d634d83f4b3fd5da20f2, type: 2}
   _guid: 31b92a1ec42c25c4ab811703dfe61ab3

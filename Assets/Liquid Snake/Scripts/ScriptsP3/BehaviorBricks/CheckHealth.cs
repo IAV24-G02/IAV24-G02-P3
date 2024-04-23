@@ -14,10 +14,6 @@ namespace BBCore.Conditions
     [Help("Checks if the target has low health")]
     public class CheckHealth : GOCondition
     {
-        [InParam("visionSensorObject")]
-        [Help("Vision Sensor used by this condition with a VisionSensor Component attached")]
-        public GameObject visionSensorObject;
-
         [InParam("target")]
         [Help("target")]
         public GameObject target;

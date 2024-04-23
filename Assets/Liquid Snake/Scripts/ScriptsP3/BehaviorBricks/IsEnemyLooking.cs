@@ -40,11 +40,14 @@ namespace BBCore.Conditions
             }
 
             // Busca el escondite mas cercano
-            // FALTA COMPROBAR SI ESTA DISPONIBLE DEPENDIENDO DE LA POSICION DEL PLAYER
             float hidingSpotDistance = Mathf.Infinity;
             if (register.hidingSpots.Count > 0 && register.hidingSpots[0] != null && register.hidingSpots[0].activeSelf)
             {
                 nearestHidingSpot = register.hidingSpots[0];
+            }
+            else
+            {
+                nearestHidingSpot = null;
             }
             for (int i = 0; i < register.hidingSpots.Count; ++i)
             {

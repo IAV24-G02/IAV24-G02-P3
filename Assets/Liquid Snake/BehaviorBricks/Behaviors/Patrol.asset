@@ -70,27 +70,27 @@ MonoBehaviour:
     />\r\n          <ActionNode id=\"15\" />\r\n          <SubbehaviorNode id=\"18\"
     />\r\n          <ActionNode id=\"19\" />\r\n        </nodes>\r\n      </_nodes>\r\n   
     </BehaviorTree>\r\n    <SequenceNode id=\"14\">\r\n      <_data>\r\n        <data
-    breakpoint=\"0\" selected=\"False\" position=\"859.8884 389.5477\" name=\"Sequence\"
+    breakpoint=\"0\" selected=\"False\" position=\"252.7458 193.834\" name=\"Sequence\"
     description=\"Executes all its children in sequence until all of them are successful\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"14\"
     />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n    <ActionNode
     id=\"19\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"382.3542 603.3338\" name=\"Animation/ToggleAnimator\" description=\"Enables
+    position=\"-224.7883 407.6195\" name=\"Animation/ToggleAnimator\" description=\"Enables
     or disables the animator found in the game object\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"14\" />\r\n          <ActionNode id=\"19\" />\r\n         
     <SequenceNode id=\"14\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ActionNode id=\"15\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"622.3289 595.1434\" name=\"LiquidSnake/ChooseNextWaypoint\" description=\"From
+    position=\"15.18618 399.4291\" name=\"LiquidSnake/ChooseNextWaypoint\" description=\"From
     a list of waypoints (GameObjects), chooses the next one and stores it\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"14\" />\r\n          <ActionNode
     id=\"15\" />\r\n          <SequenceNode id=\"14\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"16\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"951.019 586.5121\" name=\"Navigation/MoveToGameObject\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"342.4476 390.7977\" name=\"Navigation/MoveToGameObject\"
     description=\"Moves the game object towards a given target by using a NavMeshAgent\"
     cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree id=\"14\" />\r\n         
     <ActionNode id=\"16\" />\r\n          <SequenceNode id=\"14\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <SubbehaviorNode id=\"18\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"1221.453 593.6313\" name=\"RotateRandomlyNTimes\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"614.3086 397.9171\" name=\"RotateRandomlyNTimes\"
     description=\"\" cardinality=\"-1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"14\" />\r\n          <SubbehaviorNode id=\"18\" />\r\n          <SequenceNode
     id=\"14\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n 
@@ -99,7 +99,7 @@ MonoBehaviour:
     </runtimeInfo>\r\n  <editorInfo>\r\n    <BehaviorTree id=\"14\" _removeIfClosed=\"False\">\r\n     
     <_rootList />\r\n      <_nodes>\r\n        <nodes />\r\n      </_nodes>\r\n   
     </BehaviorTree>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.5
+  zoom: 0.7
   subslist:
   - {fileID: 11400000, guid: 42b70cf48b6590343bbb24f44566155f, type: 2}
   _guid: f94abe46a1591da419968ce2ece12eaf
