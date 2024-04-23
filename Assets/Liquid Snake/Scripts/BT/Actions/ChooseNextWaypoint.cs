@@ -32,13 +32,21 @@ namespace LiquidSnake.BT.Actions
                     Debug.LogError($"initialWaypoint has not been set in enemy with name {gameObject.name}");
                     return;
                 }
-
                 nextWaypoint = initialWaypoint;
             }
             // Caso 2: tenemos un waypoint seleccionado, utilizamos su siguiente waypoint
             else
             {
                 nextWaypoint = currentWaypoint.GetComponent<Waypoint>().nextWaypoint;
+                if (nextWaypoint == null)
+                {
+                    Register register = gameObject.GetComponent<Register>();
+                    if (register != null && register.rooms.Count > 0)
+                    {
+                        nextWaypoint = register.rooms[0];
+                    }
+                }
+                
             }
             base.OnStart();
         }

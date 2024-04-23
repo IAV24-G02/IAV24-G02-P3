@@ -145,21 +145,27 @@ flowchart TD
     A(("↺")) --> B((?))
     B -->|IsEnemyLooking| C[MoveToGameObject/MoveToNearestHidingSpot]
     B -->|CheckHealth| D[MoveToGameObject/MoveToNearestPossibleHealthPoint]
-    B --> E[SearchRooms]
+    B -->|AlwaysTrue| E[SearchRooms]
 ```
 
 ```mermaid
 flowchart TD
-    Z[SearchRooms] --> A
-    A(("↺")) --> B((?))
-    B -->|HasRegisteredExit| D[MoveToExit]
-    B -->|HasRegisteredLockedDoorAndButton| F(("->"))
-    F --> E[MoveToButton]
-    F --> G[MoveToDoor]
-    B -->|IsThereAnotherWayPoint| H[GoToNextWayPoint]
-    B -->|HasRegisteredNewRooms| I[GoToNextRoom, HasTurnedAround = false]
-    B--> |!IsLastWayPointSearched| J[GoToLastWaypoint]
-    B --> C[NestorPatrol]
+    A[SearchRooms] --> B
+    B(("↺")) --> C((?))
+    C -->|HasRegisteredExit| D[MoveToExit]
+    C -->|HasRegisteredLockedDoorAndButton| E(("->"))
+    E --> F[MoveToButton]
+    E --> G[MoveToDoor]
+    C -->|AlwaysTrue| H[NestorPatrol]
+```
+
+```mermaid
+flowchart TD
+    A[NestorPatrol] --> B
+    B(("↺")) --> C(("->"))
+    C --> D[ChooseNextWaypoint]
+    C --> E[MoveToWaypoint]
+    C --> F[TurnAroundAndRegister]
 ```
 
 Notas:

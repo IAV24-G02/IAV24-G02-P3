@@ -1659,6 +1659,7 @@ GameObject:
   - component: {fileID: 324342257}
   - component: {fileID: 324342258}
   - component: {fileID: 324342259}
+  - component: {fileID: 324342260}
   m_Layer: 3
   m_Name: WaypointInDoor2
   m_TagString: Room
@@ -1709,12 +1710,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &324342260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324342256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef129e01e2f7b834d89a6771ecf3e603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &330313212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3971,7 +3987,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 1307216662}
 --- !u!65 &806022323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6022,7 +6037,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 0}
 --- !u!65 &1010054958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7050,7 +7064,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 1307216662}
 --- !u!65 &1187260259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7111,7 +7124,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 1307216662}
 --- !u!65 &1193499619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7262,7 +7274,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -7804,7 +7816,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 0}
 --- !u!65 &1422234014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9498,7 +9509,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 0}
 --- !u!65 &1659607943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11425,7 +11435,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 0}
 --- !u!65 &1946599926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12845,7 +12854,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  player: {fileID: 0}
 --- !u!65 &2129257231
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -9,8 +9,6 @@ namespace LiquidSnake.LevelObjects
         [SerializeField]
         private UnityEvent onAreaEntered;
 
-        [SerializeField] private GameObject player;
-
         public void Reset()
         {
             gameObject.SetActive(true);
@@ -22,14 +20,6 @@ namespace LiquidSnake.LevelObjects
             {
                 onAreaEntered?.Invoke();
                 gameObject.SetActive(false);
-                if (player != null)
-                {
-                    Register reg = player.GetComponent<Register>();
-                    if (reg != null)
-                    {
-                        reg.healthSpotsAvailable.Remove(gameObject);
-                    }
-                }
             }
         }
     } // StarAreaTrigger

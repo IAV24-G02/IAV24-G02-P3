@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -62,6 +63,31 @@ public class Register : MonoBehaviour
             if (!healthSpots[i].activeSelf)
             {
                 healthSpots.RemoveAt(i);
+            }
+        }
+
+        var keysToRemove = healthSpotsAvailable
+        .Where(pair => !pair.Key.activeSelf)
+        .Select(pair => pair.Key)
+        .ToList();
+        foreach (var key in keysToRemove)
+        {
+            healthSpotsAvailable.Remove(key);
+        }
+
+        for (int i = healthSpotsAvailableList.Count - 1; i >= 0; i--)
+        {
+            if (!healthSpotsAvailableList[i].key.activeSelf)
+            {
+                healthSpotsAvailableList.RemoveAt(i);
+            }
+        }
+
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            if (!rooms[i].activeSelf)
+            {
+                rooms.RemoveAt(i);
             }
         }
     }
