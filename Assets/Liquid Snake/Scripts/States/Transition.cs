@@ -18,6 +18,6 @@ public class Transition
 
     public bool IsTriggered()
     {
-        return condition.Test();
+        return condition.IsTrue();
     }
 }

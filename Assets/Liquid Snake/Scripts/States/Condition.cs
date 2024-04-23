@@ -1,35 +1,46 @@
-public class Condition
+using LiquidSnake.Enemies;
+using UnityEngine;
+
+public class Condition : MonoBehaviour
 {
-    public virtual bool Test()
+    protected GameObject nestor;
+
+    public virtual bool IsTrue()
     {
         return true;
     }
 }
 
-public class FloatCondition : Condition
+public class NestorDetected : Condition
 {
-    private float minValue;
-    private float testValue;
-    private float maxValue;
+    private VisionSensor visionSensor;
+    LayerMask layerPlayer;
 
-    public float TestValue()
+    void Start()
     {
-        return testValue;
+        nestor = transform.gameObject;
+        Debug.Log(nestor);
+        visionSensor = nestor.GetComponent<VisionSensor>();
+
+        layerPlayer = LayerMask.GetMask("Player");
     }
 
-    public override bool Test()
+
+    public override bool IsTrue()
     {
-        return minValue <= testValue && testValue <= maxValue;
+        return visionSensor.GetClosestTarget().layer == layerPlayer; 
     }
 }
 
-public class AndCondition : Condition
+public class BulletsReloaded : Condition
 {
-    Condition conditionA;
-    Condition conditionB;
-
-    public override bool Test()
+    void Start()
     {
-        return conditionA.Test() && conditionB.Test();
+        
+    }
+
+    public override bool IsTrue()
+    {
+        return true;
     }
 }

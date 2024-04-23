@@ -9,27 +9,34 @@ public class StateMachine : MonoBehaviour
     State initialState;
     State currentState;
 
+    List<Action> currentActions;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        initialState = new Patrol();
         currentState = initialState;
     }
 
     void Update()
     {
-        GetAllActions();
+        currentActions = GetAllActions();
+        foreach (Action action in currentActions)
+        {
+            action.Update();
+        }
     }
 
     // Update is called once per frame
     List<Action> GetAllActions()
     {
-        List<Action> actions;
+        List<Action> actions = new List<Action>();
 
-        // Assume no transition is triggered.
+        // Se asume que ninguna transición ha sido activada
         Transition triggered = null;
 
-        // Check through each transition and store the first
-        // one that triggers.
+        // Analiza cada transición y guarda la primera
+        // que se active
 
         foreach (Transition transition in currentState.GetTransitions())
         {
@@ -42,18 +49,18 @@ public class StateMachine : MonoBehaviour
         if (triggered != null)
         {
             State targetState = triggered.GetTargetState();
-            // Add the exit action of the old state, the
-            // transition action and the entry for the new state.
-            actions = currentState.GetExitActions();
+            // Añade la acción saliente al antiguo estado, la
+            // acción de transición y la entrante para el nuevo estado
+            // actions = currentState.GetExitActions();
             actions.AddRange(triggered.GetActions());
-            actions.AddRange(targetState.GetEntryActions());
+            // actions.AddRange(targetState.GetEntryActions());
 
-            // Complete the transition and return the action list.
+            // Completa la transición y devuelve una lista de acciones
             currentState = targetState;
             return actions;
         }
         
-        // Otherwise just return the current state’s actions.
+        // En otro caso solo devuelve las acciones del estado actual
         else
         {
             return currentState.GetActions();

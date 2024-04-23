@@ -11,7 +11,7 @@ public class Action : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         
     }
