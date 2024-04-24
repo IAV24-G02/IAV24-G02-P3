@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace LiquidSnake.LevelObjects
 {
-    public class StarAreaTrigger : MonoBehaviour, IResetteable
+    public class WaypointTrigger : MonoBehaviour, IResetteable
     {
         [SerializeField]
         private UnityEvent onAreaEntered;
@@ -19,14 +19,12 @@ namespace LiquidSnake.LevelObjects
             if (other.gameObject.CompareTag("Player"))
             {
                 onAreaEntered?.Invoke();
-                gameObject.SetActive(false);
             }
             else if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 onAreaEntered?.Invoke();
-                gameObject.SetActive(false);
             }
         }
-    } // StarAreaTrigger
+    } // WaypointTrigger
 
 } // namespace LiquidSnake.LevelObjects

@@ -41,19 +41,34 @@ namespace LiquidSnake.BT.Actions
                 if (nextWaypoint == null)
                 {
                     Register register = gameObject.GetComponent<Register>();
-                    if (register != null && register.rooms.Count > 0)
+                    if (register != null)
                     {
-                        nextWaypoint = register.rooms[0];
+                        if (register.rooms.Count > 0)
+                        {
+                            nextWaypoint = register.rooms[0];
+                        }
+                        else if (register.waypoints.Count > 0)
+                        {
+                            int i = register.waypoints.Count - 1;
+                            bool found = false;
+                            while (i >= 0 && !found)
+                            {
+                                if (register.waypoints[i].activeSelf)
+                                {
+                                    nextWaypoint = register.waypoints[i];
+                                    found = true;
+                                }
+                                --i;
+                            }
+                        }
                     }
                 }
-                
             }
             base.OnStart();
         }
 
         public override TaskStatus OnUpdate()
         {
-            Debug.Log(currentWaypoint);
             base.OnUpdate();
             return currentWaypoint != null ? TaskStatus.COMPLETED : TaskStatus.FAILED;
         }

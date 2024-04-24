@@ -16,6 +16,14 @@ public class TurnAroundAndRegister : GOAction
     [Help("visionSensorObject")]
     public GameObject visionSensor;
 
+    [InParam("currentObject")]
+    [Help("currentObject")]
+    public GameObject currentObject;
+
+    [InParam("maxRotation")]
+    [Help("maxRotation")]
+    public float maxRotation;
+
     private Quaternion _initialRotation;
     private float _currentRotation;
     private VisionSensor _visionSensor;
@@ -54,9 +62,10 @@ public class TurnAroundAndRegister : GOAction
         GameObject closestTarget = _visionSensor.GetClosestTarget();
         if (closestTarget != null && _register != null)
         {
-            if (closestTarget.CompareTag("SF_Door") && !_register.doors.Contains(closestTarget))
+            if (closestTarget.CompareTag("SF_Door"))
             {
-                _register.doors.Add(closestTarget);
+                if (!_register.doors.Contains(closestTarget)) _register.doors.Add(closestTarget);
+                if (!_register.rooms.Contains(closestTarget)) _register.rooms.Add(closestTarget);
             }
             else if (closestTarget.CompareTag("Button") && !_register.buttons.Contains(closestTarget))
             {
@@ -79,15 +88,20 @@ public class TurnAroundAndRegister : GOAction
         float rotationThisFrame = rotationSpeed * Time.deltaTime;
         _currentRotation += rotationThisFrame;
 
-        if (_currentRotation > 360f)
+        if (_currentRotation > maxRotation)
         {
-            _currentRotation = 360f;
+            _currentRotation = maxRotation;
         }
 
         gameObject.transform.rotation = _initialRotation * Quaternion.Euler(0, _currentRotation, 0);
 
-        if (_currentRotation >= 360f)
+        if (_currentRotation >= maxRotation)
         {
+            // Indica que ya lo ha visitado
+            if (_register.waypoints.Contains(currentObject))
+            {
+                _register.waypoints.Find(x => x == currentObject).SetActive(false);
+            }
             return TaskStatus.COMPLETED;
         }
 

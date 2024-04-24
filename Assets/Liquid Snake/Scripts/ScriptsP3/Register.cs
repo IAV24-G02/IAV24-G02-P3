@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -34,23 +35,22 @@ public class Register : MonoBehaviour
 
     private void Update()
     {
+        List<GameObject> doorsToRemove = new List<GameObject>();
         for (int i = 0; i < doors.Count; i++)
         {
             MeshRenderer meshRenderer = doors[i].GetComponent<MeshRenderer>();
-            if (meshRenderer != null)
+            if (meshRenderer == null || !meshRenderer.enabled)
             {
-                if (!meshRenderer.enabled)
-                {
-                    doors.RemoveAt(i);
-                }
-            }
-            else
-            {
-                doors.RemoveAt(i);
+                doorsToRemove.Add(doors[i]);
             }
         }
+        foreach (var door in doorsToRemove)
+        {
+            doors.Remove(door);
+        }
 
-        for (int i = 0; i < buttons.Count; i++)
+
+        for (int i = buttons.Count - 1; i >= 0; i--)
         {
             if (!buttons[i].activeSelf)
             {
@@ -58,7 +58,7 @@ public class Register : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < healthSpots.Count; i++)
+        for (int i = healthSpots.Count - 1; i >= 0; i--)
         {
             if (!healthSpots[i].activeSelf)
             {
@@ -83,12 +83,20 @@ public class Register : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < rooms.Count; i++)
+        for (int i = rooms.Count - 1; i >= 0; i--)
         {
             if (!rooms[i].activeSelf)
             {
                 rooms.RemoveAt(i);
             }
+        }
+    }
+
+    public void AddWaypoint(GameObject wayPoint)
+    {
+        if (!waypoints.Contains(wayPoint))
+        {
+            waypoints.Add(wayPoint);
         }
     }
 }

@@ -36,13 +36,27 @@ namespace BBCore.Conditions
 
             if (register.doors.Count > 0 && register.buttons.Count > 0)
             {
-                if ((register.doors[0].name == "BlueSecurityGateBeams" && register.buttons[0].name == "BlueButton") || 
-                    (register.doors[0].name == "RedSecurityGateBeams" && register.buttons[0].name == "RedButton") ||
-                    (register.doors[0].name == "WhiteSecurityGateBeams" && register.buttons[0].name == "WhiteButton") ||
-                    (register.doors[0].name == "GreenSecurityGateBeams" && register.buttons[0].name == "GreenButton"))
+                int i = 0;
+                bool found = false;
+                while (i < register.doors.Count && !found)
                 {
-                    door = register.doors[0];
-                    button = register.buttons[0];
+                    door = register.doors[i];
+                    string doorName = door.name;
+                    int j = 0;
+                    while (j < register.buttons.Count && !found)
+                    {
+                        string buttonName = register.buttons[j].name;
+                        if ((doorName == "BlueSecurityGateBeams" && buttonName == "BlueButton") ||
+                        (doorName == "RedSecurityGateBeams" && buttonName == "RedButton") ||
+                        (doorName == "WhiteSecurityGateBeams" && buttonName == "WhiteButton") ||
+                        (doorName == "GreenSecurityGateBeams" && buttonName == "GreenButton"))
+                        {
+                            button = register.buttons[j];
+                            found = true;
+                        }
+                        ++j;
+                    }
+                    ++i;
                 }
             }
             return door != null && button != null;
