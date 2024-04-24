@@ -45,7 +45,18 @@ namespace LiquidSnake.BT.Actions
                     {
                         if (register.rooms.Count > 0)
                         {
-                            nextWaypoint = register.rooms[0];
+                            if (register.rooms[0].tag == "SF_Door")
+                            {
+                                MeshRenderer meshRenderer = register.rooms[0].GetComponent<MeshRenderer>();
+                                if (meshRenderer == null || !meshRenderer.enabled)
+                                {
+                                    nextWaypoint = register.rooms[0];
+                                }
+                            }
+                            else
+                            {
+                                nextWaypoint = register.rooms[0];
+                            }
                         }
                         else if (register.waypoints.Count > 0)
                         {
