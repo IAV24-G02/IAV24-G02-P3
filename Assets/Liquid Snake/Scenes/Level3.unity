@@ -603,6 +603,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5532601290797521274, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6491769407555352987, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
       propertyPath: originallyEnabled
@@ -616,7 +621,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1120560700}
   m_SourcePrefab: {fileID: 100100000, guid: f810e62df191bd3409d47dc6b8d95ac7, type: 3}
 --- !u!4 &132165482 stripped
 Transform:
@@ -630,7 +639,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 132165481}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1120560695}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ae3a817564d19442b128c358a2c8a4f, type: 3}
@@ -998,9 +1007,11 @@ GameObject:
   m_Component:
   - component: {fileID: 208622037}
   - component: {fileID: 208622038}
-  m_Layer: 0
+  - component: {fileID: 208622040}
+  - component: {fileID: 208622039}
+  m_Layer: 3
   m_Name: WaypointInRoom4-3
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1033,6 +1044,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 1627311856}
+--- !u!114 &208622039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208622036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 208622036}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &208622040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208622036}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &216741194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1202,7 +1261,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &220574491
 Transform:
   m_ObjectHideFlags: 0
@@ -1550,6 +1609,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1422234013}
   m_SourcePrefab: {fileID: 100100000, guid: a7889276ae15e5e4e98c2d2b879a7e74, type: 3}
+--- !u!1 &301737902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1767997205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &314712565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1643,6 +1708,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5532601290797521274, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6491769407555352987, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
       propertyPath: originallyEnabled
@@ -1656,7 +1726,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 447437582}
   m_SourcePrefab: {fileID: 100100000, guid: f810e62df191bd3409d47dc6b8d95ac7, type: 3}
 --- !u!114 &314712567 stripped
 MonoBehaviour:
@@ -2247,9 +2321,11 @@ GameObject:
   m_Component:
   - component: {fileID: 390816870}
   - component: {fileID: 390816871}
-  m_Layer: 0
+  - component: {fileID: 390816873}
+  - component: {fileID: 390816872}
+  m_Layer: 3
   m_Name: WaypointInRoom6-3
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2281,7 +2357,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1898909500}
+--- !u!114 &390816872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390816869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 390816869}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &390816873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390816869}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &404669173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3432156269681320149, guid: 1035980c7ef596f4eaf64a260f8784b3,
@@ -2511,6 +2635,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 314712565}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &447437582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447437577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypoint: {fileID: 859801663}
 --- !u!1 &466182127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,9 +2660,9 @@ GameObject:
   - component: {fileID: 466182129}
   - component: {fileID: 466182130}
   - component: {fileID: 466182131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaypointInRoom2-2
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2630,9 +2767,9 @@ GameObject:
   - component: {fileID: 502615259}
   - component: {fileID: 502615260}
   - component: {fileID: 502615261}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaypointInRoom2-1
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3236,6 +3373,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5532601290797521274, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6491769407555352987, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
       propertyPath: originallyEnabled
@@ -3249,7 +3391,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 719362554}
   m_SourcePrefab: {fileID: 100100000, guid: f810e62df191bd3409d47dc6b8d95ac7, type: 3}
 --- !u!114 &637568344 stripped
 MonoBehaviour:
@@ -3273,9 +3419,11 @@ GameObject:
   m_Component:
   - component: {fileID: 661039381}
   - component: {fileID: 661039382}
-  m_Layer: 0
+  - component: {fileID: 661039384}
+  - component: {fileID: 661039383}
+  m_Layer: 3
   m_Name: WaypointInRoom8-1
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3307,7 +3455,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1088437015}
+--- !u!65 &661039383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661039380}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &661039384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661039380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 661039380}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &662280224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,9 +3689,11 @@ GameObject:
   m_Component:
   - component: {fileID: 688652990}
   - component: {fileID: 688652991}
-  m_Layer: 0
+  - component: {fileID: 688652993}
+  - component: {fileID: 688652992}
+  m_Layer: 3
   m_Name: WaypointInRoom6-1
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3527,7 +3725,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 0}
+--- !u!114 &688652992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688652989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 688652989}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &688652993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688652989}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &690434929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1360539239201499588, guid: e8b46424844afce4cb48a73f140db5db,
@@ -3618,9 +3864,11 @@ GameObject:
   m_Component:
   - component: {fileID: 700958072}
   - component: {fileID: 700958073}
-  m_Layer: 0
+  - component: {fileID: 700958075}
+  - component: {fileID: 700958074}
+  m_Layer: 3
   m_Name: WaypointInRoom7-3
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3652,7 +3900,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 0}
+--- !u!114 &700958074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700958071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 700958071}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &700958075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700958071}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &710148277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3908,6 +4204,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 637568342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &719362554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719362549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypoint: {fileID: 1102742665}
 --- !u!1001 &726076534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4087,9 +4396,11 @@ GameObject:
   m_Component:
   - component: {fileID: 745709089}
   - component: {fileID: 745709090}
-  m_Layer: 0
+  - component: {fileID: 745709092}
+  - component: {fileID: 745709091}
+  m_Layer: 3
   m_Name: WaypointInRoom4-2
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4122,6 +4433,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 208622036}
+--- !u!65 &745709091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745709088}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &745709092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745709088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 745709088}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &749298579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73ffbc06802a247cfb1b26f4ee67eba8,
@@ -4680,9 +5039,11 @@ GameObject:
   m_Component:
   - component: {fileID: 859801664}
   - component: {fileID: 859801665}
-  m_Layer: 0
+  - component: {fileID: 859801667}
+  - component: {fileID: 859801666}
+  m_Layer: 3
   m_Name: WaypointInRoom5-1
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4714,7 +5075,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 0}
+--- !u!65 &859801666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859801663}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &859801667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859801663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 859801663}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &861387214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 540203906306712356, guid: ca405b6cbaa41dc419fcbc8d407b0554,
@@ -5410,7 +5819,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &892836965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5705,9 +6114,11 @@ GameObject:
   m_Component:
   - component: {fileID: 910902998}
   - component: {fileID: 910902999}
-  m_Layer: 0
+  - component: {fileID: 910903001}
+  - component: {fileID: 910903000}
+  m_Layer: 3
   m_Name: WaypointInRoom4-6
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5740,6 +6151,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 1108651249}
+--- !u!114 &910903000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910902997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 910902997}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &910903001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910902997}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &911822701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1360539239201499588, guid: e8b46424844afce4cb48a73f140db5db,
@@ -5790,7 +6249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 957410620}
 --- !u!1001 &932699270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6122,9 +6581,11 @@ GameObject:
   m_Component:
   - component: {fileID: 957410621}
   - component: {fileID: 957410622}
-  m_Layer: 0
+  - component: {fileID: 957410624}
+  - component: {fileID: 957410623}
+  m_Layer: 3
   m_Name: WaypointInRoom9-1
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6156,7 +6617,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 0}
+--- !u!114 &957410623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957410620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 957410620}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &957410624
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957410620}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &987772592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,9 +6676,11 @@ GameObject:
   m_Component:
   - component: {fileID: 987772593}
   - component: {fileID: 987772594}
+  - component: {fileID: 987772596}
+  - component: {fileID: 987772595}
   m_Layer: 0
   m_Name: WaypointInDoor3
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6201,7 +6712,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 390816869}
+--- !u!65 &987772595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987772592}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &987772596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987772592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef129e01e2f7b834d89a6771ecf3e603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &994032860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6613,9 +7160,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1088437016}
   - component: {fileID: 1088437017}
-  m_Layer: 0
+  - component: {fileID: 1088437019}
+  - component: {fileID: 1088437018}
+  m_Layer: 3
   m_Name: WaypointInRoom8-2
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6647,7 +7196,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1116797673}
+--- !u!114 &1088437018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088437015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1088437015}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &1088437019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088437015}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1090929905
 GameObject:
   m_ObjectHideFlags: 0
@@ -6728,9 +7325,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1102742666}
   - component: {fileID: 1102742667}
-  m_Layer: 0
+  - component: {fileID: 1102742669}
+  - component: {fileID: 1102742668}
+  m_Layer: 3
   m_Name: WaypointInRoom7-1
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6762,7 +7361,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1990106375}
+--- !u!114 &1102742668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102742665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1102742665}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &1102742669
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102742665}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1108651249
 GameObject:
   m_ObjectHideFlags: 0
@@ -6773,9 +7420,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1108651250}
   - component: {fileID: 1108651251}
-  m_Layer: 0
+  - component: {fileID: 1108651253}
+  - component: {fileID: 1108651252}
+  m_Layer: 3
   m_Name: WaypointInRoom4-5
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6808,6 +7457,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 0}
+--- !u!65 &1108651252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108651249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1108651253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108651249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1108651249}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1108664567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6852,7 +7549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 661039380}
 --- !u!1 &1116797673
 GameObject:
   m_ObjectHideFlags: 0
@@ -6863,9 +7560,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1116797674}
   - component: {fileID: 1116797675}
-  m_Layer: 0
+  - component: {fileID: 1116797677}
+  - component: {fileID: 1116797676}
+  m_Layer: 3
   m_Name: WaypointInRoom8-3
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6897,7 +7596,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 1433104718}
+--- !u!65 &1116797676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116797673}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1116797677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116797673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1116797673}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &1120560695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+    type: 3}
+  m_PrefabInstance: {fileID: 132165481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1120560700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120560695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypoint: {fileID: 957410620}
 --- !u!1001 &1140035292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7584,9 +8350,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1265028220}
   - component: {fileID: 1265028221}
-  m_Layer: 0
+  - component: {fileID: 1265028223}
+  - component: {fileID: 1265028222}
+  m_Layer: 3
   m_Name: WaypointInRoom4-1
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7619,6 +8387,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 745709088}
+--- !u!114 &1265028222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265028219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1265028219}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &1265028223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265028219}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1296122502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9164618371890346855, guid: 3bf7e38931121bb48b2ba13eac6baa48,
@@ -8147,9 +8963,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1433104719}
   - component: {fileID: 1433104720}
-  m_Layer: 0
+  - component: {fileID: 1433104722}
+  - component: {fileID: 1433104721}
+  m_Layer: 3
   m_Name: WaypointInRoom8-4
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8181,7 +8999,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 0}
+--- !u!65 &1433104721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433104718}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1433104722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433104718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1433104718}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1438289154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73ffbc06802a247cfb1b26f4ee67eba8,
@@ -9469,9 +10335,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1627311857}
   - component: {fileID: 1627311858}
-  m_Layer: 0
+  - component: {fileID: 1627311860}
+  - component: {fileID: 1627311859}
+  m_Layer: 3
   m_Name: WaypointInRoom4-4
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9504,6 +10372,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 910902997}
+--- !u!65 &1627311859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627311856}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1627311860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627311856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1627311856}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1630359478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10414,6 +11330,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5532601290797521274, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6491769407555352987, guid: f810e62df191bd3409d47dc6b8d95ac7,
         type: 3}
       propertyPath: originallyEnabled
@@ -10427,7 +11348,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3478805936769509018, guid: f810e62df191bd3409d47dc6b8d95ac7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1767997214}
   m_SourcePrefab: {fileID: 100100000, guid: f810e62df191bd3409d47dc6b8d95ac7, type: 3}
 --- !u!4 &1767997206 stripped
 Transform:
@@ -10441,12 +11366,25 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1767997205}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 301737902}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ae3a817564d19442b128c358a2c8a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1767997214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301737902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypoint: {fileID: 0}
 --- !u!1 &1771271934 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
@@ -11353,9 +12291,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1898909502}
   - component: {fileID: 1898909501}
-  m_Layer: 0
+  - component: {fileID: 1898909504}
+  - component: {fileID: 1898909503}
+  m_Layer: 3
   m_Name: WaypointInRoom6-2
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11372,7 +12312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 688652989}
 --- !u!4 &1898909502
 Transform:
   m_ObjectHideFlags: 0
@@ -11388,6 +12328,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258972008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1898909503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898909500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1898909504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898909500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1898909500}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1899670490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12087,7 +13075,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1963773555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12324,9 +13312,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1990106376}
   - component: {fileID: 1990106377}
-  m_Layer: 0
+  - component: {fileID: 1990106379}
+  - component: {fileID: 1990106378}
+  m_Layer: 3
   m_Name: WaypointInRoom7-2
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12358,7 +13348,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c14176f4cc7104a9bf9ec216088c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaypoint: {fileID: 899608701}
+  nextWaypoint: {fileID: 700958071}
+--- !u!65 &1990106378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990106375}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1990106379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990106375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1990106375}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2009000878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12467,9 +13505,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2011648535}
   - component: {fileID: 2011648536}
-  m_Layer: 0
+  - component: {fileID: 2011648538}
+  - component: {fileID: 2011648537}
+  m_Layer: 3
   m_Name: WaypointInRoom1-0
-  m_TagString: Untagged
+  m_TagString: Waypoint
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12502,6 +13542,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 662280224}
+--- !u!65 &2011648537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011648534}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2011648538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011648534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d471bb5bfa72e4ebf3b753ff666755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAreaEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307216663}
+        m_TargetAssemblyTypeName: Register, Assembly-CSharp
+        m_MethodName: AddWaypoint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2011648534}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2014787160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7002655100183500375, guid: 42d0a2a58d120c842bedf772dc16a7e4,
@@ -13402,7 +14490,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2140912242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13478,6 +14566,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087890557383447504, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087890557383447504, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087890557383447504, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087890557383447504, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 5571418419492018397, guid: 547a0ba4f9d639a4dbb335cdd857d96a,
         type: 3}
