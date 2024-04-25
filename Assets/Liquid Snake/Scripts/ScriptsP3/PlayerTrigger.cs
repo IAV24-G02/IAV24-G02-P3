@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace LiquidSnake.LevelObjects
 {
-    public class WaypointTrigger : MonoBehaviour, IResetteable
+    public class PlayerTrigger : MonoBehaviour, IResetteable
     {
         [SerializeField]
         private UnityEvent onAreaEntered;
@@ -25,6 +25,6 @@ namespace LiquidSnake.LevelObjects
                 onAreaEntered?.Invoke();
             }
         }
-    } // WaypointTrigger
+    } // PlayerTrigger
 
 } // namespace LiquidSnake.LevelObjects

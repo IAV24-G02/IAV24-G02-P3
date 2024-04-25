@@ -20,12 +20,27 @@ namespace BBUnity.Actions
 
         private Transform targetTransform;
 
+        [InParam("tasksCounter")]
+        [Help("Shows the number of success tasks and failed tasks in the UI")]
+        public GameObject tasksCounter;
+
+        private UpdateMetrics updateMetrics;
+
         /// <summary>Initialization Method of MoveToGameObject.</summary>
         /// <remarks>Check if GameObject object exists and NavMeshAgent, if there is no NavMeshAgent, the default one is added.</remarks>
         public override void OnStart()
         {
+            if (tasksCounter != null)
+            {
+                updateMetrics = tasksCounter.GetComponent<UpdateMetrics>();
+            }
+
             if (target == null)
             {
+                if (updateMetrics != null)
+                {
+                    updateMetrics.OnTaskFailed();
+                }
                 Debug.LogError("The movement target of this game object is null", gameObject);
                 return;
             }
@@ -38,7 +53,7 @@ namespace BBUnity.Actions
                 navAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
             }
 			navAgent.SetDestination(targetTransform.position);
-            
+
             #if UNITY_5_6_OR_NEWER
                 navAgent.isStopped = false;
             #else
@@ -52,9 +67,21 @@ namespace BBUnity.Actions
         public override TaskStatus OnUpdate()
         {
             if (target == null)
+            {
+                if (updateMetrics != null)
+                {
+                    updateMetrics.OnTaskFailed();
+                }
                 return TaskStatus.FAILED;
+            }
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+            {
+                if (updateMetrics != null)
+                {
+                    updateMetrics.OnTaskCompleted();
+                }
                 return TaskStatus.COMPLETED;
+            }
             else if (navAgent.destination != targetTransform.position)
                 navAgent.SetDestination(targetTransform.position);
             return TaskStatus.RUNNING;

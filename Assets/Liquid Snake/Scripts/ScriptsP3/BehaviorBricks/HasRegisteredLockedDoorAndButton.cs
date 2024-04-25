@@ -20,6 +20,10 @@ namespace BBCore.Conditions
         [Help("button")]
         public GameObject button;
 
+        [OutParam("currentWaypoint")]
+        [Help("currentWaypoint")]
+        public GameObject currentWaypoint;
+
         public override bool Check()
         {
             if (target == null)
@@ -59,6 +63,7 @@ namespace BBCore.Conditions
                     ++i;
                 }
             }
+            currentWaypoint = door;
             return door != null && button != null;
         }
     }

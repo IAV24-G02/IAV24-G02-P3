@@ -168,7 +168,7 @@ flowchart TD
     C --> F[TurnAroundAndRegister]
 ```
 
-Notas:
+## Notas
 
 - Cada vez que se realice el TurnAround, se registran: puertas bloqueadas, botones, la salida, puntos de salud, escondites y como el TurnAround se realiza en un WayPoint, establecemos que ese WayPoint ya está visitado.
 
@@ -177,6 +177,12 @@ Notas:
 - Se guardan los WayPoints sin visitar porque puede haber casos como que un guardia persiga a `Néstor` o que `Néstor` esté bajo de vida y necesite ir a un punto de salud o que haya desbloqueado una puerta.
 
 - Cuando se han registrado puertas cerradas se comprueban con el registro de botones si coinciden en color. Si coinciden, `Néstor` iría al botón y secuencialmente a la puerta. Esto dejaría algunas salas sin visitar, pero como tenemos el registro de WayPoints, iría al primer WayPoint sin visitar.
+
+- Cuando `Néstor` termina de visitar todos los waypoints de la sala en la que se encuentra actualmente o se ve interrumpida por otra tarea, se dirige al primer waypoint que dejó sin visitar y luego continúa visitando las salas sin visitar.
+
+- Las tareas fallidas corresponden a la necesidad de buscar un waypoint para seguir patrullando.
+
+- Las tareas completadas corresponden a las llegadas a un punto de salud, a un botón, a un escondite o a la salida y en el caso del apartado E. de haber realizado el TurnAround por completo en cada WayPoint y dejarlo visitado.
 
 ## Pruebas y métricas
 

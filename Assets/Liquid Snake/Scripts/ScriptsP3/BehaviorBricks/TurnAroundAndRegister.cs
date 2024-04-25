@@ -8,6 +8,12 @@ using UnityEngine;
 [Help("Smoothly rotates the character 360 degrees")]
 public class TurnAroundAndRegister : GOAction
 {
+    [InParam("tasksCounter")]
+    [Help("tasksCounter")]
+    public GameObject tasksCounter;
+
+    UpdateMetrics updateMetrics;
+
     [InParam("rotationSpeed")]
     [Help("Rotation speed")]
     public float rotationSpeed;
@@ -52,6 +58,10 @@ public class TurnAroundAndRegister : GOAction
         else
         {
             _register.enabled = true;
+        }
+        if (tasksCounter != null)
+        {
+            updateMetrics = tasksCounter.GetComponent<UpdateMetrics>();
         }
     }
 
@@ -101,6 +111,11 @@ public class TurnAroundAndRegister : GOAction
             if (_register.waypoints.Contains(currentObject))
             {
                 _register.waypoints.Find(x => x == currentObject).SetActive(false);
+            }
+
+            if (updateMetrics != null)
+            {
+                updateMetrics.OnTaskCompleted();
             }
             return TaskStatus.COMPLETED;
         }

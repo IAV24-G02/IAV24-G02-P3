@@ -22,8 +22,19 @@ namespace LiquidSnake.BT.Actions
         [Help("Next waypoint")]
         public GameObject nextWaypoint = null;
 
+        [InParam("tasksCounter")]
+        [Help("Shows the number of success tasks and failed tasks in the UI")]
+        public GameObject tasksCounter;
+
+        private UpdateMetrics updateMetrics;
+
         public override void OnStart()
         {
+            if (tasksCounter != null)
+            {
+                updateMetrics = tasksCounter.GetComponent<UpdateMetrics>();
+            }
+
             Register register = gameObject.GetComponent<Register>();
             // Caso 1: no tenemos seleccionado ningún waypoint, utilizamos el primer waypoint sin visitar
             // o el primer waypoint de habitacion sin visitar o waypoint inicial
@@ -71,6 +82,10 @@ namespace LiquidSnake.BT.Actions
                     }
                     else if (initialWaypoint == null)
                     {
+                        if (updateMetrics != null)
+                        {
+                            updateMetrics.OnTaskFailed();
+                        }
                         Debug.LogError($"initialWaypoint has not been set in enemy with name {gameObject.name}");
                         return;
                     }
@@ -91,6 +106,15 @@ namespace LiquidSnake.BT.Actions
         public override TaskStatus OnUpdate()
         {
             base.OnUpdate();
+            if (tasksCounter != null)
+            {
+                updateMetrics = tasksCounter.GetComponent<UpdateMetrics>();
+                if (updateMetrics != null)
+                {
+                    if (currentWaypoint != null) updateMetrics.OnTaskCompleted();
+                    else updateMetrics.OnTaskFailed();
+                }
+            }
             return currentWaypoint != null ? TaskStatus.COMPLETED : TaskStatus.FAILED;
         }
     }

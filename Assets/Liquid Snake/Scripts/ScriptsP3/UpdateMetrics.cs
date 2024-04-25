@@ -54,11 +54,11 @@ public class UpdateMetrics : MonoBehaviour
         // Time
         timeValueText.text = Time.time.ToString("F2");
         // Success Tasks
-        //successTasksValueText.text = successTasksValue.ToString();
+        successTasksValueText.text = successTasksValue.ToString();
         // Failed Tasks
-        //failedTasksValueText.text = failedTasksValue.ToString();
+        failedTasksValueText.text = failedTasksValue.ToString();
         // Number Tasks
-        //numberTasksValueText.text = numberTasksValue.ToString();
+        numberTasksValueText.text = numberTasksValue.ToString();
         // Number States
         //numberStatesValueText.text = numberStatesValue.ToString();
     }
@@ -66,5 +66,17 @@ public class UpdateMetrics : MonoBehaviour
     public void OnInteracted()
     {
         ++interactedValue;
+    }
+
+    public void OnTaskCompleted()
+    {
+        ++successTasksValue;
+        ++numberTasksValue;
+    }
+
+    public void OnTaskFailed()
+    {
+        ++failedTasksValue;
+        ++numberTasksValue;
     }
 }

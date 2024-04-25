@@ -22,38 +22,43 @@ MonoBehaviour:
     isBlackboard=\"False\" />\r\n          <entry name=\"visionSensorObject\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"False\" />\r\n          <entry name=\"rotationSpeed\" type=\"System.Single\"
     isBlackboard=\"False\" value=\"35\" />\r\n          <entry name=\"maxRotation\"
-    type=\"System.Single\" isBlackboard=\"False\" value=\"0\" />\r\n        </inputValues>\r\n     
-    </inputParams>\r\n      <outputParams>\r\n        <outputValues>\r\n         
-    <entry name=\"currentWaypoint\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
-    />\r\n        </outputValues>\r\n      </outputParams>\r\n      <localParams
-    />\r\n    </BehaviorTree>\r\n    <RepeatDecorator id=\"5\" loops=\"-1\" policy=\"ContinueWhenChildFails\">\r\n     
-    <child>\r\n        <SequenceNode id=\"1\" />\r\n      </child>\r\n      <inputParams
-    />\r\n      <outputParams />\r\n      <localParams />\r\n    </RepeatDecorator>\r\n   
-    <SequenceNode id=\"1\">\r\n      <children>\r\n        <elem>\r\n          <ActionNode
-    id=\"2\" />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"3\"
-    />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"7\" />\r\n       
-    </elem>\r\n      </children>\r\n      <inputParams />\r\n      <outputParams
-    />\r\n      <localParams />\r\n    </SequenceNode>\r\n    <ActionNode id=\"2\"
-    action=\"LiquidSnake/ChooseNextWaypoint\">\r\n      <inputParams>\r\n       
+    type=\"System.Single\" isBlackboard=\"False\" value=\"0\" />\r\n          <entry
+    name=\"tasksCounter\" type=\"UnityEngine.GameObject\" isBlackboard=\"False\"
+    />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams>\r\n       
+    <outputValues>\r\n          <entry name=\"currentWaypoint\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"True\" />\r\n        </outputValues>\r\n      </outputParams>\r\n     
+    <localParams />\r\n    </BehaviorTree>\r\n    <RepeatDecorator id=\"5\" loops=\"-1\"
+    policy=\"ContinueWhenChildFails\">\r\n      <child>\r\n        <SequenceNode
+    id=\"1\" />\r\n      </child>\r\n      <inputParams />\r\n      <outputParams
+    />\r\n      <localParams />\r\n    </RepeatDecorator>\r\n    <SequenceNode id=\"1\">\r\n     
+    <children>\r\n        <elem>\r\n          <ActionNode id=\"2\" />\r\n       
+    </elem>\r\n        <elem>\r\n          <ActionNode id=\"3\" />\r\n        </elem>\r\n       
+    <elem>\r\n          <ActionNode id=\"7\" />\r\n        </elem>\r\n      </children>\r\n     
+    <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </SequenceNode>\r\n   
+    <ActionNode id=\"2\" action=\"LiquidSnake/ChooseNextWaypoint\">\r\n      <inputParams>\r\n       
     <inputValues>\r\n          <entry name=\"initialWaypoint\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"initialWaypoint\" />\r\n          <entry name=\"currentWaypoint\"
     type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"currentWaypoint\"
     />\r\n          <entry name=\"nextRoom\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
-    blackboard=\"nextRoom\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
-    <outputParams>\r\n        <outputValues>\r\n          <entry name=\"NextWaypoint\"
-    type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"currentWaypoint\"
-    />\r\n        </outputValues>\r\n      </outputParams>\r\n      <localParams
-    />\r\n    </ActionNode>\r\n    <ActionNode id=\"3\" action=\"Navigation/MoveToGameObject\">\r\n     
+    blackboard=\"nextRoom\" />\r\n          <entry name=\"tasksCounter\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"True\" blackboard=\"tasksCounter\" />\r\n        </inputValues>\r\n     
+    </inputParams>\r\n      <outputParams>\r\n        <outputValues>\r\n         
+    <entry name=\"NextWaypoint\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
+    blackboard=\"currentWaypoint\" />\r\n        </outputValues>\r\n      </outputParams>\r\n     
+    <localParams />\r\n    </ActionNode>\r\n    <ActionNode id=\"3\" action=\"Navigation/MoveToGameObject\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
-    isBlackboard=\"True\" blackboard=\"currentWaypoint\" />\r\n        </inputValues>\r\n     
-    </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
-    <ActionNode id=\"7\" action=\"LiquidSnake/TurnAroundAndRegister\">\r\n      <inputParams>\r\n       
-    <inputValues>\r\n          <entry name=\"rotationSpeed\" type=\"System.Single\"
-    isBlackboard=\"True\" blackboard=\"rotationSpeed\" />\r\n          <entry name=\"visionSensorObject\"
-    type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"visionSensorObject\"
-    />\r\n          <entry name=\"maxRotation\" type=\"System.Single\" isBlackboard=\"True\"
-    blackboard=\"maxRotation\" />\r\n          <entry name=\"currentObject\" type=\"UnityEngine.GameObject\"
-    isBlackboard=\"True\" blackboard=\"currentWaypoint\" />\r\n        </inputValues>\r\n     
+    isBlackboard=\"True\" blackboard=\"currentWaypoint\" />\r\n          <entry name=\"tasksCounter\"
+    type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"tasksCounter\"
+    />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n     
+    <localParams />\r\n    </ActionNode>\r\n    <ActionNode id=\"7\" action=\"LiquidSnake/TurnAroundAndRegister\">\r\n     
+    <inputParams>\r\n        <inputValues>\r\n          <entry name=\"rotationSpeed\"
+    type=\"System.Single\" isBlackboard=\"True\" blackboard=\"rotationSpeed\" />\r\n         
+    <entry name=\"visionSensorObject\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
+    blackboard=\"visionSensorObject\" />\r\n          <entry name=\"maxRotation\"
+    type=\"System.Single\" isBlackboard=\"True\" blackboard=\"maxRotation\" />\r\n         
+    <entry name=\"currentObject\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
+    blackboard=\"currentWaypoint\" />\r\n          <entry name=\"tasksCounter\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"True\" blackboard=\"tasksCounter\" />\r\n        </inputValues>\r\n     
     </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n 
     </runtimeInfo>\r\n  <editorInfo>\r\n    <BehaviorTree id=\"0\" _name=\"NestorPatrol\"
     _description=\"\" _removeIfClosed=\"False\">\r\n      <_rootList>\r\n       
@@ -76,7 +81,7 @@ MonoBehaviour:
     <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"1\" />\r\n         
     <RepeatDecorator id=\"5\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ActionNode id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"-48.05 277.05\" name=\"LiquidSnake/ChooseNextWaypoint\" description=\"From
+    position=\"-49.3 278.3\" name=\"LiquidSnake/ChooseNextWaypoint\" description=\"From
     a list of waypoints (GameObjects), chooses the next one and stores it\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"2\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
@@ -86,7 +91,7 @@ MonoBehaviour:
     cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ActionNode id=\"3\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"7\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"439.95 272.8\" name=\"LiquidSnake/TurnAroundAndRegister\"
+    <data breakpoint=\"0\" selected=\"True\" position=\"441.2 270.3\" name=\"LiquidSnake/TurnAroundAndRegister\"
     description=\"Smoothly rotates the character 360 degrees\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"7\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
