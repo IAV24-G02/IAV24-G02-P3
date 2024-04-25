@@ -217,7 +217,7 @@ Notas:
 
 ## Ampliaciones
 
-No se han realizado ampliaciones.
+Se ha reaiza la mejora de la gestión sensorial. Se ha aplicado el sensor que tienen los guardias a `Néstor` para que pueda detectar los diferentes elementos de la escena. Estos elementos pueden ser vistos en el inspector de Unity en el componente `Register.cs` de `RobotKyle`.
 
 ## Producción
 
@@ -229,12 +229,15 @@ Las tareas se han realizado y el esfuerzo ha sido repartido entre los autores. O
 | ✔️ | Característica A | 10-04-2024 |
 | ✔️ | Característica B | 10-04-2024 |
 |  | Característica C | ..-04-2024 |
-|  | Característica D | ..-04-2024 |
-|  | Característica E | ..-04-2024 |
+| ✔️ | Característica D | 23-04-2024 |
+| ✔️ | Característica E | 25-04-2024 |
 |  |  **OTROS**  | |
-|  |  | ..-04-2024 |
+| ✔️ | Recorrido inteligente de `Néstor` de forma que visita aquello que ha dejado sin visitar cuando no encuentra un botón del mismo color que las puertas vistas. | 25-04-2024 |
+| ✔️ | Recorrido por waypoints y realización de un turn-around para registrar los objetos visionados por el sensor. | 25-04-2024 |
+| ✔️ | Durante el recorrido, si debe recuperar energía/salud, va al punto de salud y vuelve al último punto donde se encontraba. | 25-04-2024 |
 |  |  **OPCIONALES**  | |
-|  |  | ..-04-2024 |
+|  | Permite que al pulsar la barra espaciadora, el robot Néstor pueda ser controlado por el jugador mediante el ratón (clic izquierdo para moverse y clic derecho para interactuar con los elementos cercanos -botones y cápsulas de energía-).  | ..-04-2024 |
+| ✔️ | Mejora de la gestión sensorial, de manera que el protagonista vea a los personajes no necesariamente compartiendo estancia, razonando también sobre el conocimiento que le aportan esas percepciones, y mostrando realimentación visual para que quede claro lo que ha visto. | 25-04-2024 |
 
 ## Licencia
 

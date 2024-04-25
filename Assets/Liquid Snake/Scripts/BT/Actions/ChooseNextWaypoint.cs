@@ -25,7 +25,8 @@ namespace LiquidSnake.BT.Actions
         public override void OnStart()
         {
             Register register = gameObject.GetComponent<Register>();
-            // Caso 1: no tenemos seleccionado ningún waypoint, utilizamos el waypoint inicial
+            // Caso 1: no tenemos seleccionado ningún waypoint, utilizamos el primer waypoint sin visitar
+            // o el primer waypoint de habitacion sin visitar o waypoint inicial
             if (currentWaypoint == null)
             {
                 bool found = false;
@@ -47,17 +48,25 @@ namespace LiquidSnake.BT.Actions
                 {
                     if (register.rooms.Count > 0)
                     {
-                        if (register.rooms[0].tag == "SF_Door")
+                        int j = 0;
+                        bool foundRoom = false;
+                        while (j < register.rooms.Count && !foundRoom)
                         {
-                            MeshRenderer meshRenderer = register.rooms[0].GetComponent<MeshRenderer>();
-                            if (meshRenderer == null || !meshRenderer.enabled)
+                            if (register.rooms[j].tag == "SF_Door")
                             {
-                                nextWaypoint = register.rooms[0];
+                                MeshRenderer meshRenderer = register.rooms[j].GetComponent<MeshRenderer>();
+                                if (meshRenderer == null || !meshRenderer.enabled)
+                                {
+                                    nextWaypoint = register.rooms[j];
+                                    foundRoom = true;
+                                }
                             }
-                        }
-                        else
-                        {
-                            nextWaypoint = register.rooms[0];
+                            else
+                            {
+                                nextWaypoint = register.rooms[j];
+                                foundRoom = true;
+                            }
+                            ++j;
                         }
                     }
                     else if (initialWaypoint == null)

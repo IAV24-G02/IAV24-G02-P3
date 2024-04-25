@@ -89,6 +89,14 @@ public class Register : MonoBehaviour
             {
                 rooms.RemoveAt(i);
             }
+            if (rooms[i].tag == "SF_Door")
+            {
+                MeshRenderer meshRenderer = rooms[i].GetComponent<MeshRenderer>();
+                if (meshRenderer == null || !meshRenderer.enabled)
+                {
+                    rooms.RemoveAt(i);
+                }
+            }
         }
     }
 
