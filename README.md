@@ -170,6 +170,8 @@ flowchart TD
 
 ## Notas
 
+- Para quitar zoom de la cámara, pulsar la tecla `Z`. Dejar de pulsarla para volver al zoom original.
+
 - Cada vez que se realice el TurnAround, se registran: puertas bloqueadas, botones, la salida, puntos de salud, escondites y como el TurnAround se realiza en un WayPoint, establecemos que ese WayPoint ya está visitado.
 
 - Cada vez que entre a una nueva sala o esté en ella se registran los WayPoints correspondientes a esa sala además de guardarse los últimos WayPoints sin visitar si existen por lo habría un registro de WayPoints relacionado con si está visitado o no.
