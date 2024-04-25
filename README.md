@@ -217,7 +217,8 @@ Notas:
 
 ## Ampliaciones
 
-Se ha reaiza la mejora de la gestión sensorial. Se ha aplicado el sensor que tienen los guardias a `Néstor` para que pueda detectar los diferentes elementos de la escena. Estos elementos pueden ser vistos en el inspector de Unity en el componente `Register.cs` de `RobotKyle`.
+Se han realizado las siguiente ampliaciones:
+- La mejora de la gestión sensorial. Se ha aplicado el sensor que tienen los guardias a `Néstor` para que pueda detectar los diferentes elementos de la escena. Estos elementos pueden ser vistos en el inspector de Unity en el componente `Register.cs` de `RobotKyle`.
 
 ## Producción
 
@@ -236,7 +237,6 @@ Las tareas se han realizado y el esfuerzo ha sido repartido entre los autores. O
 | ✔️ | Recorrido por waypoints y realización de un turn-around para registrar los objetos visionados por el sensor. | 25-04-2024 |
 | ✔️ | Durante el recorrido, si debe recuperar energía/salud, va al punto de salud y vuelve al último punto donde se encontraba. | 25-04-2024 |
 |  |  **OPCIONALES**  | |
-|  | Permite que al pulsar la barra espaciadora, el robot Néstor pueda ser controlado por el jugador mediante el ratón (clic izquierdo para moverse y clic derecho para interactuar con los elementos cercanos -botones y cápsulas de energía-).  | ..-04-2024 |
 | ✔️ | Mejora de la gestión sensorial, de manera que el protagonista vea a los personajes no necesariamente compartiendo estancia, razonando también sobre el conocimiento que le aportan esas percepciones, y mostrando realimentación visual para que quede claro lo que ha visto. | 25-04-2024 |
 
 ## Licencia
@@ -251,4 +251,11 @@ Los recursos de terceros utilizados son de uso público.
 
 - *AI for Games*, Ian Millington.
 - [Liquid Snake](https://ceur-ws.org/Vol-3305/paper7.pdf)
-- Unity Asset Store: [Behavior Bricks](https://assetstore.unity.com/packages/tools/visual-scripting/behavior-bricks-74816)
+- Behavior Bricks de PadaOne Games (empresa de base tecnológica de la UCM)
+https://assetstore.unity.com/packages/tools/visual-scripting/behavior-bricks-74816
+- Unity, Navegación y Búsqueda de caminos
+https://docs.unity3d.com/es/2021.1/Manual/Navigation.html
+- Unity 2018 Artificial Intelligence Cookbook, Second Edition (Repositorio)
+https://github.com/PacktPublishing/Unity-2018-Artificial-Intelligence-Cookbook-Second-Edition 
+- Unity Artificial Intelligence Programming, 5th Edition (Repositorio)
+PacktPublishing/Unity-Artificial-Intelligence-Programming-Fifth-Edition: Unity Artificial Intelligence Programming – Fifth Edition, published by Packt (github.com)
