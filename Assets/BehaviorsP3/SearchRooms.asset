@@ -56,7 +56,7 @@ MonoBehaviour:
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"exit\" />\r\n        </inputValues>\r\n     
     </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
-    <ConditionEvalNode id=\"35\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"Basic/HasRegisteredLockedDoorAndButton\">\r\n     
+    <ConditionEvalNode id=\"35\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"Basic/HasRegisteredLockedDoorAndButton\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"playerTarget\" />\r\n        </inputValues>\r\n     
     </inputParams>\r\n      <outputParams>\r\n        <outputValues>\r\n         

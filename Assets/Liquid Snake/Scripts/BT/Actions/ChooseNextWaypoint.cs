@@ -24,56 +24,57 @@ namespace LiquidSnake.BT.Actions
 
         public override void OnStart()
         {
+            Register register = gameObject.GetComponent<Register>();
             // Caso 1: no tenemos seleccionado ningún waypoint, utilizamos el waypoint inicial
             if (currentWaypoint == null)
             {
-                if (initialWaypoint == null)
+                bool found = false;
+                if (register.waypoints.Count > 0)
                 {
-                    Debug.LogError($"initialWaypoint has not been set in enemy with name {gameObject.name}");
-                    return;
+                    int i = 0;
+                    while (i < register.waypoints.Count && !found)
+                    {
+                        if (register.waypoints[i].activeSelf && register.waypoints[i] != initialWaypoint)
+                        {
+                            currentWaypoint = register.waypoints[i];
+                            nextWaypoint = register.waypoints[i];
+                            found = true;
+                        }
+                        ++i;
+                    }
                 }
-                nextWaypoint = initialWaypoint;
+                if (!found)
+                {
+                    if (register.rooms.Count > 0)
+                    {
+                        if (register.rooms[0].tag == "SF_Door")
+                        {
+                            MeshRenderer meshRenderer = register.rooms[0].GetComponent<MeshRenderer>();
+                            if (meshRenderer == null || !meshRenderer.enabled)
+                            {
+                                nextWaypoint = register.rooms[0];
+                            }
+                        }
+                        else
+                        {
+                            nextWaypoint = register.rooms[0];
+                        }
+                    }
+                    else if (initialWaypoint == null)
+                    {
+                        Debug.LogError($"initialWaypoint has not been set in enemy with name {gameObject.name}");
+                        return;
+                    }
+                    else
+                    {
+                        nextWaypoint = initialWaypoint;
+                    }
+                }
             }
             // Caso 2: tenemos un waypoint seleccionado, utilizamos su siguiente waypoint
             else
             {
                 nextWaypoint = currentWaypoint.GetComponent<Waypoint>().nextWaypoint;
-                if (nextWaypoint == null)
-                {
-                    Register register = gameObject.GetComponent<Register>();
-                    if (register != null)
-                    {
-                        if (register.rooms.Count > 0)
-                        {
-                            if (register.rooms[0].tag == "SF_Door")
-                            {
-                                MeshRenderer meshRenderer = register.rooms[0].GetComponent<MeshRenderer>();
-                                if (meshRenderer == null || !meshRenderer.enabled)
-                                {
-                                    nextWaypoint = register.rooms[0];
-                                }
-                            }
-                            else
-                            {
-                                nextWaypoint = register.rooms[0];
-                            }
-                        }
-                        else if (register.waypoints.Count > 0)
-                        {
-                            int i = register.waypoints.Count - 1;
-                            bool found = false;
-                            while (i >= 0 && !found)
-                            {
-                                if (register.waypoints[i].activeSelf)
-                                {
-                                    nextWaypoint = register.waypoints[i];
-                                    found = true;
-                                }
-                                --i;
-                            }
-                        }
-                    }
-                }
             }
             base.OnStart();
         }
