@@ -1,0 +1,13 @@
+Estado Patrol: - 1 acción que sucede durante el estado: hacer la patrulla
+               - 1 transicion de salida: la condición es nestor detectado
+
+Estado Follow-Shoot: - 1 acción que sucede al entrar y durante el estado: seguir y disparar y recalcular la puntería
+                     - 2 transiciones de salida: se acaban las balas  | 
+                                                 no detecto a nestor  |
+
+Tanto si se acaban las balas como si dejo de detectar a nestor, ir a la base o  ir al waypoint más cercano respectivamente creo que no deberían ser estados  y deberían ser acciones de salida.
+Deberían ser acciones de salida del estado follow_shoot antes de volver al follow_shoot o antes de volver a la patrulla, respectivamente
+
+Estado Recarga: - 1 accion que sucede durante el estado: simular que le robot tarda en recargas x segundos
+                - 2 transiciones de salida: recargo y no veo a nestor (Vuelvo a patrol)
+                                            recargo y veo a nestor (Vuelvo a follow_shoot)

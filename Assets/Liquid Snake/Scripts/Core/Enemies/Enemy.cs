@@ -14,11 +14,6 @@ namespace LiquidSnake.Enemies
         //                      Variables privadas del componente
         //----------------------------------------------------------------------------
         #region Variables privadas del componente
-
-        /// <summary>
-        /// Ejecutor de comportamiento de árboles de comportamiento (Behavior Bricks)
-        /// </summary>
-        private BehaviorExecutor _executor;
         /// <summary>
         /// Nav Mesh Agent para gestionar la navegación del enemigo por el entorno.
         /// </summary>
@@ -68,7 +63,6 @@ namespace LiquidSnake.Enemies
 
         private void Awake()
         {
-            _executor = GetComponent<BehaviorExecutor>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
             _health = GetComponent<Health>();
@@ -96,9 +90,6 @@ namespace LiquidSnake.Enemies
         void IResetteable.Reset()
         {
             gameObject.SetActive(true);
-            _executor.SetBehaviorParam("currentWaypoint", initialWaypoint);
-            _executor.SetBehaviorParam("playerFound", false);
-            _executor.SetBehaviorParam("target", null);
             _navMeshAgent.Warp(initialWaypoint.position);
             _navMeshAgent.ResetPath();
         } // Reset

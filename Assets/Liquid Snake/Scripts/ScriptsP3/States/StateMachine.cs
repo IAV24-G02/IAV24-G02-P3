@@ -1,36 +1,42 @@
+using LiquidSnake.Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
+    [SerializeField]
+    GameObject initialWaypoint;
     // Estamos en un estado cada vez
 
     State initialState;
     State currentState;
 
-    List<Action> currentActions;
+    List<IAction> currentActions;
 
     // Start is called before the first frame update
     void Awake()
     {
-        initialState = new Patrol();
+        //Creas estados
+        //Creas acciones y transiciones y se las añades
+        //Crear condiciones y se las añades a las transiciones.
+        initialState = new Patrol(initialWaypoint);
         currentState = initialState;
     }
 
     void Update()
     {
         currentActions = GetAllActions();
-        foreach (Action action in currentActions)
+        foreach (IAction action in currentActions)
         {
             action.Update();
         }
     }
 
     // Update is called once per frame
-    List<Action> GetAllActions()
+    List<IAction> GetAllActions()
     {
-        List<Action> actions = new List<Action>();
+        List<IAction> actions = new List<IAction>();
 
         // Se asume que ninguna transición ha sido activada
         Transition triggered = null;
@@ -63,7 +69,7 @@ public class StateMachine : MonoBehaviour
         // En otro caso solo devuelve las acciones del estado actual
         else
         {
-            return currentState.GetActions();
+            return currentState.GetWhileActions();
         }
     }
 }

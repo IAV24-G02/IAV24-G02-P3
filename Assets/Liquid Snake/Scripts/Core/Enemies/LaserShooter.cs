@@ -37,6 +37,9 @@ namespace LiquidSnake.Enemies
         /// </summary>
         [SerializeField]
         private float cooldown = 0.3f;
+
+        [SerializeField]
+        const int numberOfBullets = 10;
         #endregion
 
         //--------------------------------------------------------------------------------
@@ -47,6 +50,7 @@ namespace LiquidSnake.Enemies
         /// Tiempo a esperar hasta el próximo disparo.
         /// </summary>
         private float _timeUntilNextShoot = 0f;
+        private int _bulletsLeft = numberOfBullets;
         #endregion
 
         //--------------------------------------------------------------------------------
@@ -88,7 +92,7 @@ namespace LiquidSnake.Enemies
         /// <returns>true si el disparo pudo realizarse con éxito</returns>
         public bool Shoot(Transform target = null)
         {
-            if (shootPoint == null || _timeUntilNextShoot > 0f)
+            if (shootPoint == null || _timeUntilNextShoot > 0f || _bulletsLeft <= 0)
             {
                 return false;
             }
@@ -112,6 +116,7 @@ namespace LiquidSnake.Enemies
             newBullet.GetComponent<Rigidbody>().velocity = velocity * (target == null ? shootPoint.forward : (targetPos - shootPoint.position).normalized);
             // reseteo del cooldown
             _timeUntilNextShoot = cooldown;
+            _bulletsLeft--;
             return true;
         } // Shoot
 
@@ -125,8 +130,14 @@ namespace LiquidSnake.Enemies
         public void Reset()
         {
             _timeUntilNextShoot = 0f;
+            _bulletsLeft = numberOfBullets;
         } // Reset
         #endregion
+
+        public bool BulletsEmpty()
+        {
+            return (_bulletsLeft <= 0);
+        }
     }
 
 } // namespace LiquidSnake.Enemies
