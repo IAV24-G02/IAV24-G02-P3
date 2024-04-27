@@ -6,6 +6,13 @@ public class Transition
     private State targetState;
     private Condition condition;
 
+    public Transition(Condition newCondition, State newState, List<IAction> newActions = null)
+    {
+        condition = newCondition;
+        targetState = newState;
+        actions = newActions ?? new List<IAction>();
+    }
+
 
     public List<IAction> GetActions()
     {
@@ -21,29 +28,4 @@ public class Transition
     {
         return condition.IsTrue();
     }
-}
-
-public class Out_Patrol : Transition
-{
-
-}
-
-public class Out_Follow_Shoot : Transition
-{
-
-}
-
-public class Out_Go_To_Base : Transition
-{
-
-}
-
-public class Out_Go_To_Nearest_Waypoint : Transition
-{
-
-}
-
-public class Out_Reload : Transition
-{
-
 }

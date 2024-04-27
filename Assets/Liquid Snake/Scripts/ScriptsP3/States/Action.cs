@@ -1,9 +1,5 @@
 using LiquidSnake.Enemies;
 using LiquidSnake.Utils;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,7 +18,7 @@ public class DoPatrol : IAction
 
     private RotateRandomTimes randomTurn;
 
-    private UnityEngine.AI.NavMeshAgent navAgent;
+    private NavMeshAgent navAgent;
 
     public DoPatrol() { }
 

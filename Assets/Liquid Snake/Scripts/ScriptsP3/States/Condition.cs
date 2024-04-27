@@ -16,7 +16,7 @@ public class NestorDetected : Condition
     private VisionSensor visionSensor;
     LayerMask layerPlayer;
 
-    NestorDetected(GameObject robot)
+    public NestorDetected(GameObject robot)
     {
         pinkRobot = robot;
         visionSensor = pinkRobot.GetComponentInChildren<VisionSensor>();
@@ -34,7 +34,7 @@ public class NestorDetected : Condition
 public class ReloadBullets : Condition
 {
     private LaserShooter shooterBullets;
-    ReloadBullets(GameObject robot)
+    public ReloadBullets(GameObject robot)
     {
         pinkRobot = robot;
         shooterBullets = pinkRobot.GetComponent<LaserShooter>();
@@ -49,7 +49,7 @@ public class ReloadBullets : Condition
 public class ReachBase : Condition
 {
     SearchForBase reachBase;
-    ReachBase(SearchForBase llega)
+    public ReachBase(SearchForBase llega)
     {
         reachBase = llega;
     }

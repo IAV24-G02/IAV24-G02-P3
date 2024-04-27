@@ -20,7 +20,7 @@ public class StateMachine : MonoBehaviour
         //Creas estados
         //Creas acciones y transiciones y se las añades
         //Crear condiciones y se las añades a las transiciones.
-        initialState = new Patrol(initialWaypoint);
+        initialState = new Patrol(gameObject);
         currentState = initialState;
     }
 
