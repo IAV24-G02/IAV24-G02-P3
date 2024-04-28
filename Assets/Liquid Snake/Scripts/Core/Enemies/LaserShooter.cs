@@ -39,7 +39,7 @@ namespace LiquidSnake.Enemies
         private float cooldown = 0.3f;
 
         [SerializeField]
-        const int numberOfBullets = 10;
+        private int numberOfBullets = 10;
         #endregion
 
         //--------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ namespace LiquidSnake.Enemies
         /// Tiempo a esperar hasta el próximo disparo.
         /// </summary>
         private float _timeUntilNextShoot = 0f;
-        private int _bulletsLeft = numberOfBullets;
+        private int _bulletsLeft = 10;
         #endregion
 
         //--------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ namespace LiquidSnake.Enemies
         /// En caso contrario, el disparo se realiza en la dirección del vector forward del enemigo.
         /// </summary>
         /// <returns>true si el disparo pudo realizarse con éxito</returns>
-        public bool Shoot(Transform target = null)
+        public bool Shoot(Transform target = null, float accuracy = 1)
         {
             if (shootPoint == null || _timeUntilNextShoot > 0f || _bulletsLeft <= 0)
             {
@@ -113,6 +113,8 @@ namespace LiquidSnake.Enemies
             // para tener más precisión y garantizar que golpea lo que debe golpear para generar el hit (asumiendo que no tiene una forma extraña).
             Collider targetCollider = target.GetComponent<Collider>();
             Vector3 targetPos = targetCollider == null ? target.transform.position : targetCollider.bounds.center;
+            Vector3 randomOffset = Random.insideUnitSphere * (1f - accuracy); // Generar una desviación aleatoria basada en la precisión
+            targetPos += randomOffset;
             newBullet.GetComponent<Rigidbody>().velocity = velocity * (target == null ? shootPoint.forward : (targetPos - shootPoint.position).normalized);
             // reseteo del cooldown
             _timeUntilNextShoot = cooldown;
@@ -137,6 +139,10 @@ namespace LiquidSnake.Enemies
         public bool BulletsEmpty()
         {
             return (_bulletsLeft <= 0);
+        }
+        public void rechargeBullets()
+        {
+            _bulletsLeft = numberOfBullets;
         }
     }
 

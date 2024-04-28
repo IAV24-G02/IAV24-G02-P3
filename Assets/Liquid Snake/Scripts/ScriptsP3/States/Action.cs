@@ -166,19 +166,25 @@ public class RotateRandomTimes: IAction
 public class RobotHunt : IAction
 {
     private GameObject nestor;
+    private GameObject pinkRobot;
     float punteria;
     private float chaseSpeed = 3.0f;
     private NavMeshAgent _navMeshAgent;
-
+    private float timeUntilNextShoot = 0.5f;
+    private float cooldown = 0.5f;
+    private LaserShooter shooter;
 
     public RobotHunt() {}
 
 
-    public void initRObotHunt(GameObject nestorGO, NavMeshAgent navegacion)
+    public void initRObotHunt(GameObject nestorGO, NavMeshAgent navegacion, GameObject roboPink)
     {
+        pinkRobot = roboPink;
         nestor = nestorGO;
         _navMeshAgent = navegacion;
         _navMeshAgent.speed = chaseSpeed;
+        _navMeshAgent.SetDestination(nestor.transform.position);
+        shooter = pinkRobot.GetComponent<LaserShooter>();
     }
 
     public void Reset()
@@ -188,6 +194,15 @@ public class RobotHunt : IAction
 
     public void Update()
     {
+        timeUntilNextShoot -= Time.deltaTime;
+        timeUntilNextShoot = Mathf.Max(0f, timeUntilNextShoot);
+
+        if (timeUntilNextShoot <= 0f)
+        {
+            shooter.Shoot(nestor.transform, punteria);
+
+            timeUntilNextShoot = cooldown;
+        }
         _navMeshAgent.SetDestination(nestor.transform.position);
     }
     //Si estas en caza,
@@ -209,7 +224,8 @@ public class RobotHunt : IAction
 
 public class RecalculateAim : IAction
 {
-    private float _timeUntilNextShoot = 0.8f;
+    private float timeUntilCalculation = 1f;
+    private float cooldown = 1f;
     //cada x tiempo se recalcula la precision en funcion de la distancia a la que esta el robot de nestor.
     RobotHunt robotHunt;
     GameObject pinkRobot, nestorRobot;
@@ -235,12 +251,12 @@ public class RecalculateAim : IAction
 
     public void Update()
     {
-        _timeUntilNextShoot -= Time.deltaTime;
-        _timeUntilNextShoot = Mathf.Max(0f, _timeUntilNextShoot);
+        timeUntilCalculation -= Time.deltaTime;
+        timeUntilCalculation = Mathf.Max(0f, timeUntilCalculation);
 
-        if( _timeUntilNextShoot <= 0f)
+        if(timeUntilCalculation <= 0f)
         {
-            _timeUntilNextShoot = 1f;
+            timeUntilCalculation = cooldown;
             float distance = Vector3.Distance(pinkRobot.transform.position, nestorRobot.transform.position);
             distance = Mathf.Clamp(distance, minDist, maxDist);
             float accuracy = Mathf.Lerp(1, 0, Mathf.InverseLerp(minDist, maxDist, distance));
@@ -298,28 +314,86 @@ public class SearchForBase : IAction
 
 public class SearchforNearestWaypoint : IAction
 {
-    //si busca waypoint mas cercano, buscas entre los x waypoints de tu ruta(lo especifica el state machine)
-    //vas de uno en uno calculando la distancia y cuando llegues al final el waypoint mas cercano es el que tienes que hacer
-    //navmeshagent.setdestination(waypoint mas cercano.position) y le dices al patro cual es su current waypoint
     int waypointQuantity;
     GameObject target;
+    GameObject pinkRobot;
     private UnityEngine.AI.NavMeshAgent navAgent;
     DoPatrol patrulla;
+    private bool targetCalculated;
+    private bool waypointReached;
 
     //necesitas
     //nuimero de waypoints
     //waypoint base y su posición
     //navmeshagent
-    //referencia al accion patrulla para cambiar el current waypoint7
+    //referencia al accion patrulla para cambiar el current waypoint
 
     public SearchforNearestWaypoint(){}
 
-    public void initNearestWaypoint(int nWaypoints, GameObject objetivo, UnityEngine.AI.NavMeshAgent navMesh, DoPatrol patrol)
+    public void initNearestWaypoint(int nWaypoints, GameObject objetivo, UnityEngine.AI.NavMeshAgent navMesh, DoPatrol patrol, GameObject roboPink)
     {
         waypointQuantity = nWaypoints;
         target = objetivo;
         navAgent = navMesh;
         patrulla = patrol;
+        targetCalculated = false;
+        pinkRobot = roboPink;
+    }
+
+    public void Reset()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    //si busca waypoint mas cercano, buscas entre los x waypoints de tu ruta(lo especifica el state machine)
+    //vas de uno en uno calculando la distancia y cuando llegues al final el waypoint mas cercano es el que tienes que hacer
+    //navmeshagent.setdestination(waypoint mas cercano.position) y le dices al patro cual es su current waypoint
+    public void Update()
+    {
+        if (!targetCalculated)
+        {
+            for(int i = 0; i < waypointQuantity; i++)
+            {
+                float minDistance = Vector3.Distance(pinkRobot.transform.position, target.transform.position);
+                float minDistanceCandidate = Vector3.Distance(pinkRobot.transform.position, target.GetComponent<Waypoint>().nextWaypoint.transform.position);
+                if(minDistanceCandidate <= minDistance)
+                {
+                    target = target.GetComponent<Waypoint>().nextWaypoint;
+                }
+            }
+            targetCalculated = true;
+            navAgent.SetDestination(target.transform.position); 
+        }
+        if (navAgent.destination != target.transform.position)
+            navAgent.SetDestination(target.transform.position);
+        else if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+        {
+            patrulla.setCurrentTargetWaypoint(target);
+            waypointReached = true;
+        }
+    }
+
+    public bool isWaypointReached()
+    {
+        return waypointReached;
+    }
+}
+
+public class ReloadBullets : IAction
+{
+    private float timeUntilCalculation = 4f;
+    private float cooldown = 4f;
+    //cada x tiempo se recalcula la precision en funcion de la distancia a la que esta el robot de nestor.
+    GameObject pinkRobot;
+    //necesita
+    //una referencia a la acción de robothunt para settear la accuracy
+    //El gameobject del robot y de nestor
+    //las variables del timer(referirse a laser shooter)
+    public ReloadBullets() { }
+
+    public void initReload(GameObject roboPink)
+    {
+        pinkRobot = roboPink;
     }
 
     public void Reset()
@@ -329,6 +403,13 @@ public class SearchforNearestWaypoint : IAction
 
     public void Update()
     {
+        timeUntilCalculation -= Time.deltaTime;
+        timeUntilCalculation = Mathf.Max(0f, timeUntilCalculation);
 
+        if (timeUntilCalculation <= 0f)
+        {
+            pinkRobot.GetComponent<LaserShooter>().rechargeBullets();
+        }
     }
+
 }

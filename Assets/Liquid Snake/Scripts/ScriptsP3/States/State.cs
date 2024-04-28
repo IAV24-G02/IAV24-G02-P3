@@ -32,7 +32,8 @@ public class State
 public class Patrol : State
 {
     public Patrol(GameObject gameObject)
-    {
+    {   
+
         transitions.Add(new Transition(new NestorDetected(gameObject), new FollowShoot(gameObject))); // Patrulla a persecución con disparo
     }
 }
@@ -41,8 +42,9 @@ public class FollowShoot : State
 {
     public FollowShoot(GameObject gameObject)
     {
-        transitions.Add(new Transition(new ReloadBullets(gameObject), new GoToNearestWaypoint(gameObject))); // Persecución a la base
-        transitions.Add(new Transition(new Condition(), new GoToNearestBase(gameObject))); // Persecución a ruta de patrulla
+        NotCondition condicionPatrol = new NotCondition(new NestorDetected(gameObject));
+        transitions.Add(new Transition(new BulletsEmpty(gameObject), new GoToBase(gameObject))); // Persecución a la base
+        transitions.Add(new Transition(condicionPatrol, new GoToNearestWaypoint(gameObject))); // Persecución a ruta de patrulla
     }
 }
 
@@ -50,15 +52,16 @@ public class GoToNearestWaypoint : State
 {
     public GoToNearestWaypoint(GameObject gameObject)
     {
-        transitions.Add(new Transition(new Condition(), new Patrol(gameObject))); // Ruta de patrulla a la propia patrulla
+        transitions.Add(new Transition(new ReachNearestWaypoint(gameObject), new Patrol(gameObject))); // Ruta de patrulla a la propia patrulla
+        //transitions.Add(new Transition(new NestorDetected(gameObject), new FollowShoot(gameObject));
     }
 }
 
-public class GoToNearestBase : State
+public class GoToBase : State
 {
-    public GoToNearestBase(GameObject gameObject)
+    public GoToBase(GameObject gameObject)
     {
-        transitions.Add(new Transition(new Condition(), new Reload(gameObject))); // Base a recargar
+        transitions.Add(new Transition(new ReachBase(gameObject), new Reload(gameObject))); // Base a recargar
     }
 }
 
@@ -66,7 +69,9 @@ public class Reload : State
 {
     public Reload(GameObject gameObject)
     {
-        transitions.Add(new Transition(new Condition(), new FollowShoot(gameObject))); // Recarga a persecución
-        transitions.Add(new Transition(new Condition(), new Patrol(gameObject))); // Recarga a patrulla
+        AndCondition condicionFollowShoot = new AndCondition(new NestorDetected(gameObject), new NotCondition(new BulletsEmpty(gameObject)));
+        AndCondition condicionPatrol = new AndCondition(new NotCondition(new NestorDetected(gameObject)), new NotCondition(new BulletsEmpty(gameObject)));
+        transitions.Add(new Transition(condicionFollowShoot, new FollowShoot(gameObject))); // Recarga a persecución
+        transitions.Add(new Transition(condicionPatrol, new Patrol(gameObject))); // Recarga a patrulla
     }
 }
