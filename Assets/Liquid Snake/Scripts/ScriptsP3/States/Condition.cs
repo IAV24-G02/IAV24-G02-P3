@@ -26,7 +26,8 @@ public class NestorDetected : Condition
 
     public override bool IsTrue()
     {
-        return visionSensor.GetClosestTarget().layer == layerPlayer;
+        if (visionSensor.GetClosestTarget() == null) return false;
+        else return visionSensor.GetClosestTarget().layer == layerPlayer;
     }
 }
 
