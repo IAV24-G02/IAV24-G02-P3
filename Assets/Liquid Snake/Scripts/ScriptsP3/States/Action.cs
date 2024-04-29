@@ -46,7 +46,9 @@ public class DoPatrol : IAction
                 targetWaypoint = targetWaypoint.GetComponent<Waypoint>().nextWaypoint;
                 backInPatrol = false;
             }
-            if (navAgent.destination != targetWaypoint.transform.position)
+            
+            if ((navAgent.destination.x != targetWaypoint.transform.position.x) 
+                || (navAgent.destination.z != targetWaypoint.transform.position.z))
                 navAgent.SetDestination(targetWaypoint.transform.position);
             else if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
@@ -77,19 +79,6 @@ public class DoPatrol : IAction
     {
         throw new System.NotImplementedException();
     }
-    //en el update
-    //bool esta en patrulla
-    //bool vuelve
-    //si vuelve de patrullar establece el target como target = target.nextwaypoint y vuelve false
-    //si tiene que patrullar nawmesh.setdestination(target transform)
-
-    //si llega al destino patrulla false y setea true el girar random
-
-    //necesita
-    //un setter de patrulla y de vuelve publicos
-    //un setter de current waypoint
-    //referencia a girar random
-    //el navmeshagent
 }
 
 public class RotateRandomTimes: IAction
@@ -124,9 +113,13 @@ public class RotateRandomTimes: IAction
         {   
             if (!calculatedGoal)
             {
-                int direction = Random.Range(-1, 1) >= 0 ? 1 : -1;
-                // nos aseguramos de que siempre haya una rotaci�n lo suficientemente amplia
-                _goalRotation = Quaternion.Euler(0, Random.Range(90f, 180f) * direction, 0);
+                int direction = Random.Range(0, 2) == 0 ? -1 : 1; // Genera -1 o 1 aleatoriamente
+                float rotationAmount = Random.Range(1, 3) * 90f; // Genera 90 o 180 aleatoriamente
+                float rotationAngle = rotationAmount * direction; // Aplica la dirección al ángulo
+
+                // Crea la rotación deseada
+                _goalRotation = Quaternion.Euler(0, rotationAngle, 0);
+
                 calculatedGoal = true;
             }
             float currentAngularDistance = Quaternion.Angle(pinkRobot.transform.rotation, _goalRotation);
@@ -142,9 +135,9 @@ public class RotateRandomTimes: IAction
             var abs = Mathf.Abs(dot);
             if (1 - abs <= _acceptableRange)
             {
-                calculatedGoal = false;
                 if(++timesRotated >= maxRotations)
                 {
+                    calculatedGoal = false;
                     rotateRandom = false;
                     patrol.setPatrulla(true);
                     patrol.setVuelve(true);
@@ -292,7 +285,8 @@ public class SearchForBase : IAction
 
     public void Update()
     {
-        if (navAgent.destination != baseWaypoint.transform.position)
+        if ((navAgent.destination.x != baseWaypoint.transform.position.x)
+                || (navAgent.destination.z != baseWaypoint.transform.position.z))
             navAgent.SetDestination(baseWaypoint.transform.position);
         else if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
         {
@@ -364,7 +358,8 @@ public class SearchforNearestWaypoint : IAction
             targetCalculated = true;
             navAgent.SetDestination(target.transform.position); 
         }
-        if (navAgent.destination != target.transform.position)
+        if ((navAgent.destination.x != target.transform.position.x)
+                || (navAgent.destination.z != target.transform.position.z))
             navAgent.SetDestination(target.transform.position);
         else if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
         {

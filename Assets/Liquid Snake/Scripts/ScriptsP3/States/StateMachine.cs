@@ -26,10 +26,12 @@ public class StateMachine : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(currentState.ToString());
         currentActions = GetAllActions();
         foreach (IAction action in currentActions)
         {
             action.Update();
+            Debug.Log(action.ToString());
         }
     }
 

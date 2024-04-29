@@ -299,15 +299,7 @@ PrefabInstance:
     - {fileID: 5863990874775144152, guid: ca88142e6222bd640834b5f3d0ad111a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1766589902}
-    - targetCorrespondingSourceObject: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1766589901}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca88142e6222bd640834b5f3d0ad111a, type: 3}
 --- !u!4 &51186325 stripped
 Transform:
@@ -1486,11 +1478,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3460252187689329831, guid: d9cb3a56c1e95dc4fba8955da81fc268,
+        type: 3}
+      propertyPath: m_text
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7993065438620774617, guid: d9cb3a56c1e95dc4fba8955da81fc268,
         type: 3}
       propertyPath: health
       value: 
       objectReference: {fileID: 1300187581}
+    - target: {fileID: 8215923068795723437, guid: d9cb3a56c1e95dc4fba8955da81fc268,
+        type: 3}
+      propertyPath: m_text
+      value: 'Number of States:  '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4348,7 +4350,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2109138070}
+    - targetCorrespondingSourceObject: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2109138069}
   m_SourcePrefab: {fileID: 100100000, guid: ca88142e6222bd640834b5f3d0ad111a, type: 3}
 --- !u!1001 &899608700
 PrefabInstance:
@@ -8444,46 +8454,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 51186324}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1766589901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766589900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c61b4c56aa3d4204db8dabe46170ae4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nestor: {fileID: 1307216662}
-  pinkRobot: {fileID: 1766589900}
-  initialWaypoint: {fileID: 801415461}
-  currentWaypoint: {fileID: 801415461}
-  navmesh: {fileID: 1766589909}
-  rotationSpeed: 0.5
-  minDist: 1
-  maxDist: 5
-  numWaypoints: 4
---- !u!114 &1766589902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766589900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 278e3f55bba076d45bb9c57ec06b06bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialWaypoint: {fileID: 801415461}
---- !u!195 &1766589909 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 966559006346405640, guid: ca88142e6222bd640834b5f3d0ad111a,
-    type: 3}
-  m_PrefabInstance: {fileID: 51186324}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1767997205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10754,6 +10724,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 874168758}
   m_PrefabAsset: {fileID: 0}
+--- !u!195 &2109138068 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 966559006346405640, guid: ca88142e6222bd640834b5f3d0ad111a,
+    type: 3}
+  m_PrefabInstance: {fileID: 874168758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2109138069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109138059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61b4c56aa3d4204db8dabe46170ae4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nestor: {fileID: 1307216662}
+  pinkRobot: {fileID: 2109138059}
+  initialWaypoint: {fileID: 404669173}
+  currentWaypoint: {fileID: 404669173}
+  navmesh: {fileID: 2109138068}
+  rotationSpeed: 30
+  minDist: 1
+  maxDist: 5
+  numWaypoints: 4
+--- !u!114 &2109138070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109138059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e3f55bba076d45bb9c57ec06b06bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialWaypoint: {fileID: 404669173}
 --- !u!4 &2127478653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 852083973234221153, guid: 3bf7e38931121bb48b2ba13eac6baa48,
