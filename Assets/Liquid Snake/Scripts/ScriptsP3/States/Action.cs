@@ -408,6 +408,7 @@ public class ReloadBullets : IAction
 
         if (timeUntilReload <= 0f)
         {
+            timeUntilReload = cooldown;
             pinkRobot.GetComponent<LaserShooter>().rechargeBullets();
         }
     }

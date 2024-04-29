@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -78,11 +79,11 @@ public class StateMachineManager : MonoBehaviour
     void Awake()
     {
         // Creación de los estados a utilizar por el robot
-        patrol = new Patrol(this);
-        followShoot = new FollowShoot(this);
-        goToBase = new GoToBase(this);
-        goToWaypoint = new GoToNearestWaypoint(this);
-        reload = new Reload(this);
+        patrol = new Patrol();
+        followShoot = new FollowShoot();
+        goToBase = new GoToBase();
+        goToWaypoint = new GoToNearestWaypoint();
+        reload = new Reload();
 
         // Creación de las acciones a utilizar por el robot
         doPatrol = new DoPatrol();
@@ -91,14 +92,24 @@ public class StateMachineManager : MonoBehaviour
         searchBase = new SearchForBase();
         searchWaypoint = new SearchforNearestWaypoint();
         reloadBullets = new ReloadBullets();
-        
-        // Creación de las condiciones a utilizar por los estados
+    }
+
+    void Start()
+    {
+        // Inicialización de las acciones de los estados
         doPatrol.InitPatrol(initialWaypoint, navmesh, rotateRandom);
         rotateRandom.InitRotate(pinkRobot, doPatrol, rotationSpeed);
         recalculateAim.InitAim(robotHunt, pinkRobot, nestor, minDist, maxDist);
         searchBase.InitSearchBase(initialWaypoint, doPatrol, navmesh);
         searchWaypoint.InitNearestWaypoint(numWaypoints, initialWaypoint, navmesh, doPatrol, pinkRobot);
         reloadBullets.InitReload(pinkRobot);
+
+        // Creación de las condiciones a utilizar por los estados
+        patrol.InitPatrol(this);
+        followShoot.InitFollowShoot(this);
+        goToBase.InitGoToBase(this);
+        goToWaypoint.InitGoToNearestWaypoint(this);
+        reload.InitReload(this);
     }
 
     // Update is called once per frame
