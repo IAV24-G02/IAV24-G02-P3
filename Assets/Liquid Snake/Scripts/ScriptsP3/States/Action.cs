@@ -12,6 +12,7 @@ public interface IAction : IResetteable
 
 public class DoPatrol : IAction
 {
+
     GameObject currentWaypoint;
     GameObject targetWaypoint;
     bool inPatrol, backInPatrol;
@@ -381,7 +382,7 @@ public class SearchforNearestWaypoint : IAction
 
 public class ReloadBullets : IAction
 {
-    private float timeUntilCalculation = 4f;
+    private float timeUntilReload = 4f;
     private float cooldown = 4f;
     //cada x tiempo se recalcula la precision en funcion de la distancia a la que esta el robot de nestor.
     GameObject pinkRobot;
@@ -403,11 +404,12 @@ public class ReloadBullets : IAction
 
     public void Update()
     {
-        timeUntilCalculation -= Time.deltaTime;
-        timeUntilCalculation = Mathf.Max(0f, timeUntilCalculation);
+        timeUntilReload -= Time.deltaTime;
+        timeUntilReload = Mathf.Max(0f, timeUntilReload);
 
-        if (timeUntilCalculation <= 0f)
+        if (timeUntilReload <= 0f)
         {
+            timeUntilReload = cooldown;
             pinkRobot.GetComponent<LaserShooter>().rechargeBullets();
         }
     }
