@@ -31,9 +31,14 @@ public class State
 
 public class Patrol : State
 {
+    DoPatrol patrolAction;
+    RotateRandomTimes rotateAction;
     public Patrol(GameObject gameObject)
-    {   
+    {
+        patrolAction = new DoPatrol();
+        rotateAction = new RotateRandomTimes();
 
+        //patrolAction.initPatrol(gameObject.GetComponent<Ene>)
         transitions.Add(new Transition(new NestorDetected(gameObject), new FollowShoot(gameObject))); // Patrulla a persecución con disparo
     }
 }
@@ -50,18 +55,22 @@ public class FollowShoot : State
 
 public class GoToNearestWaypoint : State
 {
+    SearchforNearestWaypoint searchAction;
     public GoToNearestWaypoint(GameObject gameObject)
     {
-        transitions.Add(new Transition(new ReachNearestWaypoint(gameObject), new Patrol(gameObject))); // Ruta de patrulla a la propia patrulla
+        searchAction = new SearchforNearestWaypoint();
+        transitions.Add(new Transition(new ReachNearestWaypoint(searchAction), new Patrol(gameObject))); // Ruta de patrulla a la propia patrulla
         //transitions.Add(new Transition(new NestorDetected(gameObject), new FollowShoot(gameObject));
     }
 }
 
 public class GoToBase : State
 {
+    SearchForBase searchAction;
     public GoToBase(GameObject gameObject)
     {
-        transitions.Add(new Transition(new ReachBase(gameObject), new Reload(gameObject))); // Base a recargar
+        searchAction = new SearchForBase();
+        transitions.Add(new Transition(new ReachBase(searchAction), new Reload(gameObject))); // Base a recargar
     }
 }
 
