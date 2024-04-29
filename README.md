@@ -237,7 +237,7 @@ Las tareas se han realizado y el esfuerzo ha sido repartido entre los autores. O
 | ✔️ | Diseño: Primer borrador | 18-04-2024 |
 | ✔️ | Característica A | 10-04-2024 |
 | ✔️ | Característica B | 10-04-2024 |
-|  | Característica C | ..-04-2024 |
+| ✔️ | Característica C | 29-04-2024 |
 | ✔️ | Característica D | 23-04-2024 |
 | ✔️ | Característica E | 25-04-2024 |
 |  |  **OTROS**  | |

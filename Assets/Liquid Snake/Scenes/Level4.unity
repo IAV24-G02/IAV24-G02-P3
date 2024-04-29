@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,6 +205,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1310962321}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 801415461}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,6 +260,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 801415461}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera
@@ -1858,6 +1873,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1486958258}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 1486958260}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1908,6 +1928,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 1486958260}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera
@@ -2380,6 +2410,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1310962321}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 933060531}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2430,6 +2465,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 933060531}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera
@@ -4209,6 +4254,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1610458228}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 2011387573}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4259,6 +4309,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 2011387573}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera
@@ -6026,6 +6086,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 797294980}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 404669173}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6076,6 +6141,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 404669173}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera
@@ -10156,6 +10231,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1610458228}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 668284216}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10206,6 +10286,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 668284216}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera
@@ -10527,6 +10617,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 415604807}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 415604811}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10577,6 +10672,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 415604811}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera
@@ -14999,6 +15104,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 415604807}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 415604809}
     - target: {fileID: 1075367328150471472, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15049,6 +15159,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1307216662}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 415604809}
     - target: {fileID: 2218439773013686655, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Camera

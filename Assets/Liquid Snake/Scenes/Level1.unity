@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -289,6 +289,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 631022999}
     m_Modifications:
+    - target: {fileID: 57926599078718227, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 2061580937}
     - target: {fileID: 180581480877606863, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Layer
@@ -464,6 +469,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: nestor
+      value: 
+      objectReference: {fileID: 1147893015}
+    - target: {fileID: 1294978030951631543, guid: ca88142e6222bd640834b5f3d0ad111a,
+        type: 3}
+      propertyPath: initialWaypoint
+      value: 
+      objectReference: {fileID: 2061580937}
     - target: {fileID: 1415718614948776667, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_Mesh
@@ -8672,6 +8687,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1145751120}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1147893015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3862277631971027947, guid: 7ae956b4f54394e80818898d8f4d30c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 862200628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1154844348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6846027946813325800, guid: 4f6f8926e43efc749a3697a7eabc0b51,
@@ -9481,7 +9502,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 862200628}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1147893015}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd375328b35a8e4ebd75c44b6683209, type: 3}
