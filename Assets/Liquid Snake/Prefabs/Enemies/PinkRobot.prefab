@@ -1217,10 +1217,11 @@ GameObject:
   - component: {fileID: 8923685056844849045}
   - component: {fileID: 5218710663370336840}
   - component: {fileID: 705411915318757303}
-  - component: {fileID: 5863990874775144152}
   - component: {fileID: 3451022713393870881}
   - component: {fileID: 8790698260661818641}
   - component: {fileID: 7745818952141058002}
+  - component: {fileID: 57926599078718227}
+  - component: {fileID: 1294978030951631543}
   m_Layer: 0
   m_Name: PinkRobot
   m_TagString: Enemy
@@ -1354,80 +1355,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5863990874775144152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7566502418548811585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 422fb6956201c7944ae2113a1a53b0b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTasksPerTick: 500
-  behavior: {fileID: 11400000, guid: f0207c9dbd375504aae75ba09036f925, type: 2}
-  paused: 0
-  restartWhenFinished: 1
-  blackboard:
-    intParams: 
-    intParamsNames: []
-    intParamsLostDefaultValue: 
-    boolParams: 
-    boolParamsNames: []
-    boolParamsLostDefaultValue: 
-    floatParams:
-    - 10
-    floatParamsNames:
-    - rotationSpeed
-    floatParamsLostDefaultValue: 
-    stringParams: []
-    stringParamsNames: []
-    stringParamsLostDefaultValue: 
-    colorParams: []
-    colorParamsNames: []
-    colorParamsLostDefaultValue: 
-    objectParams:
-    - {fileID: 4436383961488312798}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    objectParamsNames:
-    - visionSensorObject
-    - initialWaypoint
-    - currentWaypoint
-    - sensorTarget
-    objectParamsLostDefaultValue: 
-    layerMaskParams: []
-    layerMaskParamsNames: []
-    layerMaskParamsLostDefaultValue: 
-    enumParamsNames: []
-    enumParamsLostDefaultValue: 
-    vector2Params: []
-    vector2ParamsNames: []
-    vector2ParamsLostDefaultValue: 
-    vector3Params: []
-    vector3ParamsNames: []
-    vector3ParamsLostDefaultValue: 
-    vector4Params: []
-    vector4ParamsNames: []
-    vector4ParamsLostDefaultValue: 
-    rectParams: []
-    rectParamsNames: []
-    rectParamsLostDefaultValue: 
-    animationCurveParams: []
-    animationCurveParamsNames: []
-    animationCurveParamsLostDefaultValue: 
-    boundsParams: []
-    boundsParamsNames: []
-    boundsParamsLostDefaultValue: 
-    gradientParams: []
-    gradientParamsNames: []
-    gradientParamsLostDefaultValue: 
-    quaternionParams: []
-    quaternionParamsNames: []
-    quaternionParamsLostDefaultValue: 
 --- !u!114 &3451022713393870881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,6 +1405,41 @@ MonoBehaviour:
   bullet: {fileID: 52040370453604443, guid: b22bf299302902b4f8135ec80c33727e, type: 3}
   velocity: 30
   cooldown: 0.1
+  numberOfBullets: 10
+--- !u!114 &57926599078718227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566502418548811585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e3f55bba076d45bb9c57ec06b06bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialWaypoint: {fileID: 0}
+--- !u!114 &1294978030951631543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566502418548811585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61b4c56aa3d4204db8dabe46170ae4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nestor: {fileID: 0}
+  pinkRobot: {fileID: 7566502418548811585}
+  initialWaypoint: {fileID: 0}
+  currentWaypoint: {fileID: 0}
+  navmesh: {fileID: 966559006346405640}
+  rotationSpeed: 30
+  minDist: 1
+  maxDist: 5
+  numWaypoints: 4
 --- !u!1 &7878850410725324557
 GameObject:
   m_ObjectHideFlags: 0
