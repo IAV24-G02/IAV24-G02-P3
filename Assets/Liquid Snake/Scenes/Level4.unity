@@ -308,7 +308,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1976,7 +1976,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2513,7 +2513,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4357,7 +4357,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5508,8 +5508,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 336105769406006431, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 336105769406006431, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
       propertyPath: currentHealth
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 336105769406006431, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -5631,6 +5636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: blackboard.floatParams.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
+        type: 3}
+      propertyPath: blackboard.intParams.Array.data[0]
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5736451477808070349, guid: 7ae956b4f54394e80818898d8f4d30c6,
         type: 3}
@@ -6189,7 +6199,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10334,7 +10344,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10720,7 +10730,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15207,7 +15217,7 @@ PrefabInstance:
     - target: {fileID: 7566502418548811585, guid: ca88142e6222bd640834b5f3d0ad111a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
