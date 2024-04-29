@@ -407,5 +407,4 @@ public class ReloadBullets : IAction
             pinkRobot.GetComponent<LaserShooter>().rechargeBullets();
         }
     }
-
 }

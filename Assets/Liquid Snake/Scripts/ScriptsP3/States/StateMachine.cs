@@ -1,5 +1,3 @@
-using LiquidSnake.Enemies;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,12 +24,10 @@ public class StateMachine : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentState.ToString());
         currentActions = GetAllActions();
         foreach (IAction action in currentActions)
         {
             action.Update();
-            Debug.Log(action.ToString());
         }
     }
 
@@ -57,11 +53,6 @@ public class StateMachine : MonoBehaviour
         if (triggered != null)
         {
             State targetState = triggered.GetTargetState();
-            // Añade la acción saliente al antiguo estado, la
-            // acción de transición y la entrante para el nuevo estado
-            // actions = currentState.GetExitActions();
-            // actions.AddRange(targetState.GetWhileActions());
-            // actions.AddRange(targetState.GetEntryActions());
 
             // Completa la transición y devuelve una lista de acciones
             currentState = targetState;

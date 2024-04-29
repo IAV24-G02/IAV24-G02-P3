@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,7 +10,6 @@ public class StateMachineManager : MonoBehaviour
     private GameObject pinkRobot;
     [SerializeField]
     private GameObject initialWaypoint;
-    [SerializeField]
     private GameObject currentWaypoint;
     [SerializeField]
     private NavMeshAgent navmesh;
@@ -112,11 +108,5 @@ public class StateMachineManager : MonoBehaviour
         goToBase.InitGoToBase(this);
         goToWaypoint.InitGoToNearestWaypoint(this);
         reload.InitReload(this);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

@@ -23,7 +23,6 @@ public class NestorDetected : Condition
         layerPlayer = LayerMask.GetMask("Player");
     }
 
-
     public override bool IsTrue()
     {
         if (visionSensor.GetClosestTarget() == null) return false;
