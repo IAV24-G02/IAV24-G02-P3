@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Condition
 {
-    protected GameObject pinkRobot;
-
     public virtual bool IsTrue()
     {
         return true;
@@ -15,10 +13,11 @@ public class NestorDetected : Condition
 {
     private VisionSensor visionSensor;
     LayerMask layerPlayer;
+    private GameObject pinkRobot;
 
-    public NestorDetected(GameObject robot)
+    public NestorDetected(StateMachineManager manager)
     {
-        pinkRobot = robot;
+        pinkRobot = manager.GetRobot();
         visionSensor = pinkRobot.GetComponentInChildren<VisionSensor>();
 
         layerPlayer = LayerMask.GetMask("Player");
@@ -34,9 +33,10 @@ public class NestorDetected : Condition
 public class BulletsEmpty : Condition
 {
     private LaserShooter shooterBullets;
-    public BulletsEmpty(GameObject robot)
+    private GameObject pinkRobot;
+    public BulletsEmpty(StateMachineManager manager)
     {
-        pinkRobot = robot;
+        pinkRobot = manager.GetRobot();
         shooterBullets = pinkRobot.GetComponent<LaserShooter>();
     }
 
@@ -49,9 +49,9 @@ public class BulletsEmpty : Condition
 public class ReachBase : Condition
 {
     SearchForBase reachBase;
-    public ReachBase(SearchForBase llega)
+    public ReachBase(StateMachineManager manager)
     {
-        reachBase = llega;
+        reachBase = manager.GetSearchForBase();
     }
     public override bool IsTrue()
     {
@@ -62,9 +62,9 @@ public class ReachBase : Condition
 public class ReachNearestWaypoint : Condition
 {
     SearchforNearestWaypoint reachNearestWaypoint;
-    public ReachNearestWaypoint(SearchforNearestWaypoint reachWaypoint)
+    public ReachNearestWaypoint(StateMachineManager manager)
     {
-        reachNearestWaypoint = reachWaypoint;
+        reachNearestWaypoint = manager.GetSearchForNearestWaypoint();
     }
     public override bool IsTrue()
     {

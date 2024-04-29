@@ -12,7 +12,6 @@ public interface IAction : IResetteable
 
 public class DoPatrol : IAction
 {
-
     GameObject currentWaypoint;
     GameObject targetWaypoint;
     bool inPatrol, backInPatrol;
@@ -24,7 +23,7 @@ public class DoPatrol : IAction
     public DoPatrol() { }
 
 
-    public void initPatrol(GameObject current_waypoint, UnityEngine.AI.NavMeshAgent navMesh, RotateRandomTimes turn) { 
+    public void InitPatrol(GameObject current_waypoint, UnityEngine.AI.NavMeshAgent navMesh, RotateRandomTimes turn) { 
         
         currentWaypoint = current_waypoint;
         targetWaypoint = currentWaypoint.GetComponent<Waypoint>().nextWaypoint;
@@ -95,7 +94,7 @@ public class DoPatrol : IAction
 
 public class RotateRandomTimes: IAction
 {
-    //si rotar random true, segun x veces de rotación se hace la acción de rotar 
+    //si rotar random true, segun x veces de rotaciï¿½n se hace la acciï¿½n de rotar 
     //una vez se hayan hecho las rotaciones se rotar random false y patrol true y vuelve true
     GameObject pinkRobot;
     DoPatrol patrol;
@@ -108,7 +107,7 @@ public class RotateRandomTimes: IAction
     //referencia a la accion de patrol para hacer los set a patrulla y vuelve
     public RotateRandomTimes() { }
 
-    public void initRotate(GameObject robopink, DoPatrol patrulla, float rotateSpeed)
+    public void InitRotate(GameObject robopink, DoPatrol patrulla, float rotateSpeed)
     {
         pinkRobot = robopink;
         patrol = patrulla;
@@ -126,7 +125,7 @@ public class RotateRandomTimes: IAction
             if (!calculatedGoal)
             {
                 int direction = Random.Range(-1, 1) >= 0 ? 1 : -1;
-                // nos aseguramos de que siempre haya una rotación lo suficientemente amplia
+                // nos aseguramos de que siempre haya una rotaciï¿½n lo suficientemente amplia
                 _goalRotation = Quaternion.Euler(0, Random.Range(90f, 180f) * direction, 0);
                 calculatedGoal = true;
             }
@@ -178,7 +177,7 @@ public class RobotHunt : IAction
     public RobotHunt() {}
 
 
-    public void initRObotHunt(GameObject nestorGO, NavMeshAgent navegacion, GameObject roboPink)
+    public void InitRobotHunt(GameObject nestorGO, NavMeshAgent navegacion, GameObject roboPink)
     {
         pinkRobot = roboPink;
         nestor = nestorGO;
@@ -211,11 +210,11 @@ public class RobotHunt : IAction
     //disparas cada x segundos
 
     //necesitas
-    //setter la precisión la puntería consiste en aplicarle un offset a la posición de disparo según la precisión de disparo
+    //setter la precisiï¿½n la punterï¿½a consiste en aplicarle un offset a la posiciï¿½n de disparo segï¿½n la precisiï¿½n de disparo
     //el transform de nestor
     //un navmesh agent
     //las variables para el timer (referirse a lase shooter)
-    public void setAccuracy(float newAccuracy)
+    public void SetAccuracy(float newAccuracy)
     {
         punteria = newAccuracy;
     }
@@ -232,12 +231,12 @@ public class RecalculateAim : IAction
     GameObject pinkRobot, nestorRobot;
     float minDist, maxDist;
     //necesita
-    //una referencia a la acción de robothunt para settear la accuracy
+    //una referencia a la acciï¿½n de robothunt para settear la accuracy
     //El gameobject del robot y de nestor
     //las variables del timer(referirse a laser shooter)
     public RecalculateAim(){ }
 
-    public void initAim(RobotHunt roboHunt, GameObject roboPink, GameObject nestor, float distMin, float distMax) { 
+    public void InitAim(RobotHunt roboHunt, GameObject roboPink, GameObject nestor, float distMin, float distMax) { 
         robotHunt = roboHunt;
         pinkRobot = roboPink;
         nestorRobot = nestor;
@@ -261,7 +260,7 @@ public class RecalculateAim : IAction
             float distance = Vector3.Distance(pinkRobot.transform.position, nestorRobot.transform.position);
             distance = Mathf.Clamp(distance, minDist, maxDist);
             float accuracy = Mathf.Lerp(1, 0, Mathf.InverseLerp(minDist, maxDist, distance));
-            robotHunt.setAccuracy(accuracy);
+            // robotHunt.setAccuracy(accuracy);
         }
     }
 
@@ -274,7 +273,7 @@ public class SearchForBase : IAction
     //y le dices al patrol cual es su current waypoint
     GameObject baseWaypoint;
     DoPatrol patrulla;
-    private UnityEngine.AI.NavMeshAgent navAgent;
+    private NavMeshAgent navAgent;
     bool baseReached;
     //necesita 
     //navmeshagent
@@ -282,7 +281,7 @@ public class SearchForBase : IAction
     //una referencia a la accion de patrulla para settear el current waypoiont de la patrulla
     public SearchForBase(){}
 
-    public void initSearchBase(GameObject target, DoPatrol patrol, UnityEngine.AI.NavMeshAgent navMesh )
+    public void InitSearchBase(GameObject target, DoPatrol patrol, UnityEngine.AI.NavMeshAgent navMesh )
     {
         baseReached = false;
         baseWaypoint = target;
@@ -318,20 +317,20 @@ public class SearchforNearestWaypoint : IAction
     int waypointQuantity;
     GameObject target;
     GameObject pinkRobot;
-    private UnityEngine.AI.NavMeshAgent navAgent;
+    private NavMeshAgent navAgent;
     DoPatrol patrulla;
     private bool targetCalculated;
     private bool waypointReached;
 
     //necesitas
     //nuimero de waypoints
-    //waypoint base y su posición
+    //waypoint base y su posiciï¿½n
     //navmeshagent
     //referencia al accion patrulla para cambiar el current waypoint
 
     public SearchforNearestWaypoint(){}
 
-    public void initNearestWaypoint(int nWaypoints, GameObject objetivo, UnityEngine.AI.NavMeshAgent navMesh, DoPatrol patrol, GameObject roboPink)
+    public void InitNearestWaypoint(int nWaypoints, GameObject objetivo, UnityEngine.AI.NavMeshAgent navMesh, DoPatrol patrol, GameObject roboPink)
     {
         waypointQuantity = nWaypoints;
         target = objetivo;
@@ -387,12 +386,12 @@ public class ReloadBullets : IAction
     //cada x tiempo se recalcula la precision en funcion de la distancia a la que esta el robot de nestor.
     GameObject pinkRobot;
     //necesita
-    //una referencia a la acción de robothunt para settear la accuracy
+    //una referencia a la acciï¿½n de robothunt para settear la accuracy
     //El gameobject del robot y de nestor
     //las variables del timer(referirse a laser shooter)
     public ReloadBullets() { }
 
-    public void initReload(GameObject roboPink)
+    public void InitReload(GameObject roboPink)
     {
         pinkRobot = roboPink;
     }
@@ -409,7 +408,6 @@ public class ReloadBullets : IAction
 
         if (timeUntilReload <= 0f)
         {
-            timeUntilReload = cooldown;
             pinkRobot.GetComponent<LaserShooter>().rechargeBullets();
         }
     }

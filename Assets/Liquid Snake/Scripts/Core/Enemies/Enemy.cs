@@ -87,6 +87,8 @@ namespace LiquidSnake.Enemies
         //----------------------------------------------------------------------------
         #region Métodos públicos e implementación de IResetteable
 
+
+
         void IResetteable.Reset()
         {
             gameObject.SetActive(true);

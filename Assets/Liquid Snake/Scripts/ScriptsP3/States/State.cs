@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class State
 {
@@ -31,64 +32,54 @@ public class State
 
 public class Patrol : State
 {
-    DoPatrol patrolAction;
-    RotateRandomTimes rotateAction;
-    public Patrol(GameObject gameObject)
+    public Patrol(StateMachineManager manager)
     {
-        patrolAction = new DoPatrol();
-        rotateAction = new RotateRandomTimes();
-
-        
-        transitions.Add(new Transition(new NestorDetected(gameObject), new FollowShoot(gameObject))); // Patrulla a persecución con disparo
+        transitions.Add(new Transition(new NestorDetected(manager), manager.GetFollowShoot())); // Patrulla a persecución con disparo
+        whileActions.Add(manager.GetDoPatrol());
+        whileActions.Add(manager.GetRotateRandom());
     }
 }
 
 public class FollowShoot : State
 {
-    RobotHunt followAction;
-    RecalculateAim recalculateAction;
-    public FollowShoot(GameObject gameObject)
+    public FollowShoot(StateMachineManager manager)
     {
-        followAction = new RobotHunt();
-        recalculateAction = new RecalculateAim();
-
-        NotCondition condicionPatrol = new NotCondition(new NestorDetected(gameObject));
-        transitions.Add(new Transition(new BulletsEmpty(gameObject), new GoToBase(gameObject))); // Persecución a la base
-        transitions.Add(new Transition(condicionPatrol, new GoToNearestWaypoint(gameObject))); // Persecución a ruta de patrulla
+        NotCondition condicionPatrol = new NotCondition(new NestorDetected(manager));
+        transitions.Add(new Transition(new BulletsEmpty(manager), manager.GetGoToBase())); // Persecución a la base
+        transitions.Add(new Transition(condicionPatrol, manager.GetNearestWaypoint())); // Persecución a ruta de patrulla
+        whileActions.Add(manager.GetRobotHunt());
+        whileActions.Add(manager.GetAimRecalculation());
     }
 }
 
 public class GoToNearestWaypoint : State
 {
-    SearchforNearestWaypoint searchAction;
-    public GoToNearestWaypoint(GameObject gameObject)
+    public GoToNearestWaypoint(StateMachineManager manager)
     {
-        searchAction = new SearchforNearestWaypoint();
-
-        transitions.Add(new Transition(new ReachNearestWaypoint(searchAction), new Patrol(gameObject))); // Ruta de patrulla a la propia patrulla
-        //transitions.Add(new Transition(new NestorDetected(gameObject), new FollowShoot(gameObject));
+        transitions.Add(new Transition(new ReachNearestWaypoint(manager), manager.GetPatrol())); // Ruta de patrulla a la propia patrulla
+        transitions.Add(new Transition(new NestorDetected(manager), manager.GetFollowShoot()));
+        whileActions.Add(manager.GetSearchForNearestWaypoint());
     }
 }
 
 public class GoToBase : State
 {
-    SearchForBase searchAction;
-    public GoToBase(GameObject gameObject)
+    public GoToBase(StateMachineManager manager)
     {
-        searchAction = new SearchForBase();
-        transitions.Add(new Transition(new ReachBase(searchAction), new Reload(gameObject))); // Base a recargar
+        transitions.Add(new Transition(new ReachBase(manager), manager.GetReload())); // Base a recargar
+        transitions.Add(new Transition(new NestorDetected(manager), manager.GetFollowShoot())); // Base a recargar
+        whileActions.Add(manager.GetSearchForBase());
     }
 }
 
 public class Reload : State
 {
-    ReloadBullets reloadingAction;
-    public Reload(GameObject gameObject)
+    public Reload(StateMachineManager manager)
     {
-        reloadingAction = new ReloadBullets(); 
-        AndCondition condicionFollowShoot = new AndCondition(new NestorDetected(gameObject), new NotCondition(new BulletsEmpty(gameObject)));
-        AndCondition condicionPatrol = new AndCondition(new NotCondition(new NestorDetected(gameObject)), new NotCondition(new BulletsEmpty(gameObject)));
-        transitions.Add(new Transition(condicionFollowShoot, new FollowShoot(gameObject))); // Recarga a persecución
-        transitions.Add(new Transition(condicionPatrol, new Patrol(gameObject))); // Recarga a patrulla
+        AndCondition condicionFollowShoot = new AndCondition(new NestorDetected(manager), new NotCondition(new BulletsEmpty(manager)));
+        AndCondition condicionPatrol = new AndCondition(new NotCondition(new NestorDetected(manager)), new NotCondition(new BulletsEmpty(manager)));
+        transitions.Add(new Transition(condicionFollowShoot, manager.GetFollowShoot())); // Recarga a persecución
+        transitions.Add(new Transition(condicionPatrol, manager.GetPatrol())); // Recarga a patrulla
+        whileActions.Add(manager.GetReloadBullets());
     }
 }
