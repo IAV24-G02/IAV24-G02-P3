@@ -58,7 +58,7 @@ public class StateMachine : MonoBehaviour
             // Añade la acción saliente al antiguo estado, la
             // acción de transición y la entrante para el nuevo estado
             // actions = currentState.GetExitActions();
-            actions.AddRange(triggered.GetActions());
+            // actions.AddRange(targetState.GetWhileActions());
             // actions.AddRange(targetState.GetEntryActions());
 
             // Completa la transición y devuelve una lista de acciones

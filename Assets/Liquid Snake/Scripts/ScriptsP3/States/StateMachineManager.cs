@@ -88,6 +88,7 @@ public class StateMachineManager : MonoBehaviour
         // Creación de las acciones a utilizar por el robot
         doPatrol = new DoPatrol();
         rotateRandom = new RotateRandomTimes();
+        robotHunt = new RobotHunt();
         recalculateAim = new RecalculateAim();
         searchBase = new SearchForBase();
         searchWaypoint = new SearchforNearestWaypoint();
@@ -99,6 +100,7 @@ public class StateMachineManager : MonoBehaviour
         // Inicialización de las acciones de los estados
         doPatrol.InitPatrol(initialWaypoint, navmesh, rotateRandom);
         rotateRandom.InitRotate(pinkRobot, doPatrol, rotationSpeed);
+        robotHunt.InitRobotHunt(nestor, navmesh, pinkRobot);
         recalculateAim.InitAim(robotHunt, pinkRobot, nestor, minDist, maxDist);
         searchBase.InitSearchBase(initialWaypoint, doPatrol, navmesh);
         searchWaypoint.InitNearestWaypoint(numWaypoints, initialWaypoint, navmesh, doPatrol, pinkRobot);
