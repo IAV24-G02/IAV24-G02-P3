@@ -75,7 +75,7 @@ public class StateMachineManager : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Creación de los estados a utilizar por el robot
         patrol = new Patrol(this);

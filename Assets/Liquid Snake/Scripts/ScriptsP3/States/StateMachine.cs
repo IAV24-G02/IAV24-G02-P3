@@ -14,13 +14,13 @@ public class StateMachine : MonoBehaviour
 
     List<IAction> currentActions;
 
+    private StateMachineManager sMM;
+
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        //Creas estados
-        //Creas acciones y transiciones y se las añades
-        //Crear condiciones y se las añades a las transiciones.
-        initialState = new Patrol(gameObject);
+        sMM = GetComponent<StateMachineManager>();
+        initialState = sMM.GetPatrol();
         currentState = initialState;
     }
 
