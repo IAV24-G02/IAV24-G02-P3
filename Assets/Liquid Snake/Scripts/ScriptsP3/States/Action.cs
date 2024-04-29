@@ -247,13 +247,13 @@ public class RecalculateAim : IAction
         timeUntilCalculation -= Time.deltaTime;
         timeUntilCalculation = Mathf.Max(0f, timeUntilCalculation);
 
-        if(timeUntilCalculation <= 0f)
+        if (timeUntilCalculation <= 0f)
         {
             timeUntilCalculation = cooldown;
             float distance = Vector3.Distance(pinkRobot.transform.position, nestorRobot.transform.position);
             distance = Mathf.Clamp(distance, minDist, maxDist);
             float accuracy = Mathf.Lerp(1, 0, Mathf.InverseLerp(minDist, maxDist, distance));
-            // robotHunt.setAccuracy(accuracy);
+            robotHunt.SetAccuracy(accuracy);
         }
     }
 
