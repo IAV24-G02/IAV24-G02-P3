@@ -152,7 +152,7 @@ MonoBehaviour:
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"4\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"7\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"630.6068 728.7633\" name=\"Basic/CheckHealthNotKnowing\"
+    selected=\"True\" position=\"630.6068 728.7633\" name=\"Basic/CheckHealthNotKnowing\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"7\" />\r\n          <PrioritySelectorNode
     id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   

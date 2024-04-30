@@ -41,7 +41,7 @@ namespace LiquidSnake.Enemies
         //----------------------------------------------------------------------------
         private Mesh _mesh;
         private MeshRenderer _meshRenderer;
-        private Material _defaultMaterial;
+        [SerializeField] private Material _defaultMaterial;
         /// <summary>
         /// elemento detectado más cerca del punto de origen del sensor.
         /// Si no se ha detectado nada aún, este valor es null.
@@ -56,7 +56,6 @@ namespace LiquidSnake.Enemies
 
         private void OnValidate()
         {
-            _defaultMaterial = GetComponent<MeshRenderer>().sharedMaterial;
             BuildMesh();
         }
 
