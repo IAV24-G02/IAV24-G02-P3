@@ -191,12 +191,13 @@ flowchart TD
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica A** | | |
-| Comprobar la correcta representación del esquema con la topología del complejo militar incluyendo todos los elementos incluidos en este (Néstor, Cápsulas de Energía, botones, guardias y escondites) y el correcto zoom y seguimiento de la cámara a _Néstor_  | - Ejecución del programa y movimiento del jugador para inspeccionar el mapa<br> - Pulsaciones consecutivas de la tecla Z para opbservar el correcto funcionamiento del mismo. | []() |
+| Comprobar la correcta representación del esquema con la topología del complejo militar incluyendo todos los elementos incluidos en este (Néstor, Cápsulas de Energía, botones, guardias y escondites) y el correcto zoom y seguimiento de la cámara a _Néstor_  | - Ejecución del programa y movimiento del jugador para inspeccionar el mapa<br> - Pulsaciones consecutivas de la tecla Z para observar el correcto funcionamiento del mismo. | [ZOOM OUT](https://drive.google.com/file/d/1tgHym8qujXc4JhgzAzM_VnA-O8f_rXHc/view?usp=sharing) |
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica B** | | |
-| Probar el correcto bloqueo de la visibilidad de _Néstor_ al encontrarse tras una puerte cerrada o abierta y en el interior de un montón de robot. | -Colocarse tras una puerta cerrada. <br> - Colocarse tras una puerta abierta. <br> - Colocarse en el interior de un montón de robots, entrar y salir mientras _Néstor_ se encuentra en el cono de visioón de un robot.  | []() |
+| Probar el correcto bloqueo de la visibilidad de _Néstor_ al encontrarse tras una puerte cerrada o abierta. | - Colocarse tras una puerta cerrada. <br> - Colocarse tras una puerta abierta. | [PUERTAS](https://drive.google.com/file/d/1xDdn_6VpPXWPO8Dl23JN1PwGeRgeO7Vm/view?usp=sharing) |
+| Probar el correcto bloqueo de la visibilidad de _Néstor_ al encontrarse en el interior de un montón de robots. | - Colocarse en el interior de un montón de robots mientras _Néstor_ se encuentra en el cono de visión de un robot. | [MONTONES](https://drive.google.com/file/d/1a8Bazp3TvsrvPPAMe_1Jk2yMdbPS4PYI/view?usp=sharing) |
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
@@ -207,18 +208,13 @@ flowchart TD
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica D** | | |
-| `Néstor` supera el nivel de ejemplo empezando con poca vida | - Salud: 200 <br> - | []() |
-| `Néstor` supera el nivel de ejemplo sin guardias | - <br> - | []() |
-| `Néstor` supera el nivel de ejemplo con guardias | - <br> - | []() |
-
+| `Néstor` va hacia la energía cuando tiene poca vida y supera el nivel de ejemplo | - Salud < 25 <br> - | [PRIMER NIVEL]() |
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica E** | | |
-| `Néstor` supera el nivel de ejemplo empezando con poca vida | - Salud: 200 <br> - | []() |
-| `Néstor` supera el nivel de ejemplo sin guardias | - <br> - | []() |
-| `Néstor` supera el nivel de ejemplo con guardias | - <br> - | []() |
-| `Néstor` supera un nivel modificado | - <br> - | []() |
+| `Néstor` supera el nivel de ejemplo sin guardias | - <br> - | [SEGUNDO NIVEL](https://drive.google.com/file/d/1tqpZNfKwkoWwuPY-zqf9YeTGcak3bTSC/view?usp=sharing) |
+| `Néstor` supera el nivel modificado sin guardias | - <br> - | [TERCER NIVEL](https://drive.google.com/file/d/1JZDvm8CuM8yW4AeAetEV7sigTUYyDbLm/view?usp=sharing) |
 
 [ENLACE AL VÍDEO COMPLETO EN YOUTUBE]()  
 [ENLACE AL VÍDEO COMPLETO EN DRIVE]()
