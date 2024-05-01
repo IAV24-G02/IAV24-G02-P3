@@ -202,13 +202,13 @@ flowchart TD
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica C** | | |
-| Probar que el comportamiento de los robot es el descrito en la máquina de estados asignada a los mismos. | - Entrar en el cono de visión de un robot y observar que te sigue. <br> - Alejarte y acercarte y observar el empeoramiento/mejoría de la puntería. <br> - Aguantar los disparos necesarios para que se agoten y observar que vuelve a su base para recargar. <br> - Desaparecer del cono de visión del robot y observar que vuelve al Waypoint más cercano.  | []() |
+| Probar que el comportamiento de los robot es el descrito en la máquina de estados asignada a los mismos. | - Entrar en el cono de visión de un robot y observar que te sigue. <br> - Alejarte y acercarte y observar el empeoramiento/mejoría de la puntería. <br> - Aguantar los disparos necesarios para que se agoten y observar que vuelve a su base para recargar. <br> - Desaparecer del cono de visión del robot y observar que vuelve al Waypoint más cercano.  | [COMPORTAMIENTO GUARDIAS](https://drive.google.com/file/d/1c3Ql9Tgz8TNecZbubc4WdTEDZ5wJB5ul/view?usp=sharing) |
 |  | - <br> - | []() |
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
 | **Característica D** | | |
-| `Néstor` va hacia la energía cuando tiene poca vida y supera el nivel de ejemplo | - Salud < 25 <br> - | [PRIMER NIVEL]() |
+| `Néstor` va hacia la energía cuando tiene poca vida y supera el nivel de ejemplo | - Salud < 25 <br> - | [PRIMER NIVEL](https://drive.google.com/file/d/1C3Z2MO5HSn2laQ6Oe0Ervxf8qnRsIIkZ/view?usp=sharing) |
 
 | Pruebas | Métricas | Links |
 |:-:|:-:|:-:|
@@ -216,8 +216,8 @@ flowchart TD
 | `Néstor` supera el nivel de ejemplo sin guardias | - <br> - | [SEGUNDO NIVEL](https://drive.google.com/file/d/1tqpZNfKwkoWwuPY-zqf9YeTGcak3bTSC/view?usp=sharing) |
 | `Néstor` supera el nivel modificado sin guardias | - <br> - | [TERCER NIVEL](https://drive.google.com/file/d/1JZDvm8CuM8yW4AeAetEV7sigTUYyDbLm/view?usp=sharing) |
 
-[ENLACE AL VÍDEO COMPLETO EN YOUTUBE]()  
-[ENLACE AL VÍDEO COMPLETO EN DRIVE]()
+[ENLACE AL VÍDEO COMPLETO EN YOUTUBE](https://youtu.be/Hyjrv2IvgoE)  
+[ENLACE AL VÍDEO COMPLETO EN DRIVE](https://drive.google.com/file/d/1UiNMjgLb2_Ug4UxNS5yX1aKOT3B9pJCC/view?usp=sharing)
 
 ## Ampliaciones
 
